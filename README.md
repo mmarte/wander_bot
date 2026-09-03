@@ -2,6 +2,8 @@
 
 A travel and adventure social media content generation bot for short-form formats like reels, stories, and shorts.
 
+The GitHub Actions workflow generates one Wanderwithzen post on schedule, publishes it to every configured platform, and saves the queue and delivery log back to the repository. The primary Facebook page is [Wanderwithzen](https://www.facebook.com/profile.php?id=61589349864879).
+
 ## What this project includes
 
 - `wander_bot/content_generator.py` — generates travel/adventure captions, video ideas, hashtags, and short-form content outlines.
@@ -39,6 +41,8 @@ python run_bot.py --action generate --platform instagram --count 3
 ```powershell
 python run_bot.py --action publish --platform facebook --input content.json --media C:\path\to\video.mp4
 ```
+
+For automation, add the platform credentials as repository Actions secrets and run `python run_bot.py --action publish --platform all`. The workflow uses `OPENAI_API_KEY`, `FACEBOOK_PAGE_ACCESS_TOKEN`, and the optional Instagram, X, TikTok, YouTube, and Threads credentials.
 
 ## Environment variables
 

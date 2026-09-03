@@ -7,17 +7,23 @@ except ImportError:  # pragma: no cover
     openai = None
 
 from .settings import OPENAI_API_KEY
+from .settings import GROQ_API_KEY
+
+try:
+    from groq import Groq
+except ImportError:  # pragma: no cover
+    Groq = None
 
 
 class SocialContentGenerator:
     """Generate travel/adventure content for short-form social media posts."""
 
-    def __init__(self, theme: str = "travel and adventure", model: str = "gpt-4o-mini"):
+    def __init__(self, theme: str = "Wanderwithzen travel, nature, and mindful adventure", model: str = "gpt-4o-mini"):
         self.theme = theme
         self.model = model
         self.api_key = OPENAI_API_KEY
-        if openai and self.api_key:
-            openai.api_key = self.api_key
+        self.client = openai.OpenAI(api_key=self.api_key) if openai and self.api_key else None
+        self.groq_client = Groq(api_key=GROQ_API_KEY) if Groq and GROQ_API_KEY else None
 
     def generate_short_form(self, location: str, count: int = 1, platform: str = "instagram") -> List[Dict[str, str]]:
         """Generate one or more short-form content ideas."""
@@ -30,8 +36,8 @@ class SocialContentGenerator:
 
     def _build_prompt(self, location: str, platform: str, number: int) -> str:
         return (
-            f"You are a travel content creator specializing in reels, stories, and shorts. "
-            f"Produce a single short-form post idea for {platform} about travel and adventure at {location}. "
+            f"You are the content creator for Wanderwithzen, a travel, nature, and mindful adventure page. "
+            f"Produce a single short-form post idea for {platform} about an inspiring journey or destination at {location}. "
             "Include: title, caption, hashtags, shot list, mood, and a call to action. "
             "Use concise, engaging language and keep it optimized for short-form video. "
             "Present the result as JSON with keys: title, caption, hashtags, video_idea, cta. "
@@ -39,8 +45,19 @@ class SocialContentGenerator:
         )
 
     def _complete_prompt(self, prompt: str) -> Dict[str, str]:
-        if openai and self.api_key:
-            response = openai.ChatCompletion.create(
+        if self.groq_client:
+            response = self.groq_client.chat.completions.create(
+                model="openai/gpt-oss-120b",
+                messages=[{"role": "system", "content": "You are a creative social media writer."},
+                          {"role": "user", "content": prompt}],
+                max_tokens=400,
+                temperature=0.8,
+            )
+            text = response.choices[0].message.content.strip()
+            return self._parse_response(text)
+
+        if self.client:
+            response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{"role": "system", "content": "You are a creative social media writer."},
                           {"role": "user", "content": prompt}],

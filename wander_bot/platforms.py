@@ -8,6 +8,7 @@ from typing import Dict, Optional
 import requests
 
 from .settings import (
+    FACEBOOK_PAGE_ID,
     FACEBOOK_PAGE_ACCESS_TOKEN,
     INSTAGRAM_BUSINESS_ACCOUNT_ID,
     X_BEARER_TOKEN,
@@ -88,7 +89,20 @@ class FacebookPoster(SocialPlatformClient):
             return {"status": "error", "message": "Facebook Page access token is missing."}
 
         if not media_path:
-            return {"status": "error", "message": "Facebook requires a video media_path to upload."}
+            upload_url = f"https://graph.facebook.com/{GRAPH_API_VERSION}/{FACEBOOK_PAGE_ID}/feed"
+            try:
+                response = requests.post(
+                    upload_url,
+                    data={
+                        "message": content.get("caption", ""),
+                        "access_token": FACEBOOK_PAGE_ACCESS_TOKEN,
+                    },
+                    timeout=60,
+                )
+                response.raise_for_status()
+                return {"status": "ok", "platform": "facebook", "response": response.json()}
+            except requests.RequestException as exc:
+                return {"status": "error", "message": "Facebook post failed.", "details": str(exc)}
 
         upload_url = f"https://graph-video.facebook.com/{GRAPH_API_VERSION}/me/videos"
         data = {

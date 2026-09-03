@@ -23,7 +23,7 @@ PLATFORM_MAP = {
 
 
 class WanderBot:
-    def __init__(self, theme: str = "travel and adventure"):
+    def __init__(self, theme: str = "Wanderwithzen travel, nature, and mindful adventure"):
         self.generator = SocialContentGenerator(theme=theme)
 
     def generate(self, location: str, platform: str = "instagram", count: int = 1) -> List[Dict[str, str]]:
