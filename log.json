@@ -235,5 +235,44 @@
       }
     },
     "executed_at": "2026-09-04T03:22:17.840651+00:00"
+  },
+  {
+    "post_id": "wander-20260904033614252445",
+    "status": "failed",
+    "results": {
+      "facebook": {
+        "status": "error",
+        "message": "Facebook post failed.",
+        "details": {
+          "error": {
+            "message": "(#100) The global id 61589349864879 is not allowed for this call",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "A27X8Z_-ScsjaFU_9QGAwUd"
+          }
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram credentials are missing."
+      },
+      "x": {
+        "status": "error",
+        "message": "X bearer token is missing."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "error",
+        "message": "YouTube OAuth access token is missing."
+      }
+    },
+    "executed_at": "2026-09-04T03:36:15.170507+00:00"
   }
 ]
