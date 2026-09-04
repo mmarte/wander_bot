@@ -195,5 +195,53 @@
         "message": "YouTube OAuth access token is missing."
       }
     }
+  },
+  {
+    "title": "Escape the noise, find your path",
+    "caption": "Explore travel, nature, hidden places, and mindful adventure with me — nature, hidden trails, and world-class views. #travel #adventure #wanderwithzen",
+    "hashtags": "#travel #adventure #nature #wanderlust",
+    "video_idea": "Start with a fast-paced arrival shot, then show a scenic hike, local food, and a quiet sunset moment.",
+    "cta": "Save this reel and follow for more adventure escapes.",
+    "id": "wander-20260904031936522432",
+    "status": "failed",
+    "created_at": "2026-09-04T03:19:36.522459+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "61589349864879",
+    "published_at": null,
+    "publish_results": {
+      "facebook": {
+        "status": "error",
+        "message": "Facebook post failed.",
+        "details": {
+          "error": {
+            "message": "Error validating access token: Session has expired on Thursday, 03-Sep-26 18:00:00 PDT. The current time is Thursday, 03-Sep-26 20:19:37 PDT.",
+            "type": "OAuthException",
+            "code": 190,
+            "error_subcode": 463,
+            "fbtrace_id": "AQuKnraJb-LOqJOFJdrOb53"
+          }
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram credentials are missing."
+      },
+      "x": {
+        "status": "error",
+        "message": "X bearer token is missing."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "error",
+        "message": "YouTube OAuth access token is missing."
+      }
+    }
   }
 ]
