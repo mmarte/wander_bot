@@ -42,12 +42,12 @@ python run_bot.py --action generate --platform instagram --count 3
 python run_bot.py --action publish --platform facebook --input content.json --media C:\path\to\video.mp4
 ```
 
-For automation, add the platform credentials as repository Actions secrets and run `python run_bot.py --action publish --platform all`. The workflow uses `OPENAI_API_KEY`, `FACEBOOK_PAGE_ACCESS_TOKEN`, and the optional Instagram, X, TikTok, YouTube, and Threads credentials.
+For automation, add the platform credentials as repository Actions secrets and run `python run_bot.py --action publish --platform all`. The workflow uses `GROQ_API_KEY` for generation and `FB_PAGE_TOKEN` for Facebook. The Facebook token must be a Page access token with `pages_manage_posts` and `pages_read_engagement` permissions for Wanderwithzen. Optional Instagram, X, TikTok, YouTube, and Threads credentials enable those platforms when configured.
 
 ## Environment variables
 
 - `OPENAI_API_KEY`
-- `FACEBOOK_PAGE_ACCESS_TOKEN`
+- `FB_PAGE_TOKEN`
 - `INSTAGRAM_BUSINESS_ACCOUNT_ID`
 - `X_BEARER_TOKEN`
 - `TIKTOK_ACCESS_TOKEN`

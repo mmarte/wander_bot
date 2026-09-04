@@ -82,6 +82,8 @@ def main():
                      "executed_at": datetime.now(timezone.utc).isoformat()})
         log_path.write_text(json.dumps(logs[-200:], ensure_ascii=False, indent=2), encoding="utf-8")
         print(json.dumps({"post_id": post.get("id"), "status": post["status"], "results": results}, ensure_ascii=False, indent=2))
+        if not successful:
+            raise SystemExit("No platform published the post.")
 
 
 if __name__ == "__main__":
