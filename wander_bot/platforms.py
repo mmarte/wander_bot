@@ -89,7 +89,7 @@ class FacebookPoster(SocialPlatformClient):
             return {"status": "error", "message": "Facebook Page access token is missing."}
 
         if not media_path:
-            upload_url = f"https://graph.facebook.com/{GRAPH_API_VERSION}/{FACEBOOK_PAGE_ID}/feed"
+            upload_url = f"https://graph.facebook.com/{GRAPH_API_VERSION}/me/feed"
             try:
                 response = requests.post(
                     upload_url,
