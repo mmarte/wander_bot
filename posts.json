@@ -385,5 +385,47 @@
         "message": "YouTube OAuth access token is missing."
       }
     }
+  },
+  {
+    "title": "Escape the noise, find your path",
+    "caption": "Explore travel, nature, hidden places, and mindful adventure with me — nature, hidden trails, and world-class views. #travel #adventure #wanderwithzen",
+    "hashtags": "#travel #adventure #nature #wanderlust",
+    "video_idea": "Start with a fast-paced arrival shot, then show a scenic hike, local food, and a quiet sunset moment.",
+    "cta": "Save this reel and follow for more adventure escapes.",
+    "id": "wander-20260904040206319866",
+    "status": "published",
+    "created_at": "2026-09-04T04:02:06.319897+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "61589349864879",
+    "published_at": "2026-09-04T04:02:10.283409+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "1135032983019547_122120298111311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram credentials are missing."
+      },
+      "x": {
+        "status": "error",
+        "message": "X bearer token is missing."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "error",
+        "message": "YouTube OAuth access token is missing."
+      }
+    }
   }
 ]

@@ -313,5 +313,39 @@
       }
     },
     "executed_at": "2026-09-04T03:41:02.013554+00:00"
+  },
+  {
+    "post_id": "wander-20260904040206319866",
+    "status": "published",
+    "results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "1135032983019547_122120298111311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram credentials are missing."
+      },
+      "x": {
+        "status": "error",
+        "message": "X bearer token is missing."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "error",
+        "message": "YouTube OAuth access token is missing."
+      }
+    },
+    "executed_at": "2026-09-04T04:02:10.284452+00:00"
   }
 ]
