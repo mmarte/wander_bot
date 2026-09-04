@@ -274,5 +274,44 @@
       }
     },
     "executed_at": "2026-09-04T03:36:15.170507+00:00"
+  },
+  {
+    "post_id": "wander-20260904034100888271",
+    "status": "failed",
+    "results": {
+      "facebook": {
+        "status": "error",
+        "message": "Facebook post failed.",
+        "details": {
+          "error": {
+            "message": "(#200) If posting to a group, requires app being installed in the group, and \\\n          either publish_to_groups permission with user token, or both pages_read_engagement \\\n          and pages_manage_posts permission with page token; If posting to a page, \\\n          requires both pages_read_engagement and pages_manage_posts as an admin with \\\n          sufficient administrative permission",
+            "type": "OAuthException",
+            "code": 200,
+            "fbtrace_id": "AyJMeuBNycdxGOt2FUe0yzf"
+          }
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram credentials are missing."
+      },
+      "x": {
+        "status": "error",
+        "message": "X bearer token is missing."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "error",
+        "message": "YouTube OAuth access token is missing."
+      }
+    },
+    "executed_at": "2026-09-04T03:41:02.013554+00:00"
   }
 ]
