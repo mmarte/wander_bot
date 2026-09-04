@@ -19,7 +19,7 @@ from .settings import (
     THREADS_USER_ID,
 )
 
-GRAPH_API_VERSION = "v17.0"
+GRAPH_API_VERSION = "v25.0"
 THREADS_API_BASES = ["https://graph.threads.net", "https://graph.threads.com"]
 
 
@@ -99,8 +99,10 @@ class FacebookPoster(SocialPlatformClient):
                     },
                     timeout=60,
                 )
-                response.raise_for_status()
-                return {"status": "ok", "platform": "facebook", "response": response.json()}
+                data = response.json()
+                if response.status_code >= 400 or data.get("error"):
+                    return {"status": "error", "message": "Facebook post failed.", "details": data}
+                return {"status": "ok", "platform": "facebook", "response": data}
             except requests.RequestException as exc:
                 return {"status": "error", "message": "Facebook post failed.", "details": str(exc)}
 
