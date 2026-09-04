@@ -91,5 +91,37 @@
       }
     },
     "executed_at": "2026-09-03T22:52:38.053279+00:00"
+  },
+  {
+    "post_id": "wander-20260904024718903839",
+    "status": "failed",
+    "results": {
+      "facebook": {
+        "status": "error",
+        "message": "Facebook post failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v17.0/61589349864879/feed"
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram credentials are missing."
+      },
+      "x": {
+        "status": "error",
+        "message": "X bearer token is missing."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "error",
+        "message": "YouTube OAuth access token is missing."
+      }
+    },
+    "executed_at": "2026-09-04T02:47:20.358905+00:00"
   }
 ]
