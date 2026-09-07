@@ -101,6 +101,13 @@ class FacebookPoster(SocialPlatformClient):
                 )
                 data = response.json()
                 if response.status_code >= 400 or data.get("error"):
+                    error = data.get("error", {})
+                    if error.get("code") == 200:
+                        return {
+                            "status": "error",
+                            "message": "Facebook Page token lacks pages_manage_posts and/or pages_read_engagement for this Page.",
+                            "details": data,
+                        }
                     return {"status": "error", "message": "Facebook post failed.", "details": data}
                 return {"status": "ok", "platform": "facebook", "response": data}
             except requests.RequestException as exc:

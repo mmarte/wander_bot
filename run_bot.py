@@ -66,6 +66,12 @@ def main():
         results = {}
         for platform in platforms:
             results[platform] = bot.publish(post, platform=platform, media_path=args.media)
+            result = results[platform]
+            if result.get("status") == "error" and any(
+                phrase in result.get("message", "").lower()
+                for phrase in ("credentials are missing", "token is missing", "bearer token is missing", "oauth access token is missing")
+            ):
+                result["status"] = "skipped"
         successful = [name for name, result in results.items() if result.get("status") == "ok"]
         post["status"] = "published" if successful else "failed"
         post["published_at"] = datetime.now(timezone.utc).isoformat() if successful else None
