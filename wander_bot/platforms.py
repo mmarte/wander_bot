@@ -17,10 +17,13 @@ from .settings import (
     TIKTOK_OPEN_ID,
     THREADS_AUTH_TOKEN,
     THREADS_USER_ID,
+    X_USER_TOKEN,
+    YOUTUBE_CLIENT_ID,
+    YOUTUBE_CLIENT_SECRET,
+    YOUTUBE_REFRESH_TOKEN,
 )
 
 GRAPH_API_VERSION = "v25.0"
-THREADS_API_BASES = ["https://graph.threads.net", "https://graph.threads.com"]
 
 
 class SocialPlatformClient(ABC):
@@ -88,8 +91,11 @@ class FacebookPoster(SocialPlatformClient):
         if not FACEBOOK_PAGE_ACCESS_TOKEN:
             return {"status": "error", "message": "Facebook Page access token is missing."}
 
+        if not FACEBOOK_PAGE_ID:
+            return {"status": "error", "message": "Facebook Page ID is missing."}
+
         if not media_path:
-            upload_url = f"https://graph.facebook.com/{GRAPH_API_VERSION}/me/feed"
+            upload_url = f"https://graph.facebook.com/{GRAPH_API_VERSION}/{FACEBOOK_PAGE_ID}/feed"
             try:
                 response = requests.post(
                     upload_url,
@@ -108,12 +114,18 @@ class FacebookPoster(SocialPlatformClient):
                             "message": "Facebook Page token lacks pages_manage_posts and/or pages_read_engagement for this Page.",
                             "details": data,
                         }
+                    if error.get("code") == 100:
+                        return {
+                            "status": "error",
+                            "message": "Facebook Page ID does not match the Page token, or that ID is not a valid Page for this call.",
+                            "details": data,
+                        }
                     return {"status": "error", "message": "Facebook post failed.", "details": data}
                 return {"status": "ok", "platform": "facebook", "response": data}
             except requests.RequestException as exc:
                 return {"status": "error", "message": "Facebook post failed.", "details": str(exc)}
 
-        upload_url = f"https://graph-video.facebook.com/{GRAPH_API_VERSION}/me/videos"
+        upload_url = f"https://graph-video.facebook.com/{GRAPH_API_VERSION}/{FACEBOOK_PAGE_ID}/videos"
         data = {
             "description": content.get("caption", ""),
             "title": content.get("title", ""),
@@ -145,24 +157,54 @@ class TikTokPoster(SocialPlatformClient):
         if not media_path:
             return {"status": "error", "message": "TikTok requires a local video file path to upload."}
 
+        # TikTok Content Posting API v2 (the old open-api.tiktok.com
+        # video/upload endpoint is deprecated). The TikTok app must be
+        # approved for Content Posting API, otherwise init returns 403.
         try:
-            upload_url = f"https://open-api.tiktok.com/video/upload/?open_id={TIKTOK_OPEN_ID}&access_token={TIKTOK_ACCESS_TOKEN}"
-            with open(media_path, "rb") as handle:
-                response = requests.post(upload_url, files={"video": handle}, timeout=180)
-            response.raise_for_status()
-            upload_data = response.json()
-            video_id = upload_data.get("data", {}).get("video_id")
-            if not video_id:
-                return {"status": "error", "message": "TikTok video upload failed.", "details": upload_data}
-
-            publish_url = f"https://open-api.tiktok.com/video/publish/?open_id={TIKTOK_OPEN_ID}&access_token={TIKTOK_ACCESS_TOKEN}"
-            publish_response = requests.post(
-                publish_url,
-                data={"video_id": video_id, "text": content.get("caption", "")},
+            import os
+            size = os.path.getsize(media_path)
+            headers = {
+                "Authorization": f"Bearer {TIKTOK_ACCESS_TOKEN}",
+                "Content-Type": "application/json; charset=UTF-8",
+            }
+            init = requests.post(
+                "https://open.tiktokapis.com/v2/post/publish/video/init/",
+                headers=headers,
+                json={
+                    "post_info": {
+                        "title": content.get("caption", "")[:150],
+                        "privacy_level": "PUBLIC_TO_EVERYONE",
+                        "disable_comment": False,
+                        "disable_duet": False,
+                        "disable_stitch": False,
+                    },
+                    "source_info": {
+                        "source": "FILE_UPLOAD",
+                        "video_size": size,
+                        "chunk_size": size,
+                        "total_chunk_count": 1,
+                    },
+                },
                 timeout=60,
             )
-            publish_response.raise_for_status()
-            return {"status": "ok", "platform": "tiktok", "video_id": video_id, "response": publish_response.json()}
+            init_data = init.json()
+            if init.status_code >= 400 or init_data.get("error"):
+                return {"status": "error", "message": "TikTok video init failed.", "details": init_data}
+            data = init_data.get("data", {})
+            upload_url = data.get("upload_url")
+            publish_id = data.get("publish_id")
+            if not upload_url:
+                return {"status": "error", "message": "TikTok video init failed.", "details": init_data}
+            with open(media_path, "rb") as handle:
+                up = requests.put(
+                    upload_url,
+                    data=handle,
+                    headers={"Content-Type": "video/mp4", "Content-Range": f"bytes 0-{size - 1}/{size}"},
+                    timeout=300,
+                )
+            if up.status_code >= 400:
+                return {"status": "error", "message": "TikTok video upload failed.", "details": up.text[:500]}
+            return {"status": "ok", "platform": "tiktok", "publish_id": publish_id, "response": init_data}
         except requests.RequestException as exc:
             return {"status": "error", "message": "TikTok API request failed.", "details": str(exc)}
         except FileNotFoundError:
@@ -170,9 +212,33 @@ class TikTokPoster(SocialPlatformClient):
 
 
 class YouTubePoster(SocialPlatformClient):
+    def _access_token(self) -> str:
+        # Prefer refresh-token flow (long-lived, like rock_bot make_reel.py).
+        # A static YOUTUBE_ACCESS_TOKEN expires in about an hour.
+        if YOUTUBE_CLIENT_ID and YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN:
+            try:
+                r = requests.post(
+                    "https://oauth2.googleapis.com/token",
+                    data={
+                        "client_id": YOUTUBE_CLIENT_ID,
+                        "client_secret": YOUTUBE_CLIENT_SECRET,
+                        "refresh_token": YOUTUBE_REFRESH_TOKEN,
+                        "grant_type": "refresh_token",
+                    },
+                    timeout=30,
+                )
+                r.raise_for_status()
+                tok = r.json().get("access_token")
+                if tok:
+                    return tok
+            except Exception:
+                pass
+        return YOUTUBE_ACCESS_TOKEN or ""
+
     def publish_short(self, content: Dict[str, str], media_path: Optional[str] = None) -> Dict[str, str]:
-        if not YOUTUBE_ACCESS_TOKEN:
-            return {"status": "error", "message": "YouTube OAuth access token is missing."}
+        access_token = self._access_token()
+        if not access_token:
+            return {"status": "error", "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."}
 
         if not media_path:
             return {"status": "error", "message": "YouTube requires a local video file path to upload."}
@@ -180,7 +246,7 @@ class YouTubePoster(SocialPlatformClient):
         try:
             init_url = "https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status"
             headers = {
-                "Authorization": f"Bearer {YOUTUBE_ACCESS_TOKEN}",
+                "Authorization": f"Bearer {access_token}",
                 "Content-Type": "application/json; charset=UTF-8",
                 "X-Upload-Content-Type": "video/*",
             }
@@ -202,7 +268,7 @@ class YouTubePoster(SocialPlatformClient):
                     upload_url,
                     data=handle,
                     headers={
-                        "Authorization": f"Bearer {YOUTUBE_ACCESS_TOKEN}",
+                        "Authorization": f"Bearer {access_token}",
                         "Content-Type": "video/*",
                     },
                     timeout=300,
@@ -220,16 +286,26 @@ class YouTubePoster(SocialPlatformClient):
 
 class XPoster(SocialPlatformClient):
     def _headers(self) -> Dict[str, str]:
-        return {"Authorization": f"Bearer {X_BEARER_TOKEN}"}
+        # Posting requires a user token (OAuth 2.0 user or OAuth 1.0a user),
+        # not an app-only bearer token. X_USER_TOKEN is preferred.
+        tok = X_USER_TOKEN or X_BEARER_TOKEN
+        return {"Authorization": f"Bearer {tok}"}
 
     def publish_short(self, content: Dict[str, str], media_path: Optional[str] = None) -> Dict[str, str]:
-        if not X_BEARER_TOKEN:
-            return {"status": "error", "message": "X bearer token is missing."}
-
-        if not media_path:
-            return {"status": "error", "message": "X requires a local media file path to upload."}
+        if not (X_USER_TOKEN or X_BEARER_TOKEN):
+            return {"status": "error", "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."}
 
         try:
+            if not media_path:
+                # Text-only tweet, no media upload needed.
+                response = requests.post(
+                    "https://api.twitter.com/2/tweets",
+                    headers={**self._headers(), "Content-Type": "application/json"},
+                    json={"text": content.get("caption", "")[:280]},
+                    timeout=60,
+                )
+                response.raise_for_status()
+                return {"status": "ok", "platform": "x", "response": response.json()}
             media_id = self._upload_media(media_path)
             if not media_id:
                 return {"status": "error", "message": "X media upload failed."}
@@ -311,30 +387,52 @@ class ThreadsPoster(SocialPlatformClient):
         if not THREADS_AUTH_TOKEN or not THREADS_USER_ID:
             return {"status": "error", "message": "Threads auth token or user ID is missing."}
 
-        data = {"message": content.get("caption", "")}
-        files = None
+        # Threads API: create a container, then publish it. There is no
+        # /{user-id}/posts file-upload endpoint. A local video file cannot
+        # be posted directly — it needs a publicly accessible video_url.
+        # For reels, use publish_reel.py for Facebook/Instagram and post
+        # the text version here, or pass a public video URL as media_path.
+        if media_path and not self._is_url(media_path):
+            return {
+                "status": "error",
+                "message": "Threads requires a publicly accessible video/image URL for media. Pass a URL as media_path, or publish text only.",
+            }
+
+        params = {
+            "text": content.get("caption", "")[:500],
+            "access_token": THREADS_AUTH_TOKEN,
+        }
         if media_path:
-            if self._is_url(media_path):
-                data["media_url"] = media_path
+            if media_path.lower().endswith((".mp4", ".mov")):
+                params["media_type"] = "VIDEO"
+                params["video_url"] = media_path
             else:
-                try:
-                    files = {"file": open(media_path, "rb")}
-                except FileNotFoundError:
-                    return {"status": "error", "message": f"Threads media file not found: {media_path}"}
+                params["media_type"] = "IMAGE"
+                params["image_url"] = media_path
+        else:
+            params["media_type"] = "TEXT"
 
-        headers = {"Authorization": f"Bearer {THREADS_AUTH_TOKEN}"}
-        last_error = None
-        for base in THREADS_API_BASES:
-            publish_url = f"{base}/{THREADS_USER_ID}/posts"
-            try:
-                response = requests.post(publish_url, headers=headers, data=data, files=files, timeout=60)
-                response.raise_for_status()
-                return {"status": "ok", "platform": "threads", "response": response.json()}
-            except requests.RequestException as exc:
-                last_error = str(exc)
-                continue
-            finally:
-                if files:
-                    files["file"].close()
+        try:
+            create = requests.post(
+                f"https://graph.threads.net/v1.0/{THREADS_USER_ID}/threads",
+                data=params,
+                timeout=60,
+            )
+            create_data = create.json()
+            if create.status_code >= 400 or create_data.get("error"):
+                return {"status": "error", "message": "Threads container creation failed.", "details": create_data}
+            creation_id = create_data.get("id") or create_data.get("creation_id")
+            if not creation_id:
+                return {"status": "error", "message": "Threads container creation failed.", "details": create_data}
 
-        return {"status": "error", "message": "Threads publish endpoint failed.", "details": last_error}
+            publish = requests.post(
+                f"https://graph.threads.net/v1.0/{THREADS_USER_ID}/threads_publish",
+                data={"creation_id": creation_id, "access_token": THREADS_AUTH_TOKEN},
+                timeout=60,
+            )
+            publish_data = publish.json()
+            if publish.status_code >= 400 or publish_data.get("error"):
+                return {"status": "error", "message": "Threads publish failed.", "details": publish_data}
+            return {"status": "ok", "platform": "threads", "response": publish_data}
+        except requests.RequestException as exc:
+            return {"status": "error", "message": "Threads API request failed.", "details": str(exc)}

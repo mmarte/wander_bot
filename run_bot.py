@@ -36,7 +36,7 @@ def main():
                 "status": "pending",
                 "created_at": datetime.now(timezone.utc).isoformat(),
                 "brand": "Wanderwithzen",
-                "page_id": "61589349864879",
+                "page_id": "1135032983019547",
             })
             posts.append(idea)
         queue_path.write_text(json.dumps(posts[-50:], ensure_ascii=False, indent=2), encoding="utf-8")
