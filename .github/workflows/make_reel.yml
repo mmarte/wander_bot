@@ -1,0 +1,65 @@
+name: Wanderwithzen Make Reel
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+permissions:
+  contents: write
+
+jobs:
+  make_reel:
+    name: Generate and publish a travel Reel
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install ffmpeg
+        run: sudo apt-get install -y ffmpeg
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate Reel
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: python make_reel.py
+
+      - name: Publish Reel to Facebook + Instagram
+        env:
+          FB_PAGE_ID: "1135032983019547"
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          FACEBOOK_PAGE_ID: "1135032983019547"
+          IG_USER_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
+          INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+        run: python publish_reel.py
+
+      - name: Upload Reel artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: reel-${{ github.run_id }}
+          path: reels/
+          retention-days: 7
+
+      - name: Save updated log back to repo
+        run: |
+          git config user.name "Wanderwithzen Bot"
+          git config user.email "bot@wanderwithzen.com"
+          git add log.json
+          git diff --staged --quiet || git commit -m "bot: published reel $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
