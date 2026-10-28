@@ -44,9 +44,9 @@ jobs:
 
       - name: Publish across configured platforms
         env:
-          FB_PAGE_ID: "61589349864879"
+          FB_PAGE_ID: "1135032983019547"
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
-          FACEBOOK_PAGE_ID: "61589349864879"
+          FACEBOOK_PAGE_ID: "1135032983019547"
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
           INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
