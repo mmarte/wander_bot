@@ -49,22 +49,67 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 # reads the Place line out of the script file header). Places are real
 # and matched to the theme; the Pexels search stays the generic theme
 # query — footage of the exact place is not required.
+# 2026-11-07, second change: each theme now has THREE places in three
+# different countries, and pick_topic() chooses one at random per run,
+# so the country varies instead of every reel about a theme naming the
+# same place. Picking a country first and forcing a theme to fit would
+# break the reel (desert theme, rainy country), so the country varies
+# through the theme's place list — 36 places across 29 countries.
 REEL_TOPICS = [
-    {"topic": "turquoise bay from above", "search": "turquoise bay aerial drone boats", "angle": "una bahía turquesa vista desde el cielo", "place": "Bora Bora", "country": "French Polynesia", "match": "bora bora"},
-    {"topic": "tropical island escape", "search": "tropical island aerial drone turquoise water", "angle": "una isla para desconectar de verdad", "place": "Bali", "country": "Indonesia", "match": "bali"},
-    {"topic": "hidden beach", "search": "hidden beach paradise aerial drone", "angle": "una playa escondida que pocos conocen", "place": "Navagio Beach", "country": "Greece", "match": "navagio"},
-    {"topic": "palm beach coast", "search": "palm trees beach aerial ocean", "angle": "el paraíso cabe en una playa de palmeras", "place": "Tulum", "country": "Mexico", "match": "tulum"},
-    {"topic": "ocean cliffs coast", "search": "ocean cliffs aerial drone coast", "angle": "el mar golpeando los acantilados", "place": "Cliffs of Moher", "country": "Ireland", "match": "moher"},
-    {"topic": "coastal road trip", "search": "coastal road aerial ocean drive", "angle": "una ruta costera para viajar despacio", "place": "Amalfi Coast", "country": "Italy", "match": "amalfi"},
-    {"topic": "a mountain lake at sunrise", "search": "mountain lake sunrise aerial", "angle": "un amanecer que vale la pena madrugar", "place": "Lake Atitlán", "country": "Guatemala", "match": "atitlán"},
-    {"topic": "waterfall adventure", "search": "waterfall jungle aerial drone", "angle": "perseguir cascadas, no likes", "place": "Plitvice Lakes", "country": "Croatia", "match": "plitvice"},
-    {"topic": "desert dunes", "search": "desert dunes sunset travel", "angle": "el silencio del desierto al atardecer", "place": "Wadi Rum", "country": "Jordan", "match": "wadi rum"},
-    {"topic": "old town streets", "search": "old town europe streets travel", "angle": "perderse por calles antiguas sin prisa", "place": "Hallstatt", "country": "Austria", "match": "hallstatt"},
-    {"topic": "forest hiking trail", "search": "forest hiking trail aerial", "angle": "caminar entre árboles para volver a respirar", "place": "Banff", "country": "Canada", "match": "banff"},
-    {"topic": "night sky stars", "search": "milky way night sky mountains", "angle": "dormir bajo las estrellas", "place": "Lofoten Islands", "country": "Norway", "match": "lofoten"},
+    {"topic": "turquoise bay from above", "search": "turquoise bay aerial drone boats", "angle": "una bahía turquesa vista desde el cielo", "angle_en": "a turquoise bay seen from the sky", "places": [
+        {"name": "Bora Bora", "country": "French Polynesia", "match": "bora bora"},
+        {"name": "Maya Bay", "country": "Thailand", "match": "maya bay"},
+        {"name": "Grace Bay", "country": "Turks and Caicos Islands", "match": "grace bay"}]},
+    {"topic": "tropical island escape", "search": "tropical island aerial drone turquoise water", "angle": "una isla para desconectar de verdad", "angle_en": "an island to truly disconnect", "places": [
+        {"name": "Bali", "country": "Indonesia", "match": "bali"},
+        {"name": "Santorini", "country": "Greece", "match": "santorini"},
+        {"name": "Maui", "country": "United States", "match": "maui"}]},
+    {"topic": "hidden beach", "search": "hidden beach paradise aerial drone", "angle": "una playa escondida que pocos conocen", "angle_en": "a hidden beach few people know", "places": [
+        {"name": "Navagio Beach", "country": "Greece", "match": "navagio"},
+        {"name": "Playa del Amor", "country": "Mexico", "match": "amor"},
+        {"name": "Anse Source d'Argent", "country": "Seychelles", "match": "argent"}]},
+    {"topic": "palm beach coast", "search": "palm trees beach aerial ocean", "angle": "el paraíso cabe en una playa de palmeras", "angle_en": "paradise fits on a palm beach", "places": [
+        {"name": "Tulum", "country": "Mexico", "match": "tulum"},
+        {"name": "Waikiki", "country": "United States", "match": "waikiki"},
+        {"name": "Copacabana", "country": "Brazil", "match": "copacabana"}]},
+    {"topic": "ocean cliffs coast", "search": "ocean cliffs aerial drone coast", "angle": "el mar golpeando los acantilados", "angle_en": "the sea crashing against the cliffs", "places": [
+        {"name": "Cliffs of Moher", "country": "Ireland", "match": "moher"},
+        {"name": "Big Sur", "country": "United States", "match": "big sur"},
+        {"name": "Twelve Apostles", "country": "Australia", "match": "twelve apostles"}]},
+    {"topic": "coastal road trip", "search": "coastal road aerial ocean drive", "angle": "una ruta costera para viajar despacio", "angle_en": "a coastal road to travel slowly", "places": [
+        {"name": "Amalfi Coast", "country": "Italy", "match": "amalfi"},
+        {"name": "Great Ocean Road", "country": "Australia", "match": "great ocean road"},
+        {"name": "Garden Route", "country": "South Africa", "match": "garden route"}]},
+    {"topic": "a mountain lake at sunrise", "search": "mountain lake sunrise aerial", "angle": "un amanecer que vale la pena madrugar", "angle_en": "a sunrise worth waking up early for", "places": [
+        {"name": "Lake Atitlán", "country": "Guatemala", "match": "atitlán"},
+        {"name": "Lake Louise", "country": "Canada", "match": "louise"},
+        {"name": "Lake Bled", "country": "Slovenia", "match": "bled"}]},
+    {"topic": "waterfall adventure", "search": "waterfall jungle aerial drone", "angle": "perseguir cascadas, no likes", "angle_en": "chasing waterfalls, not likes", "places": [
+        {"name": "Plitvice Lakes", "country": "Croatia", "match": "plitvice"},
+        {"name": "Iguazu Falls", "country": "Argentina", "match": "iguazu"},
+        {"name": "Victoria Falls", "country": "Zambia", "match": "victoria"}]},
+    {"topic": "desert dunes", "search": "desert dunes sunset travel", "angle": "el silencio del desierto al atardecer", "angle_en": "the silence of the desert at sunset", "places": [
+        {"name": "Wadi Rum", "country": "Jordan", "match": "wadi rum"},
+        {"name": "Salar de Uyuni", "country": "Bolivia", "match": "uyuni"},
+        {"name": "Namib Desert", "country": "Namibia", "match": "namib"}]},
+    {"topic": "old town streets", "search": "old town europe streets travel", "angle": "perderse por calles antiguas sin prisa", "angle_en": "getting lost in old streets, no rush", "places": [
+        {"name": "Hallstatt", "country": "Austria", "match": "hallstatt"},
+        {"name": "Antigua Guatemala", "country": "Guatemala", "match": "antigua"},
+        {"name": "Chefchaouen", "country": "Morocco", "match": "chefchaouen"}]},
+    {"topic": "forest hiking trail", "search": "forest hiking trail aerial", "angle": "caminar entre árboles para volver a respirar", "angle_en": "walking among trees to breathe again", "places": [
+        {"name": "Black Forest", "country": "Germany", "match": "black forest"},
+        {"name": "Redwood National Park", "country": "United States", "match": "redwood"},
+        {"name": "Arashiyama", "country": "Japan", "match": "arashiyama"}]},
+    {"topic": "night sky stars", "search": "milky way night sky mountains", "angle": "dormir bajo las estrellas", "angle_en": "sleeping under the stars", "places": [
+        {"name": "Lofoten Islands", "country": "Norway", "match": "lofoten"},
+        {"name": "Atacama Desert", "country": "Chile", "match": "atacama"},
+        {"name": "Faroe Islands", "country": "Denmark", "match": "faroe"}]},
 ]
 
-SCRIPT_SYSTEM = """Eres el guionista de "Wanderwithzen".
+# 2026-11-07: reels were Spanish-only because this prompt and the TTS
+# voice were hardcoded to Spanish (the text posts are in English). The
+# language is now picked per run (pick_language) and both prompts exist.
+SCRIPT_SYSTEM_ES = """Eres el guionista de "Wanderwithzen".
 Escribes guiones cortos y apasionantes para Reels de 60 segundos sobre viajes, naturaleza y aventura consciente.
 
 ESTRUCTURA OBLIGATORIA:
@@ -78,12 +123,39 @@ REGLAS:
 - Sin indicaciones de escena, sin paréntesis, solo el texto a narrar
 - EXACTAMENTE entre 130 y 150 palabras"""
 
+SCRIPT_SYSTEM_EN = """You are the scriptwriter for "Wanderwithzen".
+You write short, gripping scripts for 60-second Reels about travel, nature and mindful adventure.
+
+REQUIRED STRUCTURE:
+- Opening hook (5 sec): a striking line that grabs attention at once
+- Main part (40 sec): 3-4 fascinating, interesting facts
+- Close (10 sec): a question that invites comments
+
+RULES:
+- Conversational, energetic English
+- NEVER copy song lyrics
+- No scene directions, no parentheses, just the narration text
+- EXACTLY between 130 and 150 words"""
+
 
 def pick_topic() -> dict:
     now = datetime.now(timezone.utc)
     # One topic per UTC day (not one per ISO week), so daily workflow stays varied.
     day_index = int(now.timestamp() // 86400)
-    return REEL_TOPICS[day_index % len(REEL_TOPICS)]
+    topic = dict(REEL_TOPICS[day_index % len(REEL_TOPICS)])
+    # One place per run, picked at random from the theme's three places
+    # in three different countries, so the country varies run to run.
+    place = random.choice(topic.pop("places"))
+    topic["place"] = place["name"]
+    topic["country"] = place["country"]
+    topic["match"] = place["match"]
+    return topic
+
+
+def pick_language() -> str:
+    # Reels were Spanish-only; pick Spanish or English at random per run
+    # so the feed is not limited to one language.
+    return random.choice(["es", "en"])
 
 
 def _normalize_text(text: str) -> str:
@@ -93,7 +165,7 @@ def _normalize_text(text: str) -> str:
     return "".join(c for c in nfkd if not unicodedata.combining(c)).lower()
 
 
-def _ensure_place_mentioned(script: str, topic_data: dict) -> str:
+def _ensure_place_mentioned(script: str, topic_data: dict, lang: str = "es") -> str:
     # 2026-11-07: the reel must name its real place and country, the same
     # rule as the text posts. Groq usually follows the prompt, but if the
     # place never made it into the script, close with a line that names
@@ -109,10 +181,12 @@ def _ensure_place_mentioned(script: str, topic_data: dict) -> str:
     if _normalize_text(match) in _normalize_text(script):
         return script
     print(f"  Place '{place}' not mentioned in script — appending closing line.")
-    return script.rstrip() + f" Todo esto te espera en {place}, {country}."
+    if lang == "es":
+        return script.rstrip() + f" Todo esto te espera en {place}, {country}."
+    return script.rstrip() + f" All of this is waiting for you in {place}, {country}."
 
 
-def generate_script(topic_data: dict) -> str:
+def generate_script(topic_data: dict, lang: str = "es") -> str:
     # 2026-11-07: Groq sometimes returns an empty (0-word) script. The old
     # code accepted it, Kokoro then produced no audio, make_reel quit
     # quietly and the whole workflow still showed green with no reel.
@@ -128,16 +202,29 @@ def generate_script(topic_data: dict) -> str:
     # a lower temperature, and a non-reasoning fallback model on the
     # last attempt.
     client = Groq(api_key=GROQ_API_KEY)
-    prompt = (
-        f"Escribe un guión de Reel de 60 segundos sobre: {topic_data['topic']}\n"
-        f"Ángulo: {topic_data['angle']}\n\n"
-        f"Este guión DEBE tratar sobre este lugar real: {topic_data['place']}, {topic_data['country']}. "
-        f"Menciona el lugar y el país por su nombre en el guión. "
-        f"OBLIGATORIO: escribe EXACTAMENTE entre 140 y 155 palabras. "
-        f"Cuenta las palabras antes de responder. "
-        f"Si tienes menos de 140 palabras, agrega más detalles y ejemplos. "
-        f"Solo el texto a narrar, sin indicaciones de escena."
-    )
+    angle = topic_data["angle"] if lang == "es" else topic_data["angle_en"]
+    if lang == "es":
+        prompt = (
+            f"Escribe un guión de Reel de 60 segundos sobre: {topic_data['topic']}\n"
+            f"Ángulo: {angle}\n\n"
+            f"Este guión DEBE tratar sobre este lugar real: {topic_data['place']}, {topic_data['country']}. "
+            f"Menciona el lugar y el país por su nombre en el guión. "
+            f"OBLIGATORIO: escribe EXACTAMENTE entre 140 y 155 palabras. "
+            f"Cuenta las palabras antes de responder. "
+            f"Si tienes menos de 140 palabras, agrega más detalles y ejemplos. "
+            f"Solo el texto a narrar, sin indicaciones de escena."
+        )
+    else:
+        prompt = (
+            f"Write a 60-second Reel script about: {topic_data['topic']}\n"
+            f"Angle: {angle}\n\n"
+            f"This script MUST be about this real place: {topic_data['place']}, {topic_data['country']}. "
+            f"Mention the place and the country by name in the script. "
+            f"MANDATORY: write EXACTLY between 140 and 155 words. "
+            f"Count the words before answering. "
+            f"If you have fewer than 140 words, add more details and examples. "
+            f"Only the narration text, no scene directions."
+        )
     last_error = ""
     for attempt in range(1, 4):
         # Attempts 1-2: gpt-oss-120b. Attempt 3: llama-3.3-70b-versatile,
@@ -149,7 +236,7 @@ def generate_script(topic_data: dict) -> str:
             completion = client.chat.completions.create(
                 model       = model,
                 messages    = [
-                    {"role": "system", "content": SCRIPT_SYSTEM},
+                    {"role": "system", "content": SCRIPT_SYSTEM_ES if lang == "es" else SCRIPT_SYSTEM_EN},
                     {"role": "user",   "content": prompt},
                 ],
                 temperature = 0.7,
@@ -161,19 +248,18 @@ def generate_script(topic_data: dict) -> str:
             print(f"  Script attempt {attempt} ({model}) error: {e}")
         words = len(script.split())
         if words >= 120:
-            return _ensure_place_mentioned(script, topic_data)
+            return _ensure_place_mentioned(script, topic_data, lang)
         print(f"  Script attempt {attempt} ({model}) returned {words} words — retrying...")
         last_error = last_error or f"only {words} words"
         time.sleep(5)
     raise RuntimeError(f"Script generation failed after 3 attempts (last: {last_error})")
 
 
-def text_to_speech_kokoro(script: str, output_path: str) -> str | None:
+def text_to_speech_kokoro(script: str, output_path: str, lang: str = "es") -> str | None:
     """
-    Generate Spanish voiceover using Kokoro TTS.
+    Generate voiceover using Kokoro TTS.
     Kokoro is 100% free, open-source, runs locally — no API key needed.
     Install: pip install kokoro soundfile
-    Kokoro supports Spanish with the 'es' language code.
     """
     try:
         from kokoro import KPipeline
@@ -181,11 +267,12 @@ def text_to_speech_kokoro(script: str, output_path: str) -> str | None:
         import numpy as np
 
         print("  Loading Kokoro TTS (first run downloads ~500MB model)...")
-        pipeline = KPipeline(lang_code="es")   # Spanish
+        pipeline = KPipeline(lang_code=lang)
+        voice = "ef_dora" if lang == "es" else "af_heart"  # Spanish / English female voice
 
         # Generate audio — Kokoro returns audio chunks
         audio_chunks = []
-        for chunk in pipeline(script, voice="ef_dora"):  # Spanish female voice
+        for chunk in pipeline(script, voice=voice):
             if chunk.audio is not None:
                 audio_chunks.append(chunk.audio)
 
@@ -202,14 +289,14 @@ def text_to_speech_kokoro(script: str, output_path: str) -> str | None:
     except ImportError:
         print("  Kokoro not installed. Run: pip install kokoro soundfile")
         print("  Falling back to gTTS (Google TTS, also free)...")
-        return text_to_speech_gtts(script, output_path)
+        return text_to_speech_gtts(script, output_path, lang)
     except Exception as e:
         print(f"  Kokoro error: {e}")
         print("  Falling back to gTTS...")
-        return text_to_speech_gtts(script, output_path)
+        return text_to_speech_gtts(script, output_path, lang)
 
 
-def text_to_speech_gtts(script: str, output_path: str) -> str | None:
+def text_to_speech_gtts(script: str, output_path: str, lang: str = "es") -> str | None:
     """
     Fallback: Google Text-to-Speech (gTTS) — free, no API key.
     Quality is lower than Kokoro but works everywhere.
@@ -222,7 +309,7 @@ def text_to_speech_gtts(script: str, output_path: str) -> str | None:
         mp3_path = output_path
         if mp3_path.lower().endswith(".wav"):
             mp3_path = mp3_path[:-4] + ".mp3"
-        tts = gTTS(text=script, lang="es", slow=False)
+        tts = gTTS(text=script, lang=lang, slow=False)
         tts.save(mp3_path)
         print(f"  Audio saved via gTTS: {mp3_path}")
         return mp3_path
@@ -257,41 +344,45 @@ def get_pexels_videos(query: str, count: int = 6) -> list:
         attempts.append((" ".join(words[:2]), "portrait"))
     if len(words) > 1:
         attempts.append((words[0], None))
-    for q, orientation in attempts:
-        try:
-            params = {
-                "query":    q,
-                "per_page": 15,
-                "size":     "medium",
-            }
-            if orientation:
-                params["orientation"] = orientation
-            r = requests.get(
-                "https://api.pexels.com/videos/search",
-                headers={"Authorization": PEXELS_KEY},
-                params=params,
-                timeout=15,
-            )
-            r.raise_for_status()
-            videos = r.json().get("videos", [])
-            if not videos:
-                print(f"  Pexels: no videos for '{q}' — trying a simpler query...")
-                time.sleep(3)
-                continue
-            urls = []
-            sample = random.sample(videos, min(count, len(videos)))
-            for v in sample:
-                files = sorted(
-                    [f for f in v["video_files"] if f.get("quality") in ("hd", "sd")],
-                    key=lambda x: x.get("width", 0),
+    for round_no in (1, 2):
+        for q, orientation in attempts:
+            try:
+                params = {
+                    "query":    q,
+                    "per_page": 15,
+                    "size":     "medium",
+                }
+                if orientation:
+                    params["orientation"] = orientation
+                r = requests.get(
+                    "https://api.pexels.com/videos/search",
+                    headers={"Authorization": PEXELS_KEY},
+                    params=params,
+                    timeout=15,
                 )
-                if files:
-                    # Prefer the highest-resolution variant for better final quality.
-                    urls.append(files[-1]["link"])
-            return urls
-        except Exception as e:
-            print(f"  Pexels video error for '{q}': {e}")
-            time.sleep(3)
+                r.raise_for_status()
+                videos = r.json().get("videos", [])
+                if not videos:
+                    print(f"  Pexels: no videos for '{q}' — trying a simpler query...")
+                    time.sleep(3)
+                    continue
+                urls = []
+                sample = random.sample(videos, min(count, len(videos)))
+                for v in sample:
+                    files = sorted(
+                        [f for f in v["video_files"] if f.get("quality") in ("hd", "sd")],
+                        key=lambda x: x.get("width", 0),
+                    )
+                    if files:
+                        # Prefer the highest-resolution variant for better final quality.
+                        urls.append(files[-1]["link"])
+                return urls
+            except Exception as e:
+                print(f"  Pexels video error for '{q}': {e}")
+                time.sleep(3)
+        if round_no == 1:
+            print("  Pexels: every query came back empty — waiting 60s and trying the whole ladder once more...")
+            time.sleep(60)
     return []
 
 
@@ -517,14 +608,16 @@ def make_reel():
     now        = datetime.now(timezone.utc)
     stamp      = now.strftime("%Y%m%d")
     topic_data = pick_topic()
+    lang = pick_language()
 
     print(f"[{now.isoformat()}] Making Reel: {topic_data['topic']}")
-    print(f"  Angle: {topic_data['angle']}\n")
+    print(f"  Place: {topic_data['place']}, {topic_data['country']} | Language: {'Spanish' if lang == 'es' else 'English'}")
+    print(f"  Angle: {topic_data['angle'] if lang == 'es' else topic_data['angle_en']}\n")
 
     # Step 1 — Script
     print("  Step 1: Writing script with Groq...")
     try:
-        script = generate_script(topic_data)
+        script = generate_script(topic_data, lang)
     except Exception as e:
         print(f"  Step 1 FAILED: {e}")
         raise SystemExit(1)
@@ -532,14 +625,14 @@ def make_reel():
 
     script_path = OUTPUT_DIR / f"reel_{stamp}_script.txt"
     script_path.write_text(
-        f"Topic: {topic_data['topic']}\nAngle: {topic_data['angle']}\nPlace: {topic_data['place']}, {topic_data['country']}\n\n{script}",
+        f"Topic: {topic_data['topic']}\nAngle: {topic_data['angle']}\nPlace: {topic_data['place']}, {topic_data['country']}\nLanguage: {lang}\n\n{script}",
         encoding="utf-8"
     )
 
     # Step 2 — TTS (Kokoro first, gTTS fallback)
     audio_path = str(OUTPUT_DIR / f"reel_{stamp}_audio.wav")
     print("  Step 2: Generating Spanish voiceover (Kokoro TTS)...")
-    audio_file = text_to_speech_kokoro(script, audio_path)
+    audio_file = text_to_speech_kokoro(script, audio_path, lang)
 
     if not audio_file:
         print("  Audio generation failed. Script saved for manual recording.")
@@ -568,7 +661,7 @@ def make_reel():
     # Step 4 — Assemble
     output_path = str(OUTPUT_DIR / f"reel_{stamp}.mp4")
     print(f"\n  Step 4: Assembling Reel with MoviePy...")
-    ok = assemble_reel(audio_file, video_urls, output_path, hook_text=topic_data["angle"])
+    ok = assemble_reel(audio_file, video_urls, output_path, hook_text=topic_data["angle"] if lang == "es" else topic_data["angle_en"])
 
     if ok:
         mb = os.path.getsize(output_path) / 1024 / 1024
