@@ -412,7 +412,7 @@ def assemble_reel(audio_path: str, video_urls: list, output_path: str, hook_text
 
         if not clips:
             print("  No valid clips — cannot assemble Reel.")
-            audio.close()
+            narration_audio.close()
             shutil.rmtree(clips_dir, ignore_errors=True)
             return False
 
@@ -446,7 +446,7 @@ def assemble_reel(audio_path: str, video_urls: list, output_path: str, hook_text
             logger      = None,
         )
         video.close()
-        audio.close()
+        narration_audio.close()
 
         # On-screen hook text for the first 5 seconds (the @wanderwithzen style).
         if hook_text:
