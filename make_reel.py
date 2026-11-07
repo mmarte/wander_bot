@@ -201,37 +201,54 @@ def text_to_speech_gtts(script: str, output_path: str) -> str | None:
 
 
 def get_pexels_videos(query: str, count: int = 6) -> list:
+    # 2026-11-07: the same query that found clips in the morning returned
+    # 0 videos in the afternoon run ("ocean cliffs aerial drone coast").
+    # Pexels is picky with long multi-word queries and can come back empty
+    # for no clear reason, so retry with progressively simpler queries
+    # before giving up.
     if not PEXELS_KEY:
         print("  PEXELS_API_KEY not set.")
         return []
-    try:
-        r = requests.get(
-            "https://api.pexels.com/videos/search",
-            headers={"Authorization": PEXELS_KEY},
-            params={
-                "query":       query,
-                "per_page":    15,
-                "orientation": "portrait",
-                "size":        "medium",
-            },
-            timeout=15,
-        )
-        r.raise_for_status()
-        videos = r.json().get("videos", [])
-        urls = []
-        sample = random.sample(videos, min(count, len(videos)))
-        for v in sample:
-            files = sorted(
-                [f for f in v["video_files"] if f.get("quality") in ("hd", "sd")],
-                key=lambda x: x.get("width", 0),
+    words = query.split()
+    queries = [query]
+    if len(words) > 3:
+        queries.append(" ".join(words[:3]))
+    if len(words) > 2:
+        queries.append(" ".join(words[:2]))
+    for q in queries:
+        try:
+            r = requests.get(
+                "https://api.pexels.com/videos/search",
+                headers={"Authorization": PEXELS_KEY},
+                params={
+                    "query":       q,
+                    "per_page":    15,
+                    "orientation": "portrait",
+                    "size":        "medium",
+                },
+                timeout=15,
             )
-            if files:
-                # Prefer the highest-resolution variant for better final quality.
-                urls.append(files[-1]["link"])
-        return urls
-    except Exception as e:
-        print(f"  Pexels video error: {e}")
-        return []
+            r.raise_for_status()
+            videos = r.json().get("videos", [])
+            if not videos:
+                print(f"  Pexels: no videos for '{q}' — trying a simpler query...")
+                time.sleep(3)
+                continue
+            urls = []
+            sample = random.sample(videos, min(count, len(videos)))
+            for v in sample:
+                files = sorted(
+                    [f for f in v["video_files"] if f.get("quality") in ("hd", "sd")],
+                    key=lambda x: x.get("width", 0),
+                )
+                if files:
+                    # Prefer the highest-resolution variant for better final quality.
+                    urls.append(files[-1]["link"])
+            return urls
+        except Exception as e:
+            print(f"  Pexels video error for '{q}': {e}")
+            time.sleep(3)
+    return []
 
 
 def download_file(url: str, path: str) -> bool:
@@ -499,8 +516,10 @@ def make_reel():
         print(f"  Found {len(video_urls)} stock clips.")
 
     if not video_urls:
+        # Fail loudly: the audio is saved for manual editing, but the
+        # automated reel did not happen, so the run must show red.
         print("  No clips found. Audio saved — edit manually in CapCut.")
-        return
+        raise SystemExit(1)
 
     # Step 4 — Assemble
     output_path = str(OUTPUT_DIR / f"reel_{stamp}.mp4")
@@ -537,6 +556,7 @@ def make_reel():
         print(f"  → TikTok: Open app → + → upload reel_{stamp}.mp4")
     else:
         print(f"\n  Assembly failed. Audio at: {audio_path}")
+        raise SystemExit(1)
 
 
 # ---------------------------------------------------------------------------
