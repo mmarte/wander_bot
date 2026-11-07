@@ -38,20 +38,23 @@ YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
 OUTPUT_DIR = Path("reels")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
-# Reel topics — rotated by calendar day so daily runs get variety
+# Reel topics — rotated by calendar day so daily runs get variety.
+# 2026-11-06: rebalanced toward the @wanderwithzen style — aerial/drone
+# shots of turquoise bays, tropical coasts and palm shores, travel-focused.
+# Coastal/aerial topics lead the rotation; the rest keep variety.
 REEL_TOPICS = [
-    {"topic": "a mountain lake at sunrise", "search": "mountain lake sunrise travel", "angle": "un amanecer que vale la pena madrugar"},
-    {"topic": "hidden beach", "search": "hidden beach paradise drone", "angle": "una playa escondida que pocos conocen"},
-    {"topic": "forest hiking trail", "search": "forest hiking trail adventure", "angle": "caminar entre árboles para volver a respirar"},
-    {"topic": "old town streets", "search": "old town europe streets travel", "angle": "perderse por calles antiguas sin prisa"},
+    {"topic": "turquoise bay from above", "search": "turquoise bay aerial drone boats", "angle": "una bahía turquesa vista desde el cielo"},
+    {"topic": "tropical island escape", "search": "tropical island aerial drone turquoise water", "angle": "una isla para desconectar de verdad"},
+    {"topic": "hidden beach", "search": "hidden beach paradise aerial drone", "angle": "una playa escondida que pocos conocen"},
+    {"topic": "palm beach coast", "search": "palm trees beach aerial ocean", "angle": "el paraíso cabe en una playa de palmeras"},
+    {"topic": "ocean cliffs coast", "search": "ocean cliffs aerial drone coast", "angle": "el mar golpeando los acantilados"},
+    {"topic": "coastal road trip", "search": "coastal road aerial ocean drive", "angle": "una ruta costera para viajar despacio"},
+    {"topic": "a mountain lake at sunrise", "search": "mountain lake sunrise aerial", "angle": "un amanecer que vale la pena madrugar"},
+    {"topic": "waterfall adventure", "search": "waterfall jungle aerial drone", "angle": "perseguir cascadas, no likes"},
     {"topic": "desert dunes", "search": "desert dunes sunset travel", "angle": "el silencio del desierto al atardecer"},
-    {"topic": "waterfall adventure", "search": "waterfall jungle adventure", "angle": "perseguir cascadas, no likes"},
-    {"topic": "mountain village", "search": "mountain village travel", "angle": "la vida lenta de un pueblo de montaña"},
-    {"topic": "coastal road trip", "search": "coastal road trip van travel", "angle": "una ruta costera para viajar despacio"},
-    {"topic": "autumn forest", "search": "autumn forest travel", "angle": "el otoño, la mejor época para viajar"},
-    {"topic": "island escape", "search": "tropical island travel drone", "angle": "una isla para desconectar de verdad"},
+    {"topic": "old town streets", "search": "old town europe streets travel", "angle": "perderse por calles antiguas sin prisa"},
+    {"topic": "forest hiking trail", "search": "forest hiking trail aerial", "angle": "caminar entre árboles para volver a respirar"},
     {"topic": "night sky stars", "search": "milky way night sky mountains", "angle": "dormir bajo las estrellas"},
-    {"topic": "local market food", "search": "local market street food travel", "angle": "viajar también se saborea en el mercado"},
 ]
 
 SCRIPT_SYSTEM = """Eres el guionista de "Wanderwithzen".
@@ -258,7 +261,57 @@ def get_youtube_clips(topic: str, count: int = 2) -> list:
     return clips
 
 
-def assemble_reel(audio_path: str, video_urls: list, output_path: str) -> bool:
+def add_hook_overlay(input_path: str, hook_text: str, output_path: str) -> bool:
+    """
+    Burn the hook line (the topic angle) onto the first 5 seconds of the
+    reel, like the on-screen text on @wanderwithzen's reels ("Exciting
+    news!", "4 things you ..."). Fail-soft: any problem leaves the
+    original file untouched and returns False.
+    """
+    import subprocess
+
+    font = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+    if not hook_text or not hook_text.strip() or not os.path.exists(font):
+        return False
+    words = hook_text.strip().split()
+    lines, cur = [], ""
+    for w in words:
+        if cur and len(cur) + len(w) + 1 > 24:
+            lines.append(cur)
+            cur = w
+        else:
+            cur = f"{cur} {w}".strip()
+    if cur:
+        lines.append(cur)
+    textfile = os.path.join(tempfile.gettempdir(), "wander_hook.txt")
+    try:
+        with open(textfile, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines[:3]))
+    except Exception as e:
+        print(f"  Hook overlay: could not write text file: {e}")
+        return False
+    vf = (
+        f"drawtext=textfile='{textfile}':fontfile={font}:fontsize=54:"
+        f"fontcolor=white:borderw=2:bordercolor=black:"
+        f"x=(w-text_w)/2:y=h*0.72:enable='between(t,0,5)'"
+    )
+    try:
+        r = subprocess.run(
+            ["ffmpeg", "-y", "-i", input_path, "-vf", vf,
+             "-c:v", "libx264", "-preset", "veryfast", "-crf", "23",
+             "-c:a", "copy", output_path],
+            capture_output=True, text=True, timeout=600,
+        )
+        if r.returncode == 0 and os.path.exists(output_path):
+            return True
+        print(f"  Hook overlay failed: {r.stderr[-300:]}")
+        return False
+    except Exception as e:
+        print(f"  Hook overlay error: {e}")
+        return False
+
+
+def assemble_reel(audio_path: str, video_urls: list, output_path: str, hook_text: str | None = None) -> bool:
     try:
         # Patch Pillow ANTIALIAS removal (Pillow 10+ removed it, MoviePy 1.0.3 needs it)
         import PIL.Image as _PILImage
@@ -345,6 +398,15 @@ def assemble_reel(audio_path: str, video_urls: list, output_path: str) -> bool:
         video.close()
         audio.close()
 
+        # On-screen hook text for the first 5 seconds (the @wanderwithzen style).
+        if hook_text:
+            hooked = output_path + ".hooked.mp4"
+            if add_hook_overlay(output_path, hook_text, hooked):
+                os.replace(hooked, output_path)
+                print("  Hook text overlay added.")
+            else:
+                print("  Hook text overlay skipped (original kept).")
+
         # Clean up temp clips after MoviePy has fully released file handles
         shutil.rmtree(clips_dir, ignore_errors=True)
         return True
@@ -406,7 +468,7 @@ def make_reel():
     # Step 4 — Assemble
     output_path = str(OUTPUT_DIR / f"reel_{stamp}.mp4")
     print(f"\n  Step 4: Assembling Reel with MoviePy...")
-    ok = assemble_reel(audio_file, video_urls, output_path)
+    ok = assemble_reel(audio_file, video_urls, output_path, hook_text=topic_data["angle"])
 
     if ok:
         mb = os.path.getsize(output_path) / 1024 / 1024

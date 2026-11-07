@@ -26,6 +26,14 @@ from .settings import (
 GRAPH_API_VERSION = "v25.0"
 
 
+def _is_image_path(path) -> bool:
+    """True for image files/URLs (jpg/png/webp), as opposed to video."""
+    if not isinstance(path, str):
+        return False
+    base = path.split("?")[0].lower()
+    return base.endswith((".jpg", ".jpeg", ".png", ".webp"))
+
+
 class SocialPlatformClient(ABC):
     @abstractmethod
     def publish_short(self, content: Dict[str, str], media_path: Optional[str] = None) -> Dict[str, str]:
@@ -43,6 +51,44 @@ class InstagramPoster(SocialPlatformClient):
     def publish_short(self, content: Dict[str, str], media_path: Optional[str] = None) -> Dict[str, str]:
         if not FACEBOOK_PAGE_ACCESS_TOKEN or not INSTAGRAM_BUSINESS_ACCOUNT_ID:
             return {"status": "error", "message": "Instagram credentials are missing."}
+
+        if media_path and _is_image_path(media_path):
+            # Photo post (feed image): image container, then publish.
+            if not self._is_url(media_path):
+                return {"status": "error", "message": "Instagram needs a publicly accessible image URL for photo posts."}
+            try:
+                create_url = f"https://graph.facebook.com/{GRAPH_API_VERSION}/{INSTAGRAM_BUSINESS_ACCOUNT_ID}/media"
+                creation = requests.post(
+                    create_url,
+                    data={
+                        "image_url": media_path,
+                        "caption": content.get("caption", ""),
+                        "access_token": FACEBOOK_PAGE_ACCESS_TOKEN,
+                    },
+                    timeout=60,
+                )
+                creation.raise_for_status()
+                creation_data = creation.json()
+                creation_id = creation_data.get("id")
+                if not creation_id:
+                    return {"status": "error", "message": "Instagram media creation failed.", "details": creation_data}
+
+                publish_url = f"https://graph.facebook.com/{GRAPH_API_VERSION}/{INSTAGRAM_BUSINESS_ACCOUNT_ID}/media_publish"
+                publish_response = requests.post(
+                    publish_url,
+                    data={"creation_id": creation_id, "access_token": FACEBOOK_PAGE_ACCESS_TOKEN},
+                    timeout=60,
+                )
+                publish_response.raise_for_status()
+                publish_data = publish_response.json()
+                return {
+                    "status": "ok",
+                    "platform": "instagram",
+                    "creation_id": creation_id,
+                    "publish_response": publish_data,
+                }
+            except requests.RequestException as exc:
+                return {"status": "error", "message": "Instagram API request failed.", "details": str(exc)}
 
         if not media_path:
             return {"status": "error", "message": "Instagram requires a publicly accessible video_url for reel uploads."}
@@ -124,6 +170,40 @@ class FacebookPoster(SocialPlatformClient):
                 return {"status": "ok", "platform": "facebook", "response": data}
             except requests.RequestException as exc:
                 return {"status": "error", "message": "Facebook post failed.", "details": str(exc)}
+
+        if _is_image_path(media_path):
+            # Photo post: Page photos endpoint takes a URL or a file upload.
+            photo_url = f"https://graph.facebook.com/{GRAPH_API_VERSION}/{FACEBOOK_PAGE_ID}/photos"
+            try:
+                if self._is_url(media_path):
+                    response = requests.post(
+                        photo_url,
+                        data={
+                            "url": media_path,
+                            "message": content.get("caption", ""),
+                            "access_token": FACEBOOK_PAGE_ACCESS_TOKEN,
+                        },
+                        timeout=120,
+                    )
+                else:
+                    with open(media_path, "rb") as handle:
+                        response = requests.post(
+                            photo_url,
+                            data={
+                                "message": content.get("caption", ""),
+                                "access_token": FACEBOOK_PAGE_ACCESS_TOKEN,
+                            },
+                            files={"source": handle},
+                            timeout=120,
+                        )
+                data = response.json()
+                if response.status_code >= 400 or data.get("error"):
+                    return {"status": "error", "message": "Facebook photo post failed.", "details": data}
+                return {"status": "ok", "platform": "facebook", "response": data}
+            except requests.RequestException as exc:
+                return {"status": "error", "message": "Facebook photo post failed.", "details": str(exc)}
+            except FileNotFoundError:
+                return {"status": "error", "message": f"Facebook media file not found: {media_path}"}
 
         upload_url = f"https://graph-video.facebook.com/{GRAPH_API_VERSION}/{FACEBOOK_PAGE_ID}/videos"
         data = {

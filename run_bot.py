@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from wander_bot.bot import WanderBot
+from wander_bot.content_generator import get_pexels_photo
 
 
 def parse_args():
@@ -31,6 +32,8 @@ def main():
             except (json.JSONDecodeError, OSError):
                 posts = []
         for idea in ideas:
+            # A picture for the post: Pexels photo matching the idea's title.
+            idea["image_url"] = get_pexels_photo(idea.get("title") or args.location)
             idea.update({
                 "id": f"wander-{datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')}",
                 "status": "pending",
@@ -65,7 +68,12 @@ def main():
         ]
         results = {}
         for platform in platforms:
-            results[platform] = bot.publish(post, platform=platform, media_path=args.media)
+            # The post's picture goes to Facebook and Instagram only;
+            # other platforms publish text-only (their posters take video).
+            media = args.media
+            if not media and platform in ("facebook", "instagram"):
+                media = post.get("image_url") or None
+            results[platform] = bot.publish(post, platform=platform, media_path=media)
             result = results[platform]
             if result.get("status") == "error" and any(
                 phrase in result.get("message", "").lower()

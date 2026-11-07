@@ -1,4 +1,5 @@
 import os
+import random
 from typing import List, Dict, Optional
 
 try:
@@ -31,6 +32,32 @@ def _salvage_fields(text: str) -> Dict[str, str]:
             except Exception:
                 found[key] = match.group(1)
     return found
+
+
+def get_pexels_photo(query: str) -> str:
+    """Return a Pexels photo URL matching the query (landscape), or "".
+    Used to put a picture on Wanderwithzen text posts. Fail-soft: any
+    problem returns "" and the post goes out text-only, as before."""
+    import requests
+
+    key = os.getenv("PEXELS_API_KEY")
+    if not key or not query:
+        return ""
+    try:
+        r = requests.get(
+            "https://api.pexels.com/v1/search",
+            headers={"Authorization": key},
+            params={"query": query, "per_page": 5, "orientation": "landscape"},
+            timeout=15,
+        )
+        r.raise_for_status()
+        photos = r.json().get("photos", [])
+        if not photos:
+            return ""
+        return random.choice(photos).get("src", {}).get("large", "") or ""
+    except Exception as e:
+        print(f"  Pexels photo error: {e}")
+        return ""
 
 
 class SocialContentGenerator:
