@@ -15,6 +15,24 @@ except ImportError:  # pragma: no cover
     Groq = None
 
 
+def _salvage_fields(text: str) -> Dict[str, str]:
+    """Best-effort extraction of string fields from JSON that will not parse
+    (e.g. the model was cut off mid-object). The caption field comes before
+    the shot list, so it usually survives truncation intact."""
+    import json
+    import re
+
+    found: Dict[str, str] = {}
+    for key in ("title", "caption", "hashtags", "cta"):
+        match = re.search(r'"' + key + r'"\s*:\s*"((?:[^"\\]|\\.)*)"', text)
+        if match:
+            try:
+                found[key] = json.loads(f'"{match.group(1)}"')
+            except Exception:
+                found[key] = match.group(1)
+    return found
+
+
 class SocialContentGenerator:
     """Generate travel/adventure content for short-form social media posts."""
 
@@ -50,7 +68,7 @@ class SocialContentGenerator:
                 model="openai/gpt-oss-120b",
                 messages=[{"role": "system", "content": "You are a creative social media writer."},
                           {"role": "user", "content": prompt}],
-                max_tokens=400,
+                max_tokens=800,
                 temperature=0.8,
             )
             text = response.choices[0].message.content.strip()
@@ -61,7 +79,7 @@ class SocialContentGenerator:
                 model=self.model,
                 messages=[{"role": "system", "content": "You are a creative social media writer."},
                           {"role": "user", "content": prompt}],
-                max_tokens=400,
+                max_tokens=800,
                 temperature=0.8,
             )
             text = response.choices[0].message.content.strip()
@@ -70,26 +88,64 @@ class SocialContentGenerator:
         return self._fallback_prompt(prompt)
 
     def _parse_response(self, text: str) -> Dict[str, str]:
-        # Minimal JSON extraction fallback. If the response is not valid JSON, return raw text.
-        try:
-            import json
+        # 2026-11-06: the model wraps its JSON in ```json fences (and
+        # sometimes in prose), so plain json.loads() always failed and the
+        # except branch posted the whole raw blob as the caption — that is
+        # what the Nov 6 test post showed (post text started with ```json).
+        # Strip fences first, then fall back to brace extraction, so the
+        # parsed caption is what gets posted.
+        import json
 
-            payload = json.loads(text)
+        cleaned = text.strip()
+        lines = cleaned.split("\n")
+        if lines and lines[0].strip().startswith("```"):
+            lines = lines[1:]
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+        cleaned = "\n".join(lines).strip()
+        payload = None
+        try:
+            payload = json.loads(cleaned)
+        except Exception:
+            start = cleaned.find("{")
+            end = cleaned.rfind("}")
+            if start != -1 and end > start:
+                try:
+                    payload = json.loads(cleaned[start:end + 1])
+                except Exception:
+                    payload = None
+        if isinstance(payload, dict):
+            caption = str(payload.get("caption") or "Discover the next adventure!").strip()
+            hashtags = str(payload.get("hashtags") or "#travel #adventure").strip()
+            if hashtags and hashtags not in caption:
+                caption = f"{caption}\n\n{hashtags}"
             return {
                 "title": payload.get("title", "Travel Short"),
-                "caption": payload.get("caption", "Discover the next adventure!"),
-                "hashtags": payload.get("hashtags", "#travel #adventure"),
+                "caption": caption,
+                "hashtags": hashtags,
                 "video_idea": payload.get("video_idea", "Showcase a sunrise hike and local flavors."),
                 "cta": payload.get("cta", "Follow for more travel stories."),
             }
-        except Exception:
+        salvaged = _salvage_fields(cleaned)
+        if salvaged.get("caption"):
+            caption = salvaged["caption"]
+            hashtags = salvaged.get("hashtags", "")
+            if hashtags and hashtags not in caption:
+                caption = f"{caption}\n\n{hashtags}"
             return {
-                "title": "Travel Short",
-                "caption": text,
-                "hashtags": "#travel #adventure #wanderwithzen",
-                "video_idea": text,
-                "cta": "Follow for more travel and adventure content.",
+                "title": salvaged.get("title") or "Travel Short",
+                "caption": caption,
+                "hashtags": hashtags or "#travel #adventure",
+                "video_idea": cleaned,
+                "cta": salvaged.get("cta") or "Follow for more travel stories.",
             }
+        return {
+            "title": "Travel Short",
+            "caption": text,
+            "hashtags": "#travel #adventure #wanderwithzen",
+            "video_idea": text,
+            "cta": "Follow for more travel and adventure content.",
+        }
 
     def _fallback_prompt(self, prompt: str) -> Dict[str, str]:
         return {
