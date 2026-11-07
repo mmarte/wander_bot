@@ -210,22 +210,32 @@ def get_pexels_videos(query: str, count: int = 6) -> list:
         print("  PEXELS_API_KEY not set.")
         return []
     words = query.split()
-    queries = [query]
+    # Each attempt is (query, orientation). The last one is the broadest
+    # possible: the first word alone, with no orientation filter — the
+    # assembler center-crops landscape clips to vertical anyway, so a
+    # landscape ocean clip is still usable. (2026-11-07: even "ocean
+    # cliffs" came back empty in the 17:32 UTC run, so the fallback has
+    # to go wider than two words.)
+    attempts = [(query, "portrait")]
     if len(words) > 3:
-        queries.append(" ".join(words[:3]))
+        attempts.append((" ".join(words[:3]), "portrait"))
     if len(words) > 2:
-        queries.append(" ".join(words[:2]))
-    for q in queries:
+        attempts.append((" ".join(words[:2]), "portrait"))
+    if len(words) > 1:
+        attempts.append((words[0], None))
+    for q, orientation in attempts:
         try:
+            params = {
+                "query":    q,
+                "per_page": 15,
+                "size":     "medium",
+            }
+            if orientation:
+                params["orientation"] = orientation
             r = requests.get(
                 "https://api.pexels.com/videos/search",
                 headers={"Authorization": PEXELS_KEY},
-                params={
-                    "query":       q,
-                    "per_page":    15,
-                    "orientation": "portrait",
-                    "size":        "medium",
-                },
+                params=params,
                 timeout=15,
             )
             r.raise_for_status()
