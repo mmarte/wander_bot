@@ -19,6 +19,7 @@ import random
 import requests
 import tempfile
 import shutil
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from dotenv import load_dotenv
@@ -80,6 +81,11 @@ def pick_topic() -> dict:
 
 
 def generate_script(topic_data: dict) -> str:
+    # 2026-11-07: Groq sometimes returns an empty (0-word) script. The old
+    # code accepted it, Kokoro then produced no audio, make_reel quit
+    # quietly and the whole workflow still showed green with no reel.
+    # Retry up to 3 times and fail loudly instead of passing an empty
+    # script down the line.
     client = Groq(api_key=GROQ_API_KEY)
     prompt = (
         f"Escribe un guión de Reel de 60 segundos sobre: {topic_data['topic']}\n"
@@ -89,16 +95,30 @@ def generate_script(topic_data: dict) -> str:
         f"Si tienes menos de 140 palabras, agrega más detalles y ejemplos. "
         f"Solo el texto a narrar, sin indicaciones de escena."
     )
-    completion = client.chat.completions.create(
-        model       = "openai/gpt-oss-120b",
-        messages    = [
-            {"role": "system", "content": SCRIPT_SYSTEM},
-            {"role": "user",   "content": prompt},
-        ],
-        temperature = 0.85,
-        max_tokens  = 400,
-    )
-    return completion.choices[0].message.content.strip()
+    last_error = ""
+    for attempt in range(1, 4):
+        script = ""
+        try:
+            completion = client.chat.completions.create(
+                model       = "openai/gpt-oss-120b",
+                messages    = [
+                    {"role": "system", "content": SCRIPT_SYSTEM},
+                    {"role": "user",   "content": prompt},
+                ],
+                temperature = 0.85,
+                max_tokens  = 400,
+            )
+            script = completion.choices[0].message.content.strip()
+        except Exception as e:
+            last_error = str(e)
+            print(f"  Script attempt {attempt} error: {e}")
+        words = len(script.split())
+        if words >= 120:
+            return script
+        print(f"  Script attempt {attempt} returned {words} words — retrying...")
+        last_error = last_error or f"only {words} words"
+        time.sleep(5)
+    raise RuntimeError(f"Script generation failed after 3 attempts (last: {last_error})")
 
 
 def text_to_speech_kokoro(script: str, output_path: str) -> str | None:
@@ -429,7 +449,11 @@ def make_reel():
 
     # Step 1 — Script
     print("  Step 1: Writing script with Groq...")
-    script = generate_script(topic_data)
+    try:
+        script = generate_script(topic_data)
+    except Exception as e:
+        print(f"  Step 1 FAILED: {e}")
+        raise SystemExit(1)
     print(f"  Script ({len(script.split())} words):\n  {script[:120]}...\n")
 
     script_path = OUTPUT_DIR / f"reel_{stamp}_script.txt"
@@ -446,7 +470,7 @@ def make_reel():
     if not audio_file:
         print("  Audio generation failed. Script saved for manual recording.")
         print(f"  Script: {script_path}")
-        return
+        raise SystemExit(1)
 
     # Step 3 — Video clips: prefer actual artist footage and audio via YouTube, fallback to Pexels stock clips.
     print(f"\n  Step 3: Looking for actual footage and sound for '{topic_data['topic']}'...")

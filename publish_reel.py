@@ -263,8 +263,10 @@ def main() -> None:
     now = _utcnow_iso()
     reel_path = _latest_reel_path()
     if not reel_path:
+        # 2026-11-07: exiting 0 here made the workflow show green while
+        # publishing nothing (the Nov 7 run). Fail loudly instead.
         print("No reel mp4 found in reels/. Run make_reel.py first.")
-        return
+        raise SystemExit(1)
 
     # Find matching script file
     stamp = reel_path.stem.replace("reel_", "")
