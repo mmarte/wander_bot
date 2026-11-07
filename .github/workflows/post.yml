@@ -40,6 +40,7 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: python run_bot.py --action generate --platform facebook --location "travel, nature, hidden places, and mindful adventure"
 
       - name: Publish across configured platforms
