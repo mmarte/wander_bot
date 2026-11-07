@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from wander_bot.bot import WanderBot
-from wander_bot.content_generator import get_pexels_photo
+from wander_bot.content_generator import get_pexels_photo, pick_place, ensure_place_in_post
 
 
 def parse_args():
@@ -23,7 +23,17 @@ def main():
     bot = WanderBot()
 
     if args.action == "generate":
-        ideas = bot.generate(args.location, platform=args.platform, count=args.count)
+        # Posts must be about real places people can travel to. The workflow
+        # passes a generic theme, so rotate one real place per day and write
+        # about that; a specific --location passed by hand is used as-is.
+        generic = args.location in ("travel, nature, hidden places, and mindful adventure", "a mountain lake")
+        ideas = []
+        places = []
+        for index in range(args.count):
+            place = pick_place(offset=index) if generic else None
+            location = f"{place['name']}, {place['country']} — {place['blurb']}" if place else args.location
+            ideas.extend(bot.generate(location, platform=args.platform, count=1))
+            places.append(place)
         queue_path = Path("posts.json")
         posts = []
         if queue_path.exists():
@@ -31,9 +41,15 @@ def main():
                 posts = json.loads(queue_path.read_text(encoding="utf-8"))
             except (json.JSONDecodeError, OSError):
                 posts = []
-        for idea in ideas:
-            # A picture for the post: Pexels photo matching the idea's title.
-            idea["image_url"] = get_pexels_photo(idea.get("title") or args.location)
+        for idea, place in zip(ideas, places):
+            if place:
+                idea["place"] = place["name"]
+                idea = ensure_place_in_post(idea, place)
+                # A picture for the post: Pexels photo of the real place first.
+                idea["image_url"] = get_pexels_photo(place["name"]) or get_pexels_photo(idea.get("title") or args.location)
+            else:
+                # A picture for the post: Pexels photo matching the idea's title.
+                idea["image_url"] = get_pexels_photo(idea.get("title") or args.location)
             idea.update({
                 "id": f"wander-{datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')}",
                 "status": "pending",
