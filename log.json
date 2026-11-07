@@ -485,5 +485,18 @@
       }
     },
     "executed_at": "2026-11-07T06:58:22.147017+00:00"
+  },
+  {
+    "post_id": "reel_20261107",
+    "post_type": "reel",
+    "reel_path": "reels/reel_20261107.mp4",
+    "fb_reel_id": "1638522764424374",
+    "ig_reel_id": null,
+    "status": "published",
+    "errors": {
+      "facebook": null,
+      "instagram": "Missing IG_USER_ID"
+    },
+    "executed_at": "2026-11-07T13:56:05.028651+00:00"
   }
 ]
