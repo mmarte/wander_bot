@@ -690,5 +690,61 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Machu Picchu Sunrise: Inca Magic Unveiled",
+    "caption": "From the misty rail line to the clouds‑kissed citadel—watch a mindful adventure unfold in just 25 seconds. 🌄✨ #TravelWithPurpose\n\n#MachuPicchu #IncaTrail #MindfulTravel #WanderWithZen #AndesAdventure #Peru",
+    "hashtags": "#MachuPicchu #IncaTrail #MindfulTravel #WanderWithZen #AndesAdventure #Peru",
+    "video_idea": {
+      "shot_list": [
+        "0‑2 s: Train slicing through emerald Andean clouds",
+        "2‑5 s: Arrival in Aguas Cálientes, steam rising from the river",
+        "5‑8 s: Bus climbing the winding mountain road",
+        "8‑12 s: First reveal of Machu Picchu peeking through mist",
+        "12‑16 s: Sunlight sweeping over stone terraces and the Intihuatana",
+        "16‑20 s: Hand‑close on a carved stone, breathing in history",
+        "20‑25 s: Silhouette of a traveler meditating at the Sun Gate"
+      ],
+      "mood": "Serene awe, grounded wonder, gentle adventure"
+    },
+    "cta": "Tap ‘Learn More’ to join our mindful trek to Machu Picchu and claim a 10% early‑bird discount today!",
+    "place": "Machu Picchu",
+    "image_url": "https://images.pexels.com/photos/37885473/pexels-photo-37885473.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261107204723944773",
+    "status": "published",
+    "created_at": "2026-11-07T20:47:23.944813+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-07T20:47:30.004422+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122130230973311662",
+          "post_id": "1135032983019547_122130230997311662"
+        }
+      },
+      "instagram": {
+        "status": "skipped",
+        "message": "Instagram credentials are missing."
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
