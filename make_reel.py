@@ -267,7 +267,12 @@ def text_to_speech_kokoro(script: str, output_path: str, lang: str = "es") -> st
         import numpy as np
 
         print("  Loading Kokoro TTS (first run downloads ~500MB model)...")
-        pipeline = KPipeline(lang_code=lang)
+        # Kokoro's KPipeline takes a single-letter code ('e' = Spanish,
+        # 'a' = American English). 'es' only works because it is an alias
+        # for 'e'; 'en' is not an alias for anything, so passing 'en'
+        # raises (2026-11-07 run). Verified against kokoro 0.9.4 source.
+        kokoro_lang = "e" if lang == "es" else "a"
+        pipeline = KPipeline(lang_code=kokoro_lang)
         voice = "ef_dora" if lang == "es" else "af_heart"  # Spanish / English female voice
 
         # Generate audio — Kokoro returns audio chunks
@@ -386,17 +391,91 @@ def get_pexels_videos(query: str, count: int = 6) -> list:
     return []
 
 
+def get_commons_videos(query: str, count: int = 6) -> list:
+    # 2026-11-07: Pexels video search came back empty for three straight
+    # runs even for the broadest query ("ocean"), so the reel no longer
+    # depends on Pexels alone. Wikimedia Commons is keyless and has real
+    # drone/coast footage (e.g. "Cliffs of Moher drone-video.webm").
+    # The filetype:video search filter is what finds videos — a plain
+    # File-namespace search returns mostly photos. The playable file is
+    # NOT imageinfo's thumburl (that is a JPG poster frame) but a
+    # videoinfo derivative under /transcoded/ — take the widest one at or
+    # below 854px, so the download stays small; the assembler center-crops
+    # to vertical anyway. The assembler saves each clip with a .mp4 name
+    # but ffmpeg probes the content, so webm decodes fine.
+    words = query.split()
+    queries = [query]
+    if len(words) > 2:
+        queries.append(" ".join(words[:2]))
+    if len(words) > 1:
+        queries.append(words[0])
+    for q in queries:
+        try:
+            r = requests.get(
+                "https://commons.wikimedia.org/w/api.php",
+                params={
+                    "action": "query",
+                    "format": "json",
+                    "generator": "search",
+                    "gsrsearch": f"{q} filetype:video",
+                    "gsrnamespace": 6,
+                    "gsrlimit": 15,
+                    "prop": "imageinfo|videoinfo",
+                    "iiprop": "url|size|mime",
+                    "viprop": "derivatives",
+                    "viurlwidth": 1280,
+                },
+                headers={"User-Agent": "WanderwithzenBot/1.0"},
+                timeout=20,
+            )
+            r.raise_for_status()
+            pages = (r.json().get("query") or {}).get("pages", {})
+            urls = []
+            for pg in pages.values():
+                ii = (pg.get("imageinfo") or [{}])[0]
+                mime = ii.get("mime") or ""
+                if not (mime.startswith("video/") or mime == "application/ogg"):
+                    continue
+                url = None
+                derivatives = (pg.get("videoinfo") or [{}])[0].get("derivatives") or []
+                sized = [d for d in derivatives if d.get("src") and d.get("width")]
+                if sized:
+                    small = [d for d in sized if d["width"] <= 854]
+                    pick = max(small, key=lambda d: d["width"]) if small else min(sized, key=lambda d: d["width"])
+                    url = pick["src"]
+                elif ii.get("url") and (ii.get("size") or 0) <= 200_000_000:
+                    url = ii["url"]
+                if url:
+                    urls.append(url)
+            if not urls:
+                print(f"  Commons: no videos for '{q}' — trying a simpler query...")
+                time.sleep(3)
+                continue
+            return random.sample(urls, min(count, len(urls)))
+        except Exception as e:
+            print(f"  Commons video error for '{q}': {e}")
+            time.sleep(3)
+    return []
+
+
 def download_file(url: str, path: str) -> bool:
-    try:
-        r = requests.get(url, timeout=60, stream=True)
-        r.raise_for_status()
-        with open(path, "wb") as f:
-            for chunk in r.iter_content(8192):
-                f.write(chunk)
-        return True
-    except Exception as e:
-        print(f"  Download error: {e}")
-        return False
+    # upload.wikimedia.org returns 403 for the default python-requests
+    # User-Agent, so every download carries the bot's UA (2026-11-07).
+    # It also rate-limits (429) under bursts, so retry a few times.
+    for attempt in range(1, 4):
+        try:
+            r = requests.get(url, timeout=60, stream=True,
+                             headers={"User-Agent": "WanderwithzenBot/1.0"})
+            r.raise_for_status()
+            with open(path, "wb") as f:
+                for chunk in r.iter_content(8192):
+                    f.write(chunk)
+            return True
+        except Exception as e:
+            print(f"  Download error (attempt {attempt}/3): {e}")
+            if attempt < 3:
+                time.sleep(10)
+    return False
 
 
 def download_youtube_video(video_url: str, output_path: str) -> bool:
@@ -651,6 +730,11 @@ def make_reel():
         print(f"  Step 3 fallback: Fetching Pexels clips ('{topic_data['search']}')...")
         video_urls = get_pexels_videos(topic_data["search"], count=6)
         print(f"  Found {len(video_urls)} stock clips.")
+
+    if not video_urls:
+        print(f"  Step 3 fallback: Fetching Wikimedia Commons clips ('{topic_data['search']}')...")
+        video_urls = get_commons_videos(topic_data["search"], count=6)
+        print(f"  Found {len(video_urls)} Commons clips.")
 
     if not video_urls:
         # Fail loudly: the audio is saved for manual editing, but the
