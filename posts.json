@@ -427,5 +427,47 @@
         "message": "YouTube OAuth access token is missing."
       }
     }
+  },
+  {
+    "title": "Travel Short",
+    "caption": "```json\n{\n  \"title\": \"Whispers of the Cloud Forest 🌿✨\",\n  \"caption\": \"Step off the beaten path and breathe in the misty magic of Colombia’s hidden cloud forest. Every step is a meditation, every view a reminder to wander with zen.\",\n  \"hashtags\": \"#WanderWithZen #CloudForest #MindfulTravel #HiddenGems #NatureTherapy #EcoAdventure\",\n  \"video_idea\": {\n    \"shot_list\": [\n      \"1️⃣ Drone sweep over emerald canopies at sunrise – golden light filtering through mist.\",\n      \"2️⃣ Close‑up of dew‑kissed ferns and a hummingbird hovering, slow‑motion.\",\n      \"3️⃣ POV footfall on mossy trail, soft crunch, breathing sounds.\",\n      \"4️⃣ Pan to a secluded waterfall, water cascading into a crystal pool",
+    "hashtags": "#travel #adventure #wanderwithzen",
+    "video_idea": "```json\n{\n  \"title\": \"Whispers of the Cloud Forest 🌿✨\",\n  \"caption\": \"Step off the beaten path and breathe in the misty magic of Colombia’s hidden cloud forest. Every step is a meditation, every view a reminder to wander with zen.\",\n  \"hashtags\": \"#WanderWithZen #CloudForest #MindfulTravel #HiddenGems #NatureTherapy #EcoAdventure\",\n  \"video_idea\": {\n    \"shot_list\": [\n      \"1️⃣ Drone sweep over emerald canopies at sunrise – golden light filtering through mist.\",\n      \"2️⃣ Close‑up of dew‑kissed ferns and a hummingbird hovering, slow‑motion.\",\n      \"3️⃣ POV footfall on mossy trail, soft crunch, breathing sounds.\",\n      \"4️⃣ Pan to a secluded waterfall, water cascading into a crystal pool",
+    "cta": "Follow for more travel and adventure content.",
+    "id": "wander-20261107032138007769",
+    "status": "published",
+    "created_at": "2026-11-07T03:21:38.007798+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-07T03:21:43.301325+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "1135032983019547_122130095025311662"
+        }
+      },
+      "instagram": {
+        "status": "skipped",
+        "message": "Instagram credentials are missing."
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
