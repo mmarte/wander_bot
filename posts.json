@@ -523,5 +523,61 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Sunrise Over the Lost City: Machu Picchu Awakens",
+    "caption": "Feel the ancient pulse of the Andes as the first light kisses the Inca citadel. 🌄✨ #MindfulTravel\n\n['#MachuPicchu', '#AndesAdventure', '#TravelMindfully', '#WanderWithZen', '#IncaMagic', '#SunriseViews']",
+    "hashtags": "['#MachuPicchu', '#AndesAdventure', '#TravelMindfully', '#WanderWithZen', '#IncaMagic', '#SunriseViews']",
+    "video_idea": {
+      "shot_list": [
+        "1️⃣ Quick train window view: misty peaks rushing by.",
+        "2️⃣ Aguas Calientes arrival – vibrant market colors.",
+        "3️⃣ Boarding the iconic green bus, wheels climbing the winding road.",
+        "4️⃣ Drone pull‑away as the bus disappears into clouds.",
+        "5️⃣ First glimpse of Machu Picchu at sunrise – golden light over stone terraces.",
+        "6️⃣ Slow‑motion of mist swirling through the citadel.",
+        "7️⃣ Close‑up of a traveler breathing deeply, eyes closed, embracing the moment."
+      ],
+      "mood": "Calm yet awe‑inspiring, with a gentle soundtrack of wind chimes and soft pan‑flute tones that invite viewers to pause, breathe, and imagine their own mindful journey."
+    },
+    "cta": "Tap ‘Learn More’ to start planning your sunrise pilgrimage to Machu Picchu today!",
+    "place": "Machu Picchu",
+    "image_url": "https://images.pexels.com/photos/14117757/pexels-photo-14117757.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261107041545682466",
+    "status": "published",
+    "created_at": "2026-11-07T04:15:45.682508+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-07T04:15:49.992440+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122130102249311662",
+          "post_id": "1135032983019547_122130102279311662"
+        }
+      },
+      "instagram": {
+        "status": "skipped",
+        "message": "Instagram credentials are missing."
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
