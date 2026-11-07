@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from wander_bot.bot import WanderBot
-from wander_bot.content_generator import get_pexels_photo, pick_place, ensure_place_in_post
+from wander_bot.content_generator import get_pexels_photo, pick_place, ensure_place_in_post, add_place_hashtags
 
 
 def parse_args():
@@ -45,6 +45,7 @@ def main():
             if place:
                 idea["place"] = place["name"]
                 idea = ensure_place_in_post(idea, place)
+                idea = add_place_hashtags(idea, place)
                 # A picture for the post: Pexels photo of the real place first.
                 idea["image_url"] = get_pexels_photo(place["name"]) or get_pexels_photo(idea.get("title") or args.location)
             else:

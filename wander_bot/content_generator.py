@@ -1,5 +1,7 @@
 import os
 import random
+import re
+import unicodedata
 from typing import List, Dict, Optional
 
 try:
@@ -122,6 +124,45 @@ def ensure_place_in_post(idea: Dict[str, str], place: Dict[str, str]) -> Dict[st
         f"Discover {place['name']}, {place['country']}. {blurb}. "
         "Slow down, look around, and let the place do the talking."
     )
+    return idea
+
+
+def _hashtag_word(word: str) -> str:
+    clean = "".join(c for c in unicodedata.normalize("NFD", word)
+                    if not unicodedata.combining(c))
+    clean = re.sub(r"[^A-Za-z0-9]", "", clean)
+    return clean.capitalize() if clean else ""
+
+
+def place_hashtags(place: Dict[str, str]) -> list:
+    """Hashtags for a place and its country, e.g. #LakeAtitlan #Guatemala,
+    #TorresDelPaine #Chile, #IsleOfSkye #Scotland."""
+    tags = []
+    for text in (place["name"], place["country"]):
+        tag = "#" + "".join(_hashtag_word(w) for w in text.split())
+        if tag != "#" and tag not in tags:
+            tags.append(tag)
+    return tags
+
+
+def add_place_hashtags(idea: Dict[str, str], place: Dict[str, str]) -> Dict[str, str]:
+    """Make sure the post's hashtags name the place and its country. The
+    caption is what gets published, so any missing tag is appended there
+    (skipping tags the caption already has, accents ignored); the
+    hashtags field is kept in sync."""
+    tags = place_hashtags(place)
+    caption = idea.get("caption", "") or ""
+    norm_caption = _normalize(caption)
+    missing = [t for t in tags if _normalize(t) not in norm_caption]
+    if missing:
+        idea["caption"] = caption.rstrip() + " " + " ".join(missing)
+    hashtags = idea.get("hashtags")
+    if isinstance(hashtags, list):
+        idea["hashtags"] = hashtags + [t for t in tags if t not in hashtags]
+    else:
+        existing = hashtags or ""
+        extra = [t for t in tags if _normalize(t) not in _normalize(existing)]
+        idea["hashtags"] = (existing + " " + " ".join(extra)).strip() if extra else existing
     return idea
 
 
