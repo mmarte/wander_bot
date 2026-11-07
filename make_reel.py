@@ -86,6 +86,15 @@ def generate_script(topic_data: dict) -> str:
     # quietly and the whole workflow still showed green with no reel.
     # Retry up to 3 times and fail loudly instead of passing an empty
     # script down the line.
+    # 2026-11-07, second failure: the same prompt came back empty 3 times
+    # in a row, so it is not a transient hiccup. Likely cause: gpt-oss is
+    # a reasoning model, and max_tokens covers its reasoning budget too —
+    # the "count the words first" instruction burns the 400-token budget
+    # on reasoning and leaves nothing for the script itself (the text
+    # posts, same key and model but max_tokens=800 and no counting
+    # demand, worked minutes earlier). So: a much bigger token budget,
+    # a lower temperature, and a non-reasoning fallback model on the
+    # last attempt.
     client = Groq(api_key=GROQ_API_KEY)
     prompt = (
         f"Escribe un guión de Reel de 60 segundos sobre: {topic_data['topic']}\n"
@@ -97,25 +106,29 @@ def generate_script(topic_data: dict) -> str:
     )
     last_error = ""
     for attempt in range(1, 4):
+        # Attempts 1-2: gpt-oss-120b. Attempt 3: llama-3.3-70b-versatile,
+        # a non-reasoning model on the same Groq key, in case the empty
+        # outputs are specific to the reasoning model.
+        model = "openai/gpt-oss-120b" if attempt < 3 else "llama-3.3-70b-versatile"
         script = ""
         try:
             completion = client.chat.completions.create(
-                model       = "openai/gpt-oss-120b",
+                model       = model,
                 messages    = [
                     {"role": "system", "content": SCRIPT_SYSTEM},
                     {"role": "user",   "content": prompt},
                 ],
-                temperature = 0.85,
-                max_tokens  = 400,
+                temperature = 0.7,
+                max_tokens  = 2000,
             )
             script = completion.choices[0].message.content.strip()
         except Exception as e:
             last_error = str(e)
-            print(f"  Script attempt {attempt} error: {e}")
+            print(f"  Script attempt {attempt} ({model}) error: {e}")
         words = len(script.split())
         if words >= 120:
             return script
-        print(f"  Script attempt {attempt} returned {words} words — retrying...")
+        print(f"  Script attempt {attempt} ({model}) returned {words} words — retrying...")
         last_error = last_error or f"only {words} words"
         time.sleep(5)
     raise RuntimeError(f"Script generation failed after 3 attempts (last: {last_error})")
