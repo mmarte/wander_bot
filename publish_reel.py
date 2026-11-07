@@ -12,7 +12,9 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import time
+import unicodedata
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -238,23 +240,59 @@ def publish_instagram_reel(video_path: Path, caption: str) -> PublishResult:
     return PublishResult(platform="instagram_reel", ok=True, id=str(ig_media_id) if ig_media_id else None)
 
 
+def _normalize(text: str) -> str:
+    nfkd = unicodedata.normalize("NFD", text or "")
+    return "".join(c for c in nfkd if not unicodedata.combining(c)).lower()
+
+
+def _hashtag_word(word: str) -> str:
+    clean = "".join(c for c in unicodedata.normalize("NFD", word)
+                    if not unicodedata.combining(c))
+    clean = re.sub(r"[^A-Za-z0-9]", "", clean)
+    return clean.capitalize() if clean else ""
+
+
+def _place_hashtags(place_str: str) -> list:
+    # "Cliffs of Moher, Ireland" -> ["#CliffsOfMoher", "#Ireland"].
+    # Same shaping as the text posts (content_generator.place_hashtags).
+    tags = []
+    for text in place_str.split(",", 1):
+        tag = "#" + "".join(_hashtag_word(w) for w in text.split())
+        if tag != "#" and tag not in tags:
+            tags.append(tag)
+    return tags
+
+
 def build_caption(script_path: Optional[Path]) -> str:
     """
     Keep captions short-ish for Reels; use the reel script if present.
     """
     base = ""
+    place_str = ""
     if script_path and script_path.exists():
         try:
             txt = script_path.read_text(encoding="utf-8").strip()
             # script file includes headers; keep only the body
             parts = txt.split("\n\n", 1)
             base = parts[1].strip() if len(parts) == 2 else txt
+            # The header carries the real place (make_reel.py writes
+            # "Place: <name>, <country>"); its tags go in the footer.
+            for line in parts[0].splitlines():
+                if line.startswith("Place: "):
+                    place_str = line[len("Place: "):].strip()
+                    break
         except Exception:
             base = ""
     if not base:
         base = "🌿 Wanderwithzen. ¿Cuál es tu próximo destino?"
     # Reels captions can be long, but keep it reasonable for cross-posting.
     footer = "\n\n#Wanderwithzen #Travel #Nature"
+    if place_str:
+        body_flat = _normalize(base).replace(" ", "")
+        tags = [t for t in _place_hashtags(place_str)
+                if _normalize(t).lstrip("#") not in body_flat]
+        if tags:
+            footer += " " + " ".join(tags)
     out = (base.strip() + footer).strip()
     return out[:2100]
 

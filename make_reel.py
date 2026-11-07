@@ -43,19 +43,25 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 # 2026-11-06: rebalanced toward the @wanderwithzen style — aerial/drone
 # shots of turquoise bays, tropical coasts and palm shores, travel-focused.
 # Coastal/aerial topics lead the rotation; the rest keep variety.
+# 2026-11-07: every reel topic is anchored on a REAL place, the same
+# rule the text posts follow. The script must name the place and its
+# country, and the caption carries #Place #Country tags (publish_reel.py
+# reads the Place line out of the script file header). Places are real
+# and matched to the theme; the Pexels search stays the generic theme
+# query — footage of the exact place is not required.
 REEL_TOPICS = [
-    {"topic": "turquoise bay from above", "search": "turquoise bay aerial drone boats", "angle": "una bahía turquesa vista desde el cielo"},
-    {"topic": "tropical island escape", "search": "tropical island aerial drone turquoise water", "angle": "una isla para desconectar de verdad"},
-    {"topic": "hidden beach", "search": "hidden beach paradise aerial drone", "angle": "una playa escondida que pocos conocen"},
-    {"topic": "palm beach coast", "search": "palm trees beach aerial ocean", "angle": "el paraíso cabe en una playa de palmeras"},
-    {"topic": "ocean cliffs coast", "search": "ocean cliffs aerial drone coast", "angle": "el mar golpeando los acantilados"},
-    {"topic": "coastal road trip", "search": "coastal road aerial ocean drive", "angle": "una ruta costera para viajar despacio"},
-    {"topic": "a mountain lake at sunrise", "search": "mountain lake sunrise aerial", "angle": "un amanecer que vale la pena madrugar"},
-    {"topic": "waterfall adventure", "search": "waterfall jungle aerial drone", "angle": "perseguir cascadas, no likes"},
-    {"topic": "desert dunes", "search": "desert dunes sunset travel", "angle": "el silencio del desierto al atardecer"},
-    {"topic": "old town streets", "search": "old town europe streets travel", "angle": "perderse por calles antiguas sin prisa"},
-    {"topic": "forest hiking trail", "search": "forest hiking trail aerial", "angle": "caminar entre árboles para volver a respirar"},
-    {"topic": "night sky stars", "search": "milky way night sky mountains", "angle": "dormir bajo las estrellas"},
+    {"topic": "turquoise bay from above", "search": "turquoise bay aerial drone boats", "angle": "una bahía turquesa vista desde el cielo", "place": "Bora Bora", "country": "French Polynesia", "match": "bora bora"},
+    {"topic": "tropical island escape", "search": "tropical island aerial drone turquoise water", "angle": "una isla para desconectar de verdad", "place": "Bali", "country": "Indonesia", "match": "bali"},
+    {"topic": "hidden beach", "search": "hidden beach paradise aerial drone", "angle": "una playa escondida que pocos conocen", "place": "Navagio Beach", "country": "Greece", "match": "navagio"},
+    {"topic": "palm beach coast", "search": "palm trees beach aerial ocean", "angle": "el paraíso cabe en una playa de palmeras", "place": "Tulum", "country": "Mexico", "match": "tulum"},
+    {"topic": "ocean cliffs coast", "search": "ocean cliffs aerial drone coast", "angle": "el mar golpeando los acantilados", "place": "Cliffs of Moher", "country": "Ireland", "match": "moher"},
+    {"topic": "coastal road trip", "search": "coastal road aerial ocean drive", "angle": "una ruta costera para viajar despacio", "place": "Amalfi Coast", "country": "Italy", "match": "amalfi"},
+    {"topic": "a mountain lake at sunrise", "search": "mountain lake sunrise aerial", "angle": "un amanecer que vale la pena madrugar", "place": "Lake Atitlán", "country": "Guatemala", "match": "atitlán"},
+    {"topic": "waterfall adventure", "search": "waterfall jungle aerial drone", "angle": "perseguir cascadas, no likes", "place": "Plitvice Lakes", "country": "Croatia", "match": "plitvice"},
+    {"topic": "desert dunes", "search": "desert dunes sunset travel", "angle": "el silencio del desierto al atardecer", "place": "Wadi Rum", "country": "Jordan", "match": "wadi rum"},
+    {"topic": "old town streets", "search": "old town europe streets travel", "angle": "perderse por calles antiguas sin prisa", "place": "Hallstatt", "country": "Austria", "match": "hallstatt"},
+    {"topic": "forest hiking trail", "search": "forest hiking trail aerial", "angle": "caminar entre árboles para volver a respirar", "place": "Banff", "country": "Canada", "match": "banff"},
+    {"topic": "night sky stars", "search": "milky way night sky mountains", "angle": "dormir bajo las estrellas", "place": "Lofoten Islands", "country": "Norway", "match": "lofoten"},
 ]
 
 SCRIPT_SYSTEM = """Eres el guionista de "Wanderwithzen".
@@ -80,6 +86,32 @@ def pick_topic() -> dict:
     return REEL_TOPICS[day_index % len(REEL_TOPICS)]
 
 
+def _normalize_text(text: str) -> str:
+    import unicodedata
+
+    nfkd = unicodedata.normalize("NFD", text or "")
+    return "".join(c for c in nfkd if not unicodedata.combining(c)).lower()
+
+
+def _ensure_place_mentioned(script: str, topic_data: dict) -> str:
+    # 2026-11-07: the reel must name its real place and country, the same
+    # rule as the text posts. Groq usually follows the prompt, but if the
+    # place never made it into the script, close with a line that names
+    # it instead of publishing a placeless reel.
+    place = topic_data.get("place", "")
+    country = topic_data.get("country", "")
+    if not place:
+        return script
+    # Check the distinctive word ("match"), not the full English name —
+    # the script is in Spanish and may say "el lago Atitlán" rather than
+    # "Lake Atitlán". Same convention as REAL_PLACES in content_generator.
+    match = topic_data.get("match", place)
+    if _normalize_text(match) in _normalize_text(script):
+        return script
+    print(f"  Place '{place}' not mentioned in script — appending closing line.")
+    return script.rstrip() + f" Todo esto te espera en {place}, {country}."
+
+
 def generate_script(topic_data: dict) -> str:
     # 2026-11-07: Groq sometimes returns an empty (0-word) script. The old
     # code accepted it, Kokoro then produced no audio, make_reel quit
@@ -99,6 +131,8 @@ def generate_script(topic_data: dict) -> str:
     prompt = (
         f"Escribe un guión de Reel de 60 segundos sobre: {topic_data['topic']}\n"
         f"Ángulo: {topic_data['angle']}\n\n"
+        f"Este guión DEBE tratar sobre este lugar real: {topic_data['place']}, {topic_data['country']}. "
+        f"Menciona el lugar y el país por su nombre en el guión. "
         f"OBLIGATORIO: escribe EXACTAMENTE entre 140 y 155 palabras. "
         f"Cuenta las palabras antes de responder. "
         f"Si tienes menos de 140 palabras, agrega más detalles y ejemplos. "
@@ -127,7 +161,7 @@ def generate_script(topic_data: dict) -> str:
             print(f"  Script attempt {attempt} ({model}) error: {e}")
         words = len(script.split())
         if words >= 120:
-            return script
+            return _ensure_place_mentioned(script, topic_data)
         print(f"  Script attempt {attempt} ({model}) returned {words} words — retrying...")
         last_error = last_error or f"only {words} words"
         time.sleep(5)
@@ -498,7 +532,7 @@ def make_reel():
 
     script_path = OUTPUT_DIR / f"reel_{stamp}_script.txt"
     script_path.write_text(
-        f"Topic: {topic_data['topic']}\nAngle: {topic_data['angle']}\n\n{script}",
+        f"Topic: {topic_data['topic']}\nAngle: {topic_data['angle']}\nPlace: {topic_data['place']}, {topic_data['country']}\n\n{script}",
         encoding="utf-8"
     )
 
