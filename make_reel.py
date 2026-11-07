@@ -226,11 +226,16 @@ def generate_script(topic_data: dict, lang: str = "es") -> str:
             f"Only the narration text, no scene directions."
         )
     last_error = ""
-    for attempt in range(1, 4):
-        # Attempts 1-2: gpt-oss-120b. Attempt 3: llama-3.3-70b-versatile,
-        # a non-reasoning model on the same Groq key, in case the empty
-        # outputs are specific to the reasoning model.
-        model = "openai/gpt-oss-120b" if attempt < 3 else "llama-3.3-70b-versatile"
+    for attempt in range(1, 5):
+        # Attempts 1-2 and 4: gpt-oss-120b (the primary model). Attempt 3:
+        # openai/gpt-oss-20b — the smaller, faster model in the same family.
+        # 2026-11-07: the old attempt-3 fallback, llama-3.3-70b-versatile,
+        # 404s ("does not exist or you do not have access") — Groq's docs
+        # now list it as Enterprise, and the only other non-reasoning
+        # production model (llama-3.1-8b-instant) carries the same badge,
+        # so the verified fallback is gpt-oss-20b (Production, developer
+        # plan, per https://console.groq.com/docs/models 2026-11-07).
+        model = "openai/gpt-oss-20b" if attempt == 3 else "openai/gpt-oss-120b"
         script = ""
         try:
             completion = client.chat.completions.create(
@@ -252,7 +257,7 @@ def generate_script(topic_data: dict, lang: str = "es") -> str:
         print(f"  Script attempt {attempt} ({model}) returned {words} words — retrying...")
         last_error = last_error or f"only {words} words"
         time.sleep(5)
-    raise RuntimeError(f"Script generation failed after 3 attempts (last: {last_error})")
+    raise RuntimeError(f"Script generation failed after 4 attempts (last: {last_error})")
 
 
 def text_to_speech_kokoro(script: str, output_path: str, lang: str = "es") -> str | None:
