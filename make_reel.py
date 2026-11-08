@@ -396,6 +396,81 @@ def get_pexels_videos(query: str, count: int = 6) -> list:
     return []
 
 
+def get_pexels_photos(query: str, count: int = 6) -> list:
+    # 2026-11-08: every video source is down at once — Pexels video
+    # search returns 0 clips, Commons downloads 429 on the runner's
+    # IP, YouTube downloads are blocked from CI — but Pexels PHOTO
+    # search works fine (the text posts fetch a photo every run, same
+    # endpoint, same key). So when no video clips can be found, the
+    # reel falls back to landscape photos, each turned into a 10s
+    # slow-zoom (Ken Burns) clip by make_photo_clip.
+    if not PEXELS_KEY:
+        print("  PEXELS_API_KEY not set.")
+        return []
+    words = query.split()
+    queries = [query]
+    if len(words) > 2:
+        queries.append(" ".join(words[:2]))
+    if len(words) > 1:
+        queries.append(words[0])
+    for q in queries:
+        try:
+            r = requests.get(
+                "https://api.pexels.com/v1/search",
+                headers={"Authorization": PEXELS_KEY},
+                params={"query": q, "per_page": 15, "orientation": "landscape"},
+                timeout=15,
+            )
+            r.raise_for_status()
+            photos = r.json().get("photos", [])
+            urls = [ph.get("src", {}).get("large", "") for ph in photos]
+            urls = [u for u in urls if u]
+            if not urls:
+                print(f"  Pexels photos: none for '{q}' — trying a simpler query...")
+                time.sleep(3)
+                continue
+            return random.sample(urls, min(count, len(urls)))
+        except Exception as e:
+            print(f"  Pexels photo error for '{q}': {e}")
+            time.sleep(3)
+    return []
+
+
+def get_pixabay_videos(query: str, count: int = 6) -> list:
+    # 2026-11-08: a second keyed video source, tried after Pexels and
+    # before Commons. Dormant until the user saves a free Pixabay API
+    # key as PIXABAY_API_KEY in the repo secrets — without it this
+    # returns [] and changes nothing. Response: hits[].videos.<size>.url
+    # (cdn.pixabay.com). Prefer "medium" (usually 1920x1080, available
+    # for every video) over "large" (usually 4K — a heavier download
+    # for a 1080x1920 reel; also empty when unavailable). Docs verified
+    # live 2026-11-07 at pixabay.com/api/docs.
+    key = os.getenv("PIXABAY_API_KEY")
+    if not key:
+        return []
+    try:
+        r = requests.get(
+            "https://pixabay.com/api/videos/",
+            params={"key": key, "q": query, "per_page": 15, "video_type": "film"},
+            timeout=15,
+        )
+        r.raise_for_status()
+        hits = r.json().get("hits", [])
+        urls = []
+        for h in hits:
+            renditions = h.get("videos") or {}
+            url = (renditions.get("medium") or {}).get("url", "") or (renditions.get("large") or {}).get("url", "")
+            if url:
+                urls.append(url)
+        if not urls:
+            print(f"  Pixabay: no videos for '{query}'.")
+            return []
+        return random.sample(urls, min(count, len(urls)))
+    except Exception as e:
+        print(f"  Pixabay video error: {e}")
+        return []
+
+
 def get_commons_videos(query: str, count: int = 6) -> list:
     # 2026-11-07: Pexels video search came back empty for three straight
     # runs even for the broadest query ("ocean"), so the reel no longer
@@ -452,13 +527,23 @@ def get_commons_videos(query: str, count: int = 6) -> list:
                 elif ii.get("url") and (ii.get("size") or 0) <= 200_000_000:
                     url = ii["url"]
                 if url:
-                    urls.append(url)
+                    urls.append((url, pg.get("title", "")))
+            # Title filter (2026-11-08): broad queries pull in off-topic
+            # files — a 1921 silent film matched "coastal road" in the
+            # 00:09 UTC run. Keep only clips whose Commons title
+            # contains at least one query word; if the filter would
+            # leave nothing, keep the unfiltered list.
+            qwords = [w for w in _normalize_text(q).split() if len(w) > 2]
+            if urls and qwords:
+                kept = [(u, t) for u, t in urls if any(w in _normalize_text(t) for w in qwords)]
+                if kept:
+                    urls = kept
             # Accumulate across the ladder instead of stopping at the
             # first hit: the full query may return a single clip (the
             # 23:55 UTC run found exactly 1), and one clip is one
             # download failure away from no reel at all. Narrow queries
             # feed the pool first; stop once we have enough.
-            for url in urls:
+            for url, _title in urls:
                 if url not in seen:
                     seen.add(url)
                     found.append(url)
@@ -528,7 +613,7 @@ def download_file(url: str, path: str) -> bool:
     return False
 
 
-def download_clips(video_urls: list, clips_dir) -> list:
+def download_clips(video_urls: list, clips_dir, suffix: str = ".mp4") -> list:
     # Download every remote URL, skipping failures; local files pass
     # through. If NOTHING downloaded (e.g. Wikimedia 429'd every clip),
     # wait 60s and try the failed URLs once more — a per-minute
@@ -539,7 +624,7 @@ def download_clips(video_urls: list, clips_dir) -> list:
         paths, failed = [], []
         for i, src in enumerate(urls):
             if src.startswith("http://") or src.startswith("https://"):
-                tmp = str(clips_dir / f"clip_{i}.mp4")
+                tmp = str(clips_dir / f"clip_{i}{suffix}")
                 if download_file(src, tmp):
                     paths.append(tmp)
                 else:
@@ -655,7 +740,37 @@ def add_hook_overlay(input_path: str, hook_text: str, output_path: str) -> bool:
         return False
 
 
-def assemble_reel(audio_path: str, video_urls: list, output_path: str, hook_text: str | None = None) -> bool:
+def make_photo_clip(photo_path: str, duration: float, output_path: str) -> bool:
+    """
+    Turn a still photo into a slow-zoom (Ken Burns) video clip, the
+    way travel reels hold on a landscape shot. The photo is first
+    center-cropped to vertical 1080x1920, then zoompan zooms from
+    1.0x to ~1.45x over the clip. Verified 2026-11-08 with ffmpeg:
+    10s, 1080x1920, h264, framing visibly zooms in.
+    """
+    import subprocess
+    vf = (
+        "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,"
+        "zoompan=z='min(max(zoom,pzoom)+0.0015,1.5)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
+        f"d={int(duration * 30)}:s=1080x1920:fps=30"
+    )
+    try:
+        r = subprocess.run(
+            ["ffmpeg", "-y", "-v", "error", "-loop", "1", "-i", photo_path,
+             "-vf", vf, "-t", str(duration), "-c:v", "libx264",
+             "-pix_fmt", "yuv420p", output_path],
+            capture_output=True, text=True, timeout=300,
+        )
+        if r.returncode == 0 and os.path.exists(output_path):
+            return True
+        print(f"  Photo clip failed: {r.stderr[-300:]}")
+        return False
+    except Exception as e:
+        print(f"  Photo clip error: {e}")
+        return False
+
+
+def assemble_reel(audio_path: str, video_urls: list, output_path: str, hook_text: str | None = None, photo_mode: bool = False) -> bool:
     try:
         # Patch Pillow ANTIALIAS removal (Pillow 10+ removed it, MoviePy 1.0.3 needs it)
         import PIL.Image as _PILImage
@@ -674,7 +789,19 @@ def assemble_reel(audio_path: str, video_urls: list, output_path: str, hook_text
         clips_dir = OUTPUT_DIR / "tmp_clips"
         clips_dir.mkdir(exist_ok=True)
 
-        clip_paths = download_clips(video_urls, clips_dir)
+        clip_paths = download_clips(video_urls, clips_dir, suffix=".jpg" if photo_mode else ".mp4")
+
+        if photo_mode:
+            # Photos become 10s slow-zoom clips; the normal
+            # VideoFileClip path below then assembles them like video.
+            zoomed = []
+            for i, path in enumerate(clip_paths):
+                out = str(clips_dir / f"photo_{i}.mp4")
+                if make_photo_clip(path, 10.0, out):
+                    zoomed.append(out)
+                else:
+                    print(f"    Photo {i} could not be turned into a clip — skipping.")
+            clip_paths = zoomed
 
         clips = []
         for i, path in enumerate(clip_paths):
@@ -803,9 +930,24 @@ def make_reel():
         print(f"  Found {len(video_urls)} stock clips.")
 
     if not video_urls:
+        print(f"  Step 3 fallback: Fetching Pixabay clips ('{topic_data['search']}')...")
+        video_urls = get_pixabay_videos(topic_data["search"], count=6)
+        print(f"  Found {len(video_urls)} Pixabay clips.")
+
+    if not video_urls:
         print(f"  Step 3 fallback: Fetching Wikimedia Commons clips ('{topic_data['search']}')...")
         video_urls = get_commons_videos(topic_data["search"], count=6)
         print(f"  Found {len(video_urls)} Commons clips.")
+
+    photo_mode = False
+    if not video_urls:
+        # Last resort: Pexels PHOTOS as slow-zoom clips. Photo search
+        # works (the text posts use it daily) while every video source
+        # is down, so the reel still publishes instead of failing.
+        print(f"  Step 3 fallback: Fetching Pexels photos ('{topic_data['search']}')...")
+        video_urls = get_pexels_photos(topic_data["search"], count=6)
+        photo_mode = bool(video_urls)
+        print(f"  Found {len(video_urls)} photos for a slow-zoom reel.")
 
     if not video_urls:
         # Fail loudly: the audio is saved for manual editing, but the
@@ -816,7 +958,7 @@ def make_reel():
     # Step 4 — Assemble
     output_path = str(OUTPUT_DIR / f"reel_{stamp}.mp4")
     print(f"\n  Step 4: Assembling Reel with MoviePy...")
-    ok = assemble_reel(audio_file, video_urls, output_path, hook_text=topic_data["angle"] if lang == "es" else topic_data["angle_en"])
+    ok = assemble_reel(audio_file, video_urls, output_path, hook_text=topic_data["angle"] if lang == "es" else topic_data["angle_en"], photo_mode=photo_mode)
 
     if ok:
         mb = os.path.getsize(output_path) / 1024 / 1024
