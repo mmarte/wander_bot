@@ -47,6 +47,25 @@ class SocialPlatformClient(ABC):
         return mime_type or "application/octet-stream"
 
 
+def _error_details(exc: requests.RequestException) -> str:
+    # str(exc) is only the status line ("400 Client Error"), which hides
+    # Meta's actual reason. The response body carries it — e.g. an
+    # OAuthException #200 for a missing permission, or "Invalid Instagram
+    # user" for a wrong business account ID — so include it (truncated).
+    # 2026-11-08: an IG photo post failed with a bare 400 and the log
+    # showed nothing more, so the cause could not be identified.
+    resp = getattr(exc, "response", None)
+    body = ""
+    if resp is not None:
+        try:
+            body = (resp.text or "").strip()
+        except Exception:
+            body = ""
+    if body:
+        return f"{exc} — {body[:500]}"
+    return str(exc)
+
+
 class InstagramPoster(SocialPlatformClient):
     def publish_short(self, content: Dict[str, str], media_path: Optional[str] = None) -> Dict[str, str]:
         if not FACEBOOK_PAGE_ACCESS_TOKEN or not INSTAGRAM_BUSINESS_ACCOUNT_ID:
@@ -88,7 +107,7 @@ class InstagramPoster(SocialPlatformClient):
                     "publish_response": publish_data,
                 }
             except requests.RequestException as exc:
-                return {"status": "error", "message": "Instagram API request failed.", "details": str(exc)}
+                return {"status": "error", "message": "Instagram API request failed.", "details": _error_details(exc)}
 
         if not media_path:
             return {"status": "error", "message": "Instagram requires a publicly accessible video_url for reel uploads."}
@@ -129,7 +148,7 @@ class InstagramPoster(SocialPlatformClient):
                 "publish_response": publish_data,
             }
         except requests.RequestException as exc:
-            return {"status": "error", "message": "Instagram API request failed.", "details": str(exc)}
+            return {"status": "error", "message": "Instagram API request failed.", "details": _error_details(exc)}
 
 
 class FacebookPoster(SocialPlatformClient):
