@@ -960,5 +960,63 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Torres del Paine: Whispering Peaks & Turquoise Dreams 🌄",
+    "caption": "From the roar of the wind at the base of the granite towers to the mirror‑still turquoise lakes below—join our 7‑minute W‑Trekkers glimpse of Patagonia’s soul. 🌿✨ #MindfulAdventure\n\n#TorresDelPaine #Patagonia #WTrek #TravelMindfully #NatureLovers #ExploreChile #WanderWithZen #Chile",
+    "hashtags": "#TorresDelPaine #Patagonia #WTrek #TravelMindfully #NatureLovers #ExploreChile #WanderWithZen #Chile",
+    "video_idea": {
+      "mood": "Epic yet meditative – sweeping awe paired with quiet, breath‑deep moments.",
+      "shot_list": [
+        "0‑2s: Drone rise over the iconic three granite towers at sunrise, sun flares on the peaks.",
+        "3‑5s: Close‑up of mist rolling off a turquoise lake, reflection of the towers.",
+        "6‑9s: Hiker’s boots stepping onto the trail, POV footfall on crunchy gravel.",
+        "10‑13s: Slow‑motion of a lone condor soaring, wind‑swept grass in foreground.",
+        "14‑18s: Time‑lapse of clouds racing over the valleys while a hiker pauses for a mindful breath.",
+        "19‑22s: Hand‑held shot of a journal page flipping, words: “Here I am present.”",
+        "23‑27s: Wide pan across the W‑trek ridge, hikers silhouetted against the glowing sky.",
+        "28‑30s: Closing frame – sunrise over the towers with WanderwithZen logo and soft fade."
+      ]
+    },
+    "cta": "Tap ‘Learn More’ to download our free 5‑day mindful trek guide and start planning your Patagonia pilgrimage today!",
+    "place": "Torres del Paine",
+    "image_url": "https://images.pexels.com/photos/30359266/pexels-photo-30359266.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261108070540490550",
+    "status": "published",
+    "created_at": "2026-11-08T07:05:40.490582+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-08T07:05:44.505715+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122130283749311662",
+          "post_id": "1135032983019547_122130283773311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"type\":\"OAuthException\",\"code\":10,\"fbtrace_id\":\"AmG3Q7ZjT7lt2dMOaapB9GQ\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
