@@ -414,6 +414,7 @@ def get_commons_videos(query: str, count: int = 6) -> list:
         queries.append(" ".join(words[:2]))
     if len(words) > 1:
         queries.append(words[0])
+    found, seen = [], set()
     for q in queries:
         try:
             r = requests.get(
@@ -452,21 +453,59 @@ def get_commons_videos(query: str, count: int = 6) -> list:
                     url = ii["url"]
                 if url:
                     urls.append(url)
+            # Accumulate across the ladder instead of stopping at the
+            # first hit: the full query may return a single clip (the
+            # 23:55 UTC run found exactly 1), and one clip is one
+            # download failure away from no reel at all. Narrow queries
+            # feed the pool first; stop once we have enough.
+            for url in urls:
+                if url not in seen:
+                    seen.add(url)
+                    found.append(url)
             if not urls:
                 print(f"  Commons: no videos for '{q}' — trying a simpler query...")
                 time.sleep(3)
-                continue
-            return random.sample(urls, min(count, len(urls)))
+            if len(found) >= count:
+                break
         except Exception as e:
             print(f"  Commons video error for '{q}': {e}")
             time.sleep(3)
-    return []
+    if not found:
+        return []
+    return random.sample(found, min(count, len(found)))
+
+
+def _retry_after_seconds(response) -> int:
+    # Wikimedia's 429s carry a Retry-After header (seconds, or an
+    # HTTP-date). Honor it instead of guessing: wait at least 10s and
+    # at most 120s so a run never stalls for minutes on one clip.
+    raw = (response.headers or {}).get("Retry-After") if response is not None else None
+    if raw is None:
+        return 10
+    try:
+        return max(10, min(120, int(raw)))
+    except ValueError:
+        pass
+    try:
+        from email.utils import parsedate_to_datetime
+        from datetime import datetime, timezone
+        when = parsedate_to_datetime(raw)
+        if when is not None:
+            if when.tzinfo is None:
+                when = when.replace(tzinfo=timezone.utc)
+            delta = (when - datetime.now(timezone.utc)).total_seconds()
+            return max(10, min(120, int(delta)))
+    except Exception:
+        pass
+    return 10
 
 
 def download_file(url: str, path: str) -> bool:
     # upload.wikimedia.org returns 403 for the default python-requests
     # User-Agent, so every download carries the bot's UA (2026-11-07).
-    # It also rate-limits (429) under bursts, so retry a few times.
+    # It also rate-limits (429) under bursts: on a 429, wait out the
+    # server's Retry-After header instead of a fixed 10s (2026-11-07:
+    # the runner's Commons download 429'd on all 3 attempts 10s apart).
     for attempt in range(1, 4):
         try:
             r = requests.get(url, timeout=60, stream=True,
@@ -477,10 +516,46 @@ def download_file(url: str, path: str) -> bool:
                     f.write(chunk)
             return True
         except Exception as e:
-            print(f"  Download error (attempt {attempt}/3): {e}")
+            wait = 10
+            resp = getattr(e, "response", None)
+            if resp is not None and getattr(resp, "status_code", None) == 429:
+                wait = _retry_after_seconds(resp)
+                print(f"  Download error (attempt {attempt}/3): {e} — server asked to wait {wait}s")
+            else:
+                print(f"  Download error (attempt {attempt}/3): {e}")
             if attempt < 3:
-                time.sleep(10)
+                time.sleep(wait)
     return False
+
+
+def download_clips(video_urls: list, clips_dir) -> list:
+    # Download every remote URL, skipping failures; local files pass
+    # through. If NOTHING downloaded (e.g. Wikimedia 429'd every clip),
+    # wait 60s and try the failed URLs once more — a per-minute
+    # rate-limit bucket often clears in that time. 2026-11-07: the
+    # 23:55 UTC run found 1 Commons clip and its download 429'd 3
+    # times, so the reel died with no clip to try.
+    def _once(urls):
+        paths, failed = [], []
+        for i, src in enumerate(urls):
+            if src.startswith("http://") or src.startswith("https://"):
+                tmp = str(clips_dir / f"clip_{i}.mp4")
+                if download_file(src, tmp):
+                    paths.append(tmp)
+                else:
+                    failed.append((i, src))
+            elif os.path.exists(src):
+                paths.append(src)
+            else:
+                print(f"    Skipping invalid source: {src}")
+        return paths, failed
+    clip_paths, failed = _once(video_urls)
+    if not clip_paths and failed:
+        print("  No clips downloaded — waiting 60s and retrying the downloads once more...")
+        time.sleep(60)
+        retry_paths, _ = _once([src for _, src in failed])
+        clip_paths.extend(retry_paths)
+    return clip_paths
 
 
 def download_youtube_video(video_url: str, output_path: str) -> bool:
@@ -598,17 +673,8 @@ def assemble_reel(audio_path: str, video_urls: list, output_path: str, hook_text
         # Download clips to a permanent temp folder (avoids Windows file-locking issue)
         clips_dir = OUTPUT_DIR / "tmp_clips"
         clips_dir.mkdir(exist_ok=True)
-        clip_paths = []
 
-        for i, src in enumerate(video_urls):
-            if src.startswith("http://") or src.startswith("https://"):
-                tmp = str(clips_dir / f"clip_{i}.mp4")
-                if download_file(src, tmp):
-                    clip_paths.append(tmp)
-            elif os.path.exists(src):
-                clip_paths.append(src)
-            else:
-                print(f"    Skipping invalid source: {src}")
+        clip_paths = download_clips(video_urls, clips_dir)
 
         clips = []
         for i, path in enumerate(clip_paths):
@@ -715,7 +781,7 @@ def make_reel():
 
     # Step 2 — TTS (Kokoro first, gTTS fallback)
     audio_path = str(OUTPUT_DIR / f"reel_{stamp}_audio.wav")
-    print("  Step 2: Generating Spanish voiceover (Kokoro TTS)...")
+    print(f"  Step 2: Generating {'Spanish' if lang == 'es' else 'English'} voiceover (Kokoro TTS)...")
     audio_file = text_to_speech_kokoro(script, audio_path, lang)
 
     if not audio_file:
