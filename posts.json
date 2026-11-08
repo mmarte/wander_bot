@@ -905,5 +905,60 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Patagonia Peaks & Pristine Waters 🌄",
+    "caption": "From the towering granite sentinels of Torres del Paine to the mirror‑like turquoise lagoons, the W Trek rewrites the meaning of awe. ✨🌿 #WanderWithZen\n\n#TorresDelPaine #Patagonia #WTrek #NatureLovers #MindfulAdventure #TravelInspo #Chile",
+    "hashtags": "#TorresDelPaine #Patagonia #WTrek #NatureLovers #MindfulAdventure #TravelInspo #Chile",
+    "video_idea": {
+      "shot_list": [
+        "0-3s: Drone rise over the three granite towers at sunrise, mist swirling.",
+        "4-7s: Close‑up of turquoise water lapping the shore of Lago Nordenskjöld.",
+        "8-12s: POV step‑by‑step on the trail, boots crunching snow‑dusted ground.",
+        "13-16s: Slow‑motion of a lone condor soaring above the peaks.",
+        "17-20s: Sunset time‑lapse over the towers, colors shifting from gold to deep violet."
+      ],
+      "mood": "Epic, tranquil, and meditative – a blend of awe‑inspiring grandeur and quiet reflection."
+    },
+    "cta": "Ready to feel the wind at the summit? Pack your boots, tag a fellow wanderer, and share your own Patagonia moment with #WanderWithZen!",
+    "place": "Torres del Paine",
+    "image_url": "https://images.pexels.com/photos/28551773/pexels-photo-28551773.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261108051216020598",
+    "status": "published",
+    "created_at": "2026-11-08T05:12:16.020631+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-08T05:12:19.696639+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122130273015311662",
+          "post_id": "1135032983019547_122130273039311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"type\":\"OAuthException\",\"code\":10,\"fbtrace_id\":\"A0I7vJKmVeugo4g0TTxwF9R\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
