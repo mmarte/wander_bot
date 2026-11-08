@@ -791,5 +791,62 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Granite Giants & Turquoise Dreams",
+    "caption": "From sunrise on the iconic towers to the mirror‑still blues of Lago Pehoé, the W Trek in Torres del Paine reminds us that every step is a meditation. 🌄✨ #MindfulAdventure\n\n['#TorresDelPaine', '#Patagonia', '#WTrek', '#GraniteTowers', '#TurquoiseLakes', '#TravelMindfully', '#WanderWithZen'] #Chile",
+    "hashtags": "['#TorresDelPaine', '#Patagonia', '#WTrek', '#GraniteTowers', '#TurquoiseLakes', '#TravelMindfully', '#WanderWithZen'] #Chile",
+    "video_idea": {
+      "shot_list": [
+        "1️⃣ Drone sweep over the three granite towers at golden hour.",
+        "2️⃣ Close‑up of mist lifting off a turquoise lake (Lago Nordenskjöld).",
+        "3️⃣ POV footfall on the trail – crunch of gravel, breath in sync with a calm soundtrack.",
+        "4️⃣ Slow‑motion of a sunrise light beam hitting the base of the towers.",
+        "5️⃣ Quick cut to a traveler pausing, eyes closed, taking a mindful breath.",
+        "6️⃣ Time‑lapse of clouds racing over the peaks.",
+        "7️⃣ End frame: a handwritten map of the W Trek fading into the Wanderwithzen logo."
+      ],
+      "mood": "Serene yet exhilarating – a blend of awe‑inspiring grandeur and quiet reflection, set to a soft ambient‑folk track."
+    },
+    "cta": "Ready to walk the path? 🌍 Tap ‘Follow’ for more mindful journeys and start planning your Patagonia pilgrimage today!",
+    "place": "Torres del Paine",
+    "image_url": "https://images.pexels.com/photos/28551773/pexels-photo-28551773.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261108044319015901",
+    "status": "published",
+    "created_at": "2026-11-08T04:43:19.015942+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-08T04:43:23.477240+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122130268941311662",
+          "post_id": "1135032983019547_122130268965311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
