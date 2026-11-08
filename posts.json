@@ -1018,5 +1018,61 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Guardians of Patagonia: The W Trek",
+    "caption": "From sunrise on the iconic granite towers to the mirror‑still turquoise waters of Pehoé, every step in Torres del Paine rewrites your story. 🌄✨\n\n#TorresDelPaine #Patagonia #WTrek #MindfulTravel #NatureLovers #AdventureAwaits #Chile",
+    "hashtags": "#TorresDelPaine #Patagonia #WTrek #MindfulTravel #NatureLovers #AdventureAwaits #Chile",
+    "video_idea": {
+      "shot_list": [
+        "Drone sweep over the three granite towers at golden hour",
+        "Close‑up of boots hitting the trail, mist rising",
+        "Time‑lapse of clouds swirling over Grey Glacier",
+        "Slow‑motion splash as a hiker dips feet in Lake Pehoé",
+        "Pan over sunrise reflecting on turquoise lake",
+        "Final wide shot of campfire under a star‑filled sky"
+      ],
+      "mood": "Epic yet meditative – a blend of awe‑inspiring grandeur and quiet reflection."
+    },
+    "cta": "Tap ‘Learn More’ to download our free 7‑day mindful trekking guide and start planning your Patagonia escape!",
+    "place": "Torres del Paine",
+    "image_url": "https://images.pexels.com/photos/7499997/pexels-photo-7499997.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261108181518510787",
+    "status": "published",
+    "created_at": "2026-11-08T18:15:18.510824+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-08T18:15:25.085288+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122130354171311662",
+          "post_id": "1135032983019547_122130354195311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"type\":\"OAuthException\",\"code\":10,\"fbtrace_id\":\"Ad-7855vab2CTt4_vzWIRGn\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
