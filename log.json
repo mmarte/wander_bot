@@ -581,5 +581,40 @@
       }
     },
     "executed_at": "2026-11-07T20:47:30.005691+00:00"
+  },
+  {
+    "post_id": "wander-20261108000510304073",
+    "status": "published",
+    "results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122130245637311662",
+          "post_id": "1135032983019547_122130245661311662"
+        }
+      },
+      "instagram": {
+        "status": "skipped",
+        "message": "Instagram credentials are missing."
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    },
+    "executed_at": "2026-11-08T00:05:15.503785+00:00"
   }
 ]

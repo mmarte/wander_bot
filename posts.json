@@ -746,5 +746,50 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Patagonia's Whisper: The W Trek",
+    "caption": "From soaring granite sentinels to crystal‑blue lakes, every step at Torres del Paine feels like meditation in motion. 🌄✨ #WanderWithZen\n\n#TorresDelPaine #Patagonia #WTrek #MindfulTravel #NatureLovers #AdventureAwaits #Chile",
+    "hashtags": "#TorresDelPaine #Patagonia #WTrek #MindfulTravel #NatureLovers #AdventureAwaits #Chile",
+    "video_idea": "Mood: Serene awe. Shots: 1️⃣ Drone sweep over the three granite towers at sunrise. 2️⃣ Close‑up of turquoise lake reflections. 3️⃣ POV footfall on the trail with breath‑synced ambient sound. 4️⃣ Slow‑motion of wind‑kissed grasses. 5️⃣ Sunset silhouette of the towers. 6️⃣ End card with a meditative quote overlay.",
+    "cta": "Tap ‘Learn More’ to download our free 7‑day mindful trek guide and start planning your Patagonia pilgrimage.",
+    "place": "Torres del Paine",
+    "image_url": "https://images.pexels.com/photos/33149705/pexels-photo-33149705.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261108000510304073",
+    "status": "published",
+    "created_at": "2026-11-08T00:05:10.304099+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-08T00:05:15.502398+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122130245637311662",
+          "post_id": "1135032983019547_122130245661311662"
+        }
+      },
+      "instagram": {
+        "status": "skipped",
+        "message": "Instagram credentials are missing."
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
