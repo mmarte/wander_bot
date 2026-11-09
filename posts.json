@@ -1120,5 +1120,60 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Idea #1 – Chasing Turquoise on the Icefields Parkway",
+    "caption": "From emerald‑blue lakes to sky‑piercing peaks, experience Banff’s magic in a 60‑second mindful adventure. 🌲✨\n\n#Banff #IcefieldsParkway #TurquoiseLakes #CanadianRockies #MindfulTravel #WanderWithZen #BanffNationalPark #Canada",
+    "hashtags": "#Banff #IcefieldsParkway #TurquoiseLakes #CanadianRockies #MindfulTravel #WanderWithZen #BanffNationalPark #Canada",
+    "video_idea": {
+      "shot_list": [
+        "Drone sweep over Lake Louise at sunrise, turquoise water reflecting the surrounding peaks.",
+        "POV car window view cruising the Icefields Parkway, mountains rushing by in smooth motion.",
+        "Slow‑motion close‑up of glacial meltwater spilling into Moraine Lake, ripples catching the light.",
+        "Time‑lapse of clouds rolling over Mount Bowlen, revealing shifting shadows.",
+        "Traveler seated on a ridge, eyes closed, meditating with Peyto Lake’s turquoise expanse behind."
+      ],
+      "mood": "Serene yet exhilarating – a blend of calm mindfulness and awe‑inspiring adventure."
+    },
+    "cta": "Tap ‘Learn More’ to download our free 3‑day Banff itinerary and start your mindful escape today!",
+    "place": "Banff National Park",
+    "image_url": "https://images.pexels.com/photos/28366333/pexels-photo-28366333.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261109001430499831",
+    "status": "published",
+    "created_at": "2026-11-09T00:14:30.499871+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-09T00:14:35.275907+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122130384951311662",
+          "post_id": "1135032983019547_122130384975311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"type\":\"OAuthException\",\"code\":10,\"fbtrace_id\":\"AAVBDkVlSUn_6PJoqnE3IJG\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
