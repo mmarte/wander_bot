@@ -1290,5 +1290,62 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Mystic Turquoise Trails: Plitvice Lakes",
+    "caption": "Step onto the wooden walkways and let cascading waterfalls guide your breath. 🌊✨ #MindfulAdventure\n\n#PlitviceLakes #Croatia #NatureTherapy #MindfulTravel #Wanderwithzen",
+    "hashtags": "#PlitviceLakes #Croatia #NatureTherapy #MindfulTravel #Wanderwithzen",
+    "video_idea": {
+      "mood": "Calm yet awe‑inspiring, with gentle ambient sounds of water and soft instrumental tones.",
+      "shot_list": [
+        "1. Drone sweep over the terraced lakes at sunrise, turquoise hues glowing.",
+        "2. Close‑up of water spilling over a waterfall, slow‑motion droplets.",
+        "3. POV footstep on the wooden boardwalk, mist swirling around.",
+        "4. Pan up to towering pine silhouettes framing the sky.",
+        "5. Traveler pausing, eyes closed, inhaling – a moment of mindfulness.",
+        "6. Time‑lapse of clouds drifting over the lake surface.",
+        "7. End card: Wanderwithzen logo with a subtle ripple effect."
+      ]
+    },
+    "cta": "Tap ‘Learn More’ to plan your serene escape to Plitvice and share your own zen moment in the comments!",
+    "place": "Plitvice Lakes",
+    "image_url": "https://images.pexels.com/photos/35474945/pexels-photo-35474945.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261110004005890074",
+    "status": "published",
+    "created_at": "2026-11-10T00:40:05.890108+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-10T00:40:12.249167+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122130555315311662",
+          "post_id": "1135032983019547_122130555345311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"type\":\"OAuthException\",\"code\":10,\"fbtrace_id\":\"AJGTintYBoO2pDhTmevaNpk\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
