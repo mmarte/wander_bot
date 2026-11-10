@@ -1459,5 +1459,51 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Turquoise Trails: Plitvice Lakes in 60 Seconds",
+    "caption": "Step onto the whispering boardwalks of Croatia’s jewel—where waterfalls sing and turquoise lakes reflect your soul. 🌿✨\n\n#PlitviceLakes #Croatia #NatureLovers #MindfulAdventure #TravelInspo #WanderWithZen",
+    "hashtags": "#PlitviceLakes #Croatia #NatureLovers #MindfulAdventure #TravelInspo #WanderWithZen",
+    "video_idea": "Shot 1: Drone sweep over cascading lakes at sunrise. Shot 2: Slow‑motion close‑up of water spilling over limestone cliffs. Shot 3: POV walk along wooden boardwalks, mist on the lens. Shot 4: Time‑lapse of clouds drifting over forested terraces. Shot 5: Calm pause on a mirror‑still pool with a gentle breath‑in, breath‑out overlay. Mood: Calm, awe‑inspiring, meditative.",
+    "cta": "Tap ‘Watch More’ and start planning your mindful escape to Plitvice today!",
+    "place": "Plitvice Lakes",
+    "image_url": "https://images.pexels.com/photos/34976238/pexels-photo-34976238.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261110201906846770",
+    "status": "published",
+    "created_at": "2026-11-10T20:19:06.846805+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-10T20:19:12.417738+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122130662775311662",
+          "post_id": "1135032983019547_122130662799311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"type\":\"OAuthException\",\"code\":10,\"fbtrace_id\":\"Ali1saR2P--mkgVyhVO2xl5\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
