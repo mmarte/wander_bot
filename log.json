@@ -1061,5 +1061,18 @@
       }
     },
     "executed_at": "2026-11-10T08:10:20.854424+00:00"
+  },
+  {
+    "post_id": "reel_20261110",
+    "post_type": "reel",
+    "reel_path": "reels/reel_20261110.mp4",
+    "fb_reel_id": "1607671863880454",
+    "ig_reel_id": null,
+    "status": "published",
+    "errors": {
+      "facebook": null,
+      "instagram": "(#10) Application does not have permission for this action"
+    },
+    "executed_at": "2026-11-10T16:52:43.466160+00:00"
   }
 ]
