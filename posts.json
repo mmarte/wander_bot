@@ -1551,5 +1551,62 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Sunset Trail: From Fira to Oia 🌅",
+    "caption": "Feel the volcanic heartbeat of Santorini as you wander the cliff‑side path where whitewashed villages meet endless blue. Let each step be a mindful breath, each view a reminder that adventure lives in the present moment. ✨\n\n#Santorini #MindfulTravel #WanderWithZen #FiraToOia #TravelInspiration #NatureLovers #Greece",
+    "hashtags": "#Santorini #MindfulTravel #WanderWithZen #FiraToOia #TravelInspiration #NatureLovers #Greece",
+    "video_idea": {
+      "mood": "Calm yet exhilarating – sunrise gold to sunset pink, soft ambient music with distant waves.",
+      "shot_list": [
+        "1. Opening drone sweep over the caldera at golden hour.",
+        "2. Close‑up of footfalls on the stone path, slow‑motion dust swirling.",
+        "3. Pan across whitewashed houses with blue domes, gentle wind fluttering curtains.",
+        "4. Time‑lapse of the sun climbing behind the cliffs as you walk.",
+        "5. POV of turning a corner to reveal Oia’s iconic blue dome.",
+        "6. Final wide shot of the sunset over the sea, silhouette of the walker standing still.",
+        "7. Text overlay: “Breathe. Explore. Be present.”"
+      ]
+    },
+    "cta": "Tap ‘Watch More’ to discover our guided mindfulness itinerary for Santorini and start planning your soul‑refreshing escape today!",
+    "place": "Santorini",
+    "image_url": "https://images.pexels.com/photos/37844509/pexels-photo-37844509.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261111005806237243",
+    "status": "published",
+    "created_at": "2026-11-11T00:58:06.237277+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-11T00:58:12.604882+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122130681681311662",
+          "post_id": "1135032983019547_122130681705311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"A-drNAls3p8hXnNe39YxwUm\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
