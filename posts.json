@@ -1822,5 +1822,61 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Scooter Serenity: Ubud to the Sea",
+    "caption": "From emerald terraces to golden sunsets, ride with us on a two‑wheel odyssey across Bali’s heart. 🌾🏄‍♀️\n\n#Bali #Ubud #RiceTerraces #Surf #ScooterAdventure #MindfulJourney #TravelWithZen #Indonesia",
+    "hashtags": "#Bali #Ubud #RiceTerraces #Surf #ScooterAdventure #MindfulJourney #TravelWithZen #Indonesia",
+    "video_idea": {
+      "mood": "Calm yet adventurous – vibrant colors, gentle breezes, and a meditative rhythm of wheels on road.",
+      "shot_list": [
+        "1. Drone sunrise over Tegalalang rice terraces, mist rolling between the fields.",
+        "2. Close‑up of scooter wheel turning on a stone path, rider’s hand gripping the handle with a relaxed smile.",
+        "3. Quick cuts of Ubud market stalls – bright fruits, woven baskets, friendly locals.",
+        "4. Slow‑motion pass through Pura Tirta Empul’s gate, incense smoke swirling.",
+        "5. POV scooter ride along the coastal road, surf break at Kuta appearing in the distance.",
+        "6. Golden‑hour cliff view, rider sipping tea, waves crashing below – end with a lingering sunset silhouette."
+      ]
+    },
+    "cta": "Tap ‘Learn More’ to download our free Bali mindful itinerary and start your own scooter adventure today!",
+    "place": "Bali",
+    "image_url": "https://images.pexels.com/photos/34356770/pexels-photo-34356770.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261112080809796499",
+    "status": "published",
+    "created_at": "2026-11-12T08:08:09.796532+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-12T08:08:13.994527+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122130889395311662",
+          "post_id": "1135032983019547_122130889419311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"Awvbx49cDI69uguBjnOR_wI\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
