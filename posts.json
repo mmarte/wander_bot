@@ -1992,5 +1992,60 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Arctic Peaks & Coastal Roads: Lofoten in 60 Seconds",
+    "caption": "From towering summits that plunge into the sea to the winding E10 through sleepy fishing villages—feel the wild serenity of Norway’s Lofoten Islands. 🌊🏔️ #MindfulTravel\n\n#Lofoten #ArcticAdventure #E10RoadTrip #NatureLovers #TravelMindfully #LofotenIslands #Norway",
+    "hashtags": "#Lofoten #ArcticAdventure #E10RoadTrip #NatureLovers #TravelMindfully #LofotenIslands #Norway",
+    "video_idea": {
+      "mood": "Majestic, tranquil, awe‑inspiring",
+      "shot_list": [
+        "Drone sweep over jagged peaks at sunrise, light spilling over the sea",
+        "Close‑up of colorful fishing huts and bobbing boats in a quiet harbor",
+        "POV dash cam driving the E10, hairpin turns hugging the cliff edge",
+        "Slow‑motion of waves crashing on black sand beaches",
+        "Timelapse of the sun dipping behind the mountains, casting golden hues"
+      ]
+    },
+    "cta": "Tap to watch the full journey and share your own Arctic dream escape!",
+    "place": "Lofoten Islands",
+    "image_url": "https://images.pexels.com/photos/34072120/pexels-photo-34072120.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261113013457135407",
+    "status": "published",
+    "created_at": "2026-11-13T01:34:57.135446+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-13T01:35:03.720018+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122130975927311662",
+          "post_id": "1135032983019547_122130975951311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"A34moDArlsLJLh0cI1A2pVn\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
