@@ -2047,5 +2047,60 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Arctic Peaks & Coastal Roads: Lofoten in 60 Seconds",
+    "caption": "From towering cliffs that kiss the sea to the winding E‑10 threading pastel fishing villages—experience the raw, mindful magic of Norway’s Lofoten Islands. 🌊🏔️✨\n\n#Lofoten #ArcticAdventure #E10RoadTrip #MindfulTravel #Wanderwithzen #NatureLovers #LofotenIslands #Norway",
+    "hashtags": "#Lofoten #ArcticAdventure #E10RoadTrip #MindfulTravel #Wanderwithzen #NatureLovers #LofotenIslands #Norway",
+    "video_idea": {
+      "shot_list": [
+        "Drone fly‑over at sunrise: jagged peaks exploding from turquoise waters.",
+        "POV dashcam on the E‑10: winding road, gulls, and bright rorbuer (fishermen cabins) passing by.",
+        "Close‑up of a weathered cabin door swinging open, lantern glow inside.",
+        "Slow‑motion of waves crashing on white‑sand beach with scattered shells.",
+        "Sunset timelapse: mountains silhouette, sky blush, hint of northern lights."
+      ],
+      "mood": "Serene awe with a touch of wanderlust—invite viewers to breathe in the Arctic calm."
+    },
+    "cta": "Ready for your own Arctic escape? Follow Wanderwithzen and tag a friend who needs this view! 🌍",
+    "place": "Lofoten Islands",
+    "image_url": "https://images.pexels.com/photos/37214399/pexels-photo-37214399.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261113074407713095",
+    "status": "published",
+    "created_at": "2026-11-13T07:44:07.713129+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-13T07:44:12.202661+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122131024347311662",
+          "post_id": "1135032983019547_122131024371311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"A4uC6Vbv5qjjZbTMGZ_jJke\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
