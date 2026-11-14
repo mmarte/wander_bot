@@ -2318,5 +2318,62 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Oasis of the Sands: Huacachina Adventure",
+    "caption": "From sunrise dunes to sunset reflections—feel the pulse of Peru’s hidden oasis and let the desert whisper your next mindful escape. 🌅🏜️\n\n#Huacachina #DesertOasis #MindfulTravel #WanderWithZen #Ica #DuneBuggy #AdventureAwaits #Peru",
+    "hashtags": "#Huacachina #DesertOasis #MindfulTravel #WanderWithZen #Ica #DuneBuggy #AdventureAwaits #Peru",
+    "video_idea": {
+      "shot_list": [
+        "1️⃣ Drone sweep over golden dunes at sunrise, revealing the tiny oasis sparkle.",
+        "2️⃣ Close‑up of crystal‑clear water mirroring the sky – a breath of calm.",
+        "3️⃣ Traveler stepping into a dune buggy, boots crunching sand.",
+        "4️⃣ Fast‑cut of the buggy carving up steep dunes, sand spraying.",
+        "5️⃣ Sunset glow over the lagoon, golden‑orange hues spreading.",
+        "6️⃣ Slow‑motion of a mindful pause: sitting by the water, eyes closed, inhaling desert air.",
+        "7️⃣ Night‑time timelapse of stars over the dunes, fireflies flickering."
+      ],
+      "mood": "Serene yet adventurous – a blend of awe‑inspiring vastness and intimate mindfulness."
+    },
+    "cta": "Tap ‘Learn More’ to plan your own Huacachina escape and feel the desert’s calm energy.",
+    "place": "Huacachina",
+    "image_url": "https://images.pexels.com/photos/17043687/pexels-photo-17043687.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261114184052149902",
+    "status": "published",
+    "created_at": "2026-11-14T18:40:52.149945+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-14T18:40:59.286087+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122131204989311662",
+          "post_id": "1135032983019547_122131205013311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AWab5Fg_CTVpbENPCapO-2V\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
