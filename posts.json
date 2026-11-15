@@ -5,45 +5,6 @@
     "hashtags": "#travel #adventure #nature #wanderlust",
     "video_idea": "Start with a fast-paced arrival shot, then show a scenic hike, local food, and a quiet sunset moment.",
     "cta": "Save this reel and follow for more adventure escapes.",
-    "id": "wander-20260903165714214346",
-    "status": "failed",
-    "created_at": "2026-09-03T16:57:14.214377+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "61589349864879",
-    "published_at": null,
-    "publish_results": {
-      "facebook": {
-        "status": "error",
-        "message": "Facebook Page access token is missing."
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram credentials are missing."
-      },
-      "x": {
-        "status": "error",
-        "message": "X bearer token is missing."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "error",
-        "message": "YouTube OAuth access token is missing."
-      }
-    }
-  },
-  {
-    "title": "Escape the noise, find your path",
-    "caption": "Explore travel, nature, hidden places, and mindful adventure with me — nature, hidden trails, and world-class views. #travel #adventure #wanderwithzen",
-    "hashtags": "#travel #adventure #nature #wanderlust",
-    "video_idea": "Start with a fast-paced arrival shot, then show a scenic hike, local food, and a quiet sunset moment.",
-    "cta": "Save this reel and follow for more adventure escapes.",
     "id": "wander-20260903194233491215",
     "status": "failed",
     "created_at": "2026-09-03T19:42:33.491240+00:00",
@@ -2592,6 +2553,62 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"APLyBsFroiCAGGuhq-NkvR9\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Mirror Earth: 4x4 Odyssey on Salar de Uyuni",
+    "caption": "From sunrise to starlit reflections, we chase the horizon where sky meets salt. 🌅🚙\n\n#SalarDeUyuni #Bolivia #SaltFlat #4x4Adventure #TravelMindfully #WanderwithZen",
+    "hashtags": "#SalarDeUyuni #Bolivia #SaltFlat #4x4Adventure #TravelMindfully #WanderwithZen",
+    "video_idea": {
+      "shot_list": [
+        "1️⃣ Drone lift‑off: sweeping aerial reveal of the endless white salt plain under a pastel sky.",
+        "2️⃣ 4x4 tires crunching across the mirror surface, kicking up tiny salt crystals.",
+        "3️⃣ Close‑up: clouds and mountains reflected perfectly on the ground, creating a surreal double‑vision.",
+        "4️⃣ Traveler’s boots stepping forward, leaving a fleeting imprint that fades instantly.",
+        "5️⃣ Sunset timelapse: the flat transforms to gold, then to deep violet as the sun dips.",
+        "6️⃣ Nightfall: star‑filled sky mirrored below, a silent, infinite portal."
+      ],
+      "mood": "Ethereal, contemplative, awe‑inspiring – a quiet invitation to feel the planet’s heartbeat."
+    },
+    "cta": "Tap ‘Learn More’ to map your own mindful journey across the world’s biggest mirror and join our next adventure!",
+    "place": "Salar de Uyuni",
+    "image_url": "https://images.pexels.com/photos/39640243/pexels-photo-39640243.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261115213904674255",
+    "status": "published",
+    "created_at": "2026-11-15T21:39:04.674289+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-15T21:39:11.486063+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122131365609311662",
+          "post_id": "1135032983019547_122131365633311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"A-uvtWDATfQbyXyIylkstx8\"}}"
       },
       "x": {
         "status": "skipped",
