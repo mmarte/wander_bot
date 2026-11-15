@@ -2432,5 +2432,63 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Mirror Earth: 4x4 Adventure on Salar de Uyuni",
+    "caption": "Step into the endless sky‑to‑ground reflection. From sunrise to star‑strewn night, watch our 4x4 carve a path across the world’s biggest salt canvas. 🌍✨ #WanderWithZen\n\n#SalarDeUyuni #Bolivia #SaltFlat #MindfulTravel #AdventureAwaits #TravelVideo #NatureLovers",
+    "hashtags": "#SalarDeUyuni #Bolivia #SaltFlat #MindfulTravel #AdventureAwaits #TravelVideo #NatureLovers",
+    "video_idea": {
+      "shot_list": [
+        "1️⃣ Drone sweep at sunrise: horizon blends sky and salt, golden light rippling.",
+        "2️⃣ Close‑up of 4x4 tires crunching crystal‑white salt, dust sparkling.",
+        "3️⃣ POV from the driver: steering through endless reflections, wind‑whisper sound.",
+        "4️⃣ Slow‑mo of footprints appearing then vanishing in the mirror‑like surface.",
+        "5️⃣ Time‑lapse of clouds racing across the flat, turning day into night in seconds.",
+        "6️⃣ Night shot: Milky Way reflected, camper’s lantern glow on the salt."
+      ],
+      "mood": "Serene awe meets exhilarating freedom – calm pastel tones at dawn, deep indigo at night, with a gentle ambient soundtrack and subtle heart‑beat drum for the 4x4 moments.",
+      "duration": "45‑seconds (optimal for Facebook feed)",
+      "format": "Vertical (9:16) for mobile, with subtitles for silent autoplay."
+    },
+    "cta": "Tap ‘Learn More’ to download our free 3‑day mindful itinerary for Salar de Uyuni and start planning your reflective escape!",
+    "place": "Salar de Uyuni",
+    "image_url": "https://images.pexels.com/photos/30612994/pexels-photo-30612994.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261115003025844449",
+    "status": "published",
+    "created_at": "2026-11-15T00:30:25.844482+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-15T00:30:30.582473+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122131246221311662",
+          "post_id": "1135032983019547_122131246245311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AlbtrVXPyf5MsthrzCzjyB8\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
