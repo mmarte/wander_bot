@@ -2490,5 +2490,68 @@
         "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
       }
     }
+  },
+  {
+    "title": "Mirror Earth: Journey Across Salar de Uyuni",
+    "caption": "Step onto the planet’s biggest mirror and watch the horizon disappear. 🌌🚙 #WanderWithZen\n\n#SalarDeUyuni #Bolivia #SaltFlat #MindfulTravel #AdventureAwaits #TravelVideo",
+    "hashtags": "#SalarDeUyuni #Bolivia #SaltFlat #MindfulTravel #AdventureAwaits #TravelVideo",
+    "video_idea": {
+      "mood": "Ethereal, tranquil, awe‑inspiring",
+      "shot_list": [
+        "0‑2s: Drone pulling up from the flat, revealing the endless white‑salt mirror under a pastel sunrise.",
+        "2‑4s: Close‑up of 4x4 tires kicking up a fine plume of salt, slow‑motion dust swirling.",
+        "4‑6s: Wide shot of the vehicle crossing a perfect reflection of the sky, creating a seamless horizon.",
+        "6‑8s: Traveler stepping out, placing hands on the ground, eyes closed – a moment of mindfulness.",
+        "8‑10s: Time‑lapse of clouds racing over the flat, the mirror changing colors.",
+        "10‑12s: Nightfall – stars reflected on the salt, Milky Way doubled, silhouette of the 4x4.",
+        "12‑14s: Quick cut to a local guide sharing a whispered legend (subtitle).",
+        "14‑15s: Fade to Wanderwithzen logo with gentle ambient sound."
+      ],
+      "audio": "Ambient wind + soft acoustic guitar, rising at the sunrise and fading into night crickets.",
+      "text_overlay": [
+        "“Where earth meets sky”",
+        "“Mindful moments in the mirror”"
+      ]
+    },
+    "cta": "Tap to explore the mirror world and book your mindful adventure today!",
+    "place": "Salar de Uyuni",
+    "image_url": "https://images.pexels.com/photos/30612994/pexels-photo-30612994.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261115074352788366",
+    "status": "published",
+    "created_at": "2026-11-15T07:43:52.788400+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-15T07:43:58.294891+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122131288335311662",
+          "post_id": "1135032983019547_122131288365311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"ACk5zMY0awLD3OJohx4-SZm\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
   }
 ]
