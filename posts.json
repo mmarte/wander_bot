@@ -5,45 +5,6 @@
     "hashtags": "#travel #adventure #nature #wanderlust",
     "video_idea": "Start with a fast-paced arrival shot, then show a scenic hike, local food, and a quiet sunset moment.",
     "cta": "Save this reel and follow for more adventure escapes.",
-    "id": "wander-20260903225237232189",
-    "status": "failed",
-    "created_at": "2026-09-03T22:52:37.232220+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "61589349864879",
-    "published_at": null,
-    "publish_results": {
-      "facebook": {
-        "status": "error",
-        "message": "Facebook Page access token is missing."
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram credentials are missing."
-      },
-      "x": {
-        "status": "error",
-        "message": "X bearer token is missing."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "error",
-        "message": "YouTube OAuth access token is missing."
-      }
-    }
-  },
-  {
-    "title": "Escape the noise, find your path",
-    "caption": "Explore travel, nature, hidden places, and mindful adventure with me — nature, hidden trails, and world-class views. #travel #adventure #wanderwithzen",
-    "hashtags": "#travel #adventure #nature #wanderlust",
-    "video_idea": "Start with a fast-paced arrival shot, then show a scenic hike, local food, and a quiet sunset moment.",
-    "cta": "Save this reel and follow for more adventure escapes.",
     "id": "wander-20260904024718903839",
     "status": "failed",
     "created_at": "2026-09-04T02:47:18.903866+00:00",
@@ -2628,6 +2589,62 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"ALfY8Y5RBHcU5Pe6mR-FBip\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Sunrise Soar over Cappadocia",
+    "caption": "Glide above fairy chimneys and watch the sunrise paint Göreme’s cave villages gold. 🌅✨\n\n#Cappadocia #BalloonRide #SunriseMagic #TravelMindfully #ExploreTurkey #Turkey",
+    "hashtags": "#Cappadocia #BalloonRide #SunriseMagic #TravelMindfully #ExploreTurkey #Turkey",
+    "video_idea": {
+      "shots": [
+        "0‑5 s: Balloon basket POV as it lifts, soft sunrise light breaking.",
+        "5‑10 s: Wide aerial sweep over towering fairy chimneys, golden glow.",
+        "10‑15 s: Close‑up of a traveler sipping tea, eyes closed, breathing calmly.",
+        "15‑20 s: Slow pan across the cave‑carved village of Göreme, shadows dancing.",
+        "20‑25 s: Time‑lapse of the sun rising, colors shifting from pink to amber.",
+        "25‑30 s: Fade to Wanderwithzen logo with gentle call‑to‑action overlay."
+      ],
+      "mood": "Serene, awe‑inspiring, meditative – a gentle invitation to rise with the sun."
+    },
+    "cta": "Tap to book your sunrise balloon adventure and let your spirit rise!",
+    "place": "Cappadocia",
+    "image_url": "https://images.pexels.com/photos/8321259/pexels-photo-8321259.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261116074913041314",
+    "status": "published",
+    "created_at": "2026-11-16T07:49:13.041344+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-16T07:49:18.552703+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122131413885311662",
+          "post_id": "1135032983019547_122131413909311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"ARgtN-V5u1nCMwvNLCxbPnq\"}}"
       },
       "x": {
         "status": "skipped",
