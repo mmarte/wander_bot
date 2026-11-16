@@ -5,45 +5,6 @@
     "hashtags": "#travel #adventure #nature #wanderlust",
     "video_idea": "Start with a fast-paced arrival shot, then show a scenic hike, local food, and a quiet sunset moment.",
     "cta": "Save this reel and follow for more adventure escapes.",
-    "id": "wander-20260903194233491215",
-    "status": "failed",
-    "created_at": "2026-09-03T19:42:33.491240+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "61589349864879",
-    "published_at": null,
-    "publish_results": {
-      "facebook": {
-        "status": "error",
-        "message": "Facebook Page access token is missing."
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram credentials are missing."
-      },
-      "x": {
-        "status": "error",
-        "message": "X bearer token is missing."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "error",
-        "message": "YouTube OAuth access token is missing."
-      }
-    }
-  },
-  {
-    "title": "Escape the noise, find your path",
-    "caption": "Explore travel, nature, hidden places, and mindful adventure with me — nature, hidden trails, and world-class views. #travel #adventure #wanderwithzen",
-    "hashtags": "#travel #adventure #nature #wanderlust",
-    "video_idea": "Start with a fast-paced arrival shot, then show a scenic hike, local food, and a quiet sunset moment.",
-    "cta": "Save this reel and follow for more adventure escapes.",
     "id": "wander-20260903225237232189",
     "status": "failed",
     "created_at": "2026-09-03T22:52:37.232220+00:00",
@@ -2609,6 +2570,64 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"A-uvtWDATfQbyXyIylkstx8\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Sunrise Over Cappadocia: Balloons & Fairy Chimneys",
+    "caption": "Float above ancient stone wonders as the sun paints the sky—discover the magic of Göreme from a hot‑air balloon. 🌅✨\n\n#Cappadocia #Göreme #BalloonAdventure #TravelMindfully #NatureLovers #WanderWithZen #Turkey",
+    "hashtags": "#Cappadocia #Göreme #BalloonAdventure #TravelMindfully #NatureLovers #WanderWithZen #Turkey",
+    "video_idea": {
+      "mood": "Ethereal, tranquil, awe‑inspiring",
+      "shot_list": [
+        "1. Ground pre‑dawn: soft focus on lanterns and balloon baskets being prepared.",
+        "2. Close‑up of balloon fabric inflating, sunrise hues reflecting on the material.",
+        "3. POV of the basket door opening, hands gripping the ropes as the balloon lifts.",
+        "4. Wide aerial sweep: golden sunrise spilling over fairy chimneys and valleys.",
+        "5. Slow‑motion glide over Göreme’s cave villages, dust motes catching the light.",
+        "6. 360° pan of the horizon as other balloons drift, creating a sea of colors.",
+        "7. Gentle landing: feet touching the earth, sunrise still glowing in the background."
+      ],
+      "duration": "45‑60 seconds, optimized for Facebook feed autoplay."
+    },
+    "cta": "Tap 'Learn More' to book your sunrise balloon ride and start your mindful adventure today!",
+    "place": "Cappadocia",
+    "image_url": "https://images.pexels.com/photos/6068242/pexels-photo-6068242.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261116003528738308",
+    "status": "published",
+    "created_at": "2026-11-16T00:35:28.738348+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-16T00:35:32.856159+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122131380237311662",
+          "post_id": "1135032983019547_122131380261311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"ALfY8Y5RBHcU5Pe6mR-FBip\"}}"
       },
       "x": {
         "status": "skipped",
