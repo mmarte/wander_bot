@@ -5,46 +5,6 @@
     "hashtags": "#travel #adventure #nature #wanderlust",
     "video_idea": "Start with a fast-paced arrival shot, then show a scenic hike, local food, and a quiet sunset moment.",
     "cta": "Save this reel and follow for more adventure escapes.",
-    "id": "wander-20260904031320244385",
-    "status": "failed",
-    "created_at": "2026-09-04T03:13:20.244441+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "61589349864879",
-    "published_at": null,
-    "publish_results": {
-      "facebook": {
-        "status": "error",
-        "message": "Facebook post failed.",
-        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v17.0/61589349864879/feed"
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram credentials are missing."
-      },
-      "x": {
-        "status": "error",
-        "message": "X bearer token is missing."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "error",
-        "message": "YouTube OAuth access token is missing."
-      }
-    }
-  },
-  {
-    "title": "Escape the noise, find your path",
-    "caption": "Explore travel, nature, hidden places, and mindful adventure with me — nature, hidden trails, and world-class views. #travel #adventure #wanderwithzen",
-    "hashtags": "#travel #adventure #nature #wanderlust",
-    "video_idea": "Start with a fast-paced arrival shot, then show a scenic hike, local food, and a quiet sunset moment.",
-    "cta": "Save this reel and follow for more adventure escapes.",
     "id": "wander-20260904031936522432",
     "status": "failed",
     "created_at": "2026-09-04T03:19:36.522459+00:00",
@@ -2660,6 +2620,63 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"Aie0Ic-iiGDz-Vjpi1fl9k2\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Hallstatt Horizons: Walk the Whispering Shore",
+    "caption": "From ferry to footpath, let the lake’s mirror and Dachstein’s peaks guide your mindful steps. 🌊⛰️\n\n#Hallstatt #Austria #LakeWalk #MindfulTravel #NatureLovers #Dachstein #TravelInspiration",
+    "hashtags": "#Hallstatt #Austria #LakeWalk #MindfulTravel #NatureLovers #Dachstein #TravelInspiration",
+    "video_idea": {
+      "shot_list": [
+        "1️⃣ Ferry pier arrival – quick pan of the dock and smiling travelers.",
+        "2️⃣ Drone sweep over Hallstatt, the lake, and towering Dachstein.",
+        "3️⃣ Close‑up of water ripples catching sunrise light.",
+        "4️⃣ Steady‑cam walk along the shore, feet in soft sand, gentle mist.",
+        "5️⃣ Hand‑held detail: stones, wildflowers, and a journal page turning.",
+        "6️⃣ Sunset glow reflecting on the lake, silhouette of mountains.",
+        "7️⃣ Fade‑out to a simple text overlay: “Find your quiet place.”"
+      ],
+      "mood": "Serene, contemplative, awe‑inspiring"
+    },
+    "cta": "Tap to start your own Hallstatt journey – share your favorite lakeside moment in the comments!",
+    "place": "Hallstatt",
+    "image_url": "https://images.pexels.com/photos/36183115/pexels-photo-36183115.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261117004445536817",
+    "status": "published",
+    "created_at": "2026-11-17T00:44:45.536855+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-17T00:44:50.413424+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122131490565311662",
+          "post_id": "1135032983019547_122131490589311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"Ancis8KbIwVRm4Wkt5Idh8_\"}}"
       },
       "x": {
         "status": "skipped",
