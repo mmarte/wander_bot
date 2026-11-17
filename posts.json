@@ -5,53 +5,6 @@
     "hashtags": "#travel #adventure #nature #wanderlust",
     "video_idea": "Start with a fast-paced arrival shot, then show a scenic hike, local food, and a quiet sunset moment.",
     "cta": "Save this reel and follow for more adventure escapes.",
-    "id": "wander-20260904034100888271",
-    "status": "failed",
-    "created_at": "2026-09-04T03:41:00.888299+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "61589349864879",
-    "published_at": null,
-    "publish_results": {
-      "facebook": {
-        "status": "error",
-        "message": "Facebook post failed.",
-        "details": {
-          "error": {
-            "message": "(#200) If posting to a group, requires app being installed in the group, and \\\n          either publish_to_groups permission with user token, or both pages_read_engagement \\\n          and pages_manage_posts permission with page token; If posting to a page, \\\n          requires both pages_read_engagement and pages_manage_posts as an admin with \\\n          sufficient administrative permission",
-            "type": "OAuthException",
-            "code": 200,
-            "fbtrace_id": "AyJMeuBNycdxGOt2FUe0yzf"
-          }
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram credentials are missing."
-      },
-      "x": {
-        "status": "error",
-        "message": "X bearer token is missing."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "error",
-        "message": "YouTube OAuth access token is missing."
-      }
-    }
-  },
-  {
-    "title": "Escape the noise, find your path",
-    "caption": "Explore travel, nature, hidden places, and mindful adventure with me — nature, hidden trails, and world-class views. #travel #adventure #wanderwithzen",
-    "hashtags": "#travel #adventure #nature #wanderlust",
-    "video_idea": "Start with a fast-paced arrival shot, then show a scenic hike, local food, and a quiet sunset moment.",
-    "cta": "Save this reel and follow for more adventure escapes.",
     "id": "wander-20260904040206319866",
     "status": "published",
     "created_at": "2026-09-04T04:02:06.319897+00:00",
@@ -2694,6 +2647,65 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"An9nLi05Yxmxw7vzfSMybqH\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Hallstatt: Lakeside Serenity in 30 Seconds",
+    "caption": "From the gentle ripple of the ferry pier to the towering Dachstein peaks—walk with us along Hallstatt’s crystal‑clear shore and feel the calm of alpine wonder. 🌊🏔️ #MindfulTravel\n\n#Hallstatt #Austria #LakeLife #Dachstein #MindfulAdventure #TravelInspo #NatureLovers",
+    "hashtags": "#Hallstatt #Austria #LakeLife #Dachstein #MindfulAdventure #TravelInspo #NatureLovers",
+    "video_idea": {
+      "mood": "Peaceful yet awe‑inspiring, with soft natural light and a meditative soundtrack of distant water lapping and mountain breezes.",
+      "shot_list": [
+        "0‑2s: Drone rise over Hallstatt, revealing the village hugging the lake.",
+        "2‑5s: Close‑up of ferry dock feet stepping onto the wooden pier.",
+        "5‑9s: Slow‑motion of feet walking along the water’s edge, reflections of mountains shimmering.",
+        "9‑12s: Pan up to the Dachstein peaks, clouds drifting lazily.",
+        "12‑15s: Hand‑held glide past pastel houses, doorways, and blooming balcony flowers.",
+        "15‑18s: Quick cut to a local café table, steaming coffee beside a view of the lake.",
+        "18‑22s: Sunset glow on the water; lens flare accentuates the golden hour.",
+        "22‑27s: Silhouette of a lone wanderer (the viewer) pausing, inhaling, eyes closed.",
+        "27‑30s: Fade to Wanderwithzen logo with overlay text: \"Find your calm in Hallstatt\"."
+      ]
+    },
+    "cta": "Tap ‘Learn More’ to discover how to plan your mindful escape to Hallstatt today!",
+    "place": "Hallstatt",
+    "image_url": "https://images.pexels.com/photos/12114211/pexels-photo-12114211.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261117234938468175",
+    "status": "published",
+    "created_at": "2026-11-17T23:49:38.468209+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-17T23:49:42.086280+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122131608207311662",
+          "post_id": "1135032983019547_122131608231311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AdDTOR_x4jq91BALQKIAqXw\"}}"
       },
       "x": {
         "status": "skipped",
