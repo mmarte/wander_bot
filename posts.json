@@ -5,54 +5,6 @@
     "hashtags": "#travel #adventure #nature #wanderlust",
     "video_idea": "Start with a fast-paced arrival shot, then show a scenic hike, local food, and a quiet sunset moment.",
     "cta": "Save this reel and follow for more adventure escapes.",
-    "id": "wander-20260904031936522432",
-    "status": "failed",
-    "created_at": "2026-09-04T03:19:36.522459+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "61589349864879",
-    "published_at": null,
-    "publish_results": {
-      "facebook": {
-        "status": "error",
-        "message": "Facebook post failed.",
-        "details": {
-          "error": {
-            "message": "Error validating access token: Session has expired on Thursday, 03-Sep-26 18:00:00 PDT. The current time is Thursday, 03-Sep-26 20:19:37 PDT.",
-            "type": "OAuthException",
-            "code": 190,
-            "error_subcode": 463,
-            "fbtrace_id": "AQuKnraJb-LOqJOFJdrOb53"
-          }
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram credentials are missing."
-      },
-      "x": {
-        "status": "error",
-        "message": "X bearer token is missing."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "error",
-        "message": "YouTube OAuth access token is missing."
-      }
-    }
-  },
-  {
-    "title": "Escape the noise, find your path",
-    "caption": "Explore travel, nature, hidden places, and mindful adventure with me — nature, hidden trails, and world-class views. #travel #adventure #wanderwithzen",
-    "hashtags": "#travel #adventure #nature #wanderlust",
-    "video_idea": "Start with a fast-paced arrival shot, then show a scenic hike, local food, and a quiet sunset moment.",
-    "cta": "Save this reel and follow for more adventure escapes.",
     "id": "wander-20260904032216614092",
     "status": "failed",
     "created_at": "2026-09-04T03:22:16.614115+00:00",
@@ -2677,6 +2629,62 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"Ancis8KbIwVRm4Wkt5Idh8_\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Hallstatt: Whispering Waters & Alpine Echoes",
+    "caption": "Stroll the shore, breathe in mountain air, and let the lake’s reflections guide your next mindful adventure. 🌊🏔️\n\n#Hallstatt #Austria #LakeLife #Dachstein #MindfulTravel #WanderWithZen #TravelInspo",
+    "hashtags": "#Hallstatt #Austria #LakeLife #Dachstein #MindfulTravel #WanderWithZen #TravelInspo",
+    "video_idea": {
+      "shot_list": [
+        "0-3s: Drone sweep over Hallstatt’s pastel rooftops hugging the lake at sunrise.",
+        "4-6s: Close‑up of ferry wheels gently rippling the water as it pulls into the pier.",
+        "7-10s: Slow‑motion footstep tracking along the shore, sand glistening with dew.",
+        "11-13s: Hand‑held pan up to the towering Dachstein peaks, clouds drifting past.",
+        "14-16s: POV of a wooden bench by the water, a journal open with a pen hovering.",
+        "17-20s: Sunset timelapse – sky shifting from gold to lavender, lights flickering in the village."
+      ],
+      "mood": "Calm yet awe‑inspiring; a meditative blend of gentle motion and grand alpine grandeur."
+    },
+    "cta": "Ready to feel the lake’s serenity? Click to explore mindful journeys to Hallstatt today!",
+    "place": "Hallstatt",
+    "image_url": "https://images.pexels.com/photos/36183115/pexels-photo-36183115.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261117031738852120",
+    "status": "published",
+    "created_at": "2026-11-17T03:17:38.852165+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-17T03:17:43.336246+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122131503345311662",
+          "post_id": "1135032983019547_122131503375311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AUDjNdRet4e9L2oKgJF7Pjq\"}}"
       },
       "x": {
         "status": "skipped",
