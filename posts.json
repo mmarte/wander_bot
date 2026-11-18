@@ -1,47 +1,5 @@
 [
   {
-    "title": "Travel Short",
-    "caption": "```json\n{\n  \"title\": \"Whispers of the Cloud Forest 🌿✨\",\n  \"caption\": \"Step off the beaten path and breathe in the misty magic of Colombia’s hidden cloud forest. Every step is a meditation, every view a reminder to wander with zen.\",\n  \"hashtags\": \"#WanderWithZen #CloudForest #MindfulTravel #HiddenGems #NatureTherapy #EcoAdventure\",\n  \"video_idea\": {\n    \"shot_list\": [\n      \"1️⃣ Drone sweep over emerald canopies at sunrise – golden light filtering through mist.\",\n      \"2️⃣ Close‑up of dew‑kissed ferns and a hummingbird hovering, slow‑motion.\",\n      \"3️⃣ POV footfall on mossy trail, soft crunch, breathing sounds.\",\n      \"4️⃣ Pan to a secluded waterfall, water cascading into a crystal pool",
-    "hashtags": "#travel #adventure #wanderwithzen",
-    "video_idea": "```json\n{\n  \"title\": \"Whispers of the Cloud Forest 🌿✨\",\n  \"caption\": \"Step off the beaten path and breathe in the misty magic of Colombia’s hidden cloud forest. Every step is a meditation, every view a reminder to wander with zen.\",\n  \"hashtags\": \"#WanderWithZen #CloudForest #MindfulTravel #HiddenGems #NatureTherapy #EcoAdventure\",\n  \"video_idea\": {\n    \"shot_list\": [\n      \"1️⃣ Drone sweep over emerald canopies at sunrise – golden light filtering through mist.\",\n      \"2️⃣ Close‑up of dew‑kissed ferns and a hummingbird hovering, slow‑motion.\",\n      \"3️⃣ POV footfall on mossy trail, soft crunch, breathing sounds.\",\n      \"4️⃣ Pan to a secluded waterfall, water cascading into a crystal pool",
-    "cta": "Follow for more travel and adventure content.",
-    "id": "wander-20261107032138007769",
-    "status": "published",
-    "created_at": "2026-11-07T03:21:38.007798+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-07T03:21:43.301325+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "1135032983019547_122130095025311662"
-        }
-      },
-      "instagram": {
-        "status": "skipped",
-        "message": "Instagram credentials are missing."
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Sunrise Serenity at Lake Atitlán 🌅",
     "caption": "Awaken your soul with a sunrise paddle on Guatemala’s hidden jewel. Feel the mist, hear the volcano whispers, and breathe in pure stillness. 🌿✨\n\n#WanderWithZen #MindfulAdventure #LakeAtitlan #HiddenGem #TravelInspiration #NatureTherapy",
     "hashtags": "#WanderWithZen #MindfulAdventure #LakeAtitlan #HiddenGem #TravelInspiration #NatureTherapy",
@@ -2720,6 +2678,62 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AvqcZADgJ9zg3og5pEIki5x\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Cliffside Calm: Faroe Islands Journey",
+    "caption": "From mist‑kissed sea cliffs to emerald‑topped villages, glide through tunnels and fjords while the North Atlantic whispers mindfulness. 🌊🏞️\n\n#WanderWithZen #FaroeIslands #SeaCliffs #GrassRoof #MindfulTravel #AtlanticAdventure #Denmark",
+    "hashtags": "#WanderWithZen #FaroeIslands #SeaCliffs #GrassRoof #MindfulTravel #AtlanticAdventure #Denmark",
+    "video_idea": {
+      "mood": "Serene yet adventurous – soft ambient music with natural ocean sounds, warm golden‑hour lighting.",
+      "shot_list": [
+        "1️⃣ Drone sweep over towering sea cliffs at sunrise, clouds rolling below.",
+        "2️⃣ Close‑up of a grass‑roofed cottage with a gentle breeze moving the grass.",
+        "3️⃣ POV drive through a narrow tunnel, lights flickering, emerging into a dramatic fjord.",
+        "4️⃣ Slow‑motion of waves crashing against basalt rocks, seagulls soaring.",
+        "5️⃣ Time‑lapse of sunset over the fjord, colors shifting from gold to deep violet.",
+        "6️⃣ Final frame: a traveler (silhouette) meditating on a cliff edge, breath syncing with the sea."
+      ]
+    },
+    "cta": "Tap to watch the full journey and start planning your own mindful adventure to the Faroe Islands today!",
+    "place": "Faroe Islands",
+    "image_url": "https://images.pexels.com/photos/38771664/pexels-photo-38771664.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261118082401268159",
+    "status": "published",
+    "created_at": "2026-11-18T08:24:01.268198+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-18T08:24:05.535917+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122131656063311662",
+          "post_id": "1135032983019547_122131656087311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"ArAXjRWTI201F3h7HhzO7Ea\"}}"
       },
       "x": {
         "status": "skipped",
