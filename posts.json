@@ -1,59 +1,5 @@
 [
   {
-    "title": "Sunrise Serenity at Lake Atitlán 🌅",
-    "caption": "Awaken your soul with a sunrise paddle on Guatemala’s hidden jewel. Feel the mist, hear the volcano whispers, and breathe in pure stillness. 🌿✨\n\n#WanderWithZen #MindfulAdventure #LakeAtitlan #HiddenGem #TravelInspiration #NatureTherapy",
-    "hashtags": "#WanderWithZen #MindfulAdventure #LakeAtitlan #HiddenGem #TravelInspiration #NatureTherapy",
-    "video_idea": {
-      "mood": "Calm, awe‑inspiring, meditative",
-      "shot_list": [
-        "1️⃣ Drone sweep over the mist‑cloaked lake at dawn",
-        "2️⃣ Close‑up of a paddle cutting gentle ripples",
-        "3️⃣ Slow‑motion of sunrise colors reflecting on water",
-        "4️⃣ Traveler seated on a wooden dock, eyes closed, inhaling",
-        "5️⃣ Pan to volcanic peaks framing the horizon",
-        "6️⃣ Quick cut of local market colors for cultural contrast",
-        "7️⃣ End card: “Find your stillness” with Wanderwithzen logo"
-      ],
-      "description": "A 30‑second short‑form video that blends breathtaking landscape with mindful moments, guiding viewers to imagine themselves in the scene and feel the invitation to pause."
-    },
-    "cta": "Tap ‘Learn More’ to discover a guided sunrise kayak retreat at Lake Atitlán and start your mindful journey today!",
-    "id": "wander-20261107033208405166",
-    "status": "published",
-    "created_at": "2026-11-07T03:32:08.405200+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-07T03:32:11.563888+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "1135032983019547_122130096213311662"
-        }
-      },
-      "instagram": {
-        "status": "skipped",
-        "message": "Instagram credentials are missing."
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Sunrise Over the Lost City: Machu Picchu Awakens",
     "caption": "Feel the ancient pulse of the Andes as the first light kisses the Inca citadel. 🌄✨ #MindfulTravel\n\n['#MachuPicchu', '#AndesAdventure', '#TravelMindfully', '#WanderWithZen', '#IncaMagic', '#SunriseViews']",
     "hashtags": "['#MachuPicchu', '#AndesAdventure', '#TravelMindfully', '#WanderWithZen', '#IncaMagic', '#SunriseViews']",
@@ -2734,6 +2680,52 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"ArAXjRWTI201F3h7HhzO7Ea\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Cliffs & Calm: Faroe Islands in 45 Seconds",
+    "caption": "From soaring sea cliffs to snug grass‑roofed villages, feel the pulse of the North Atlantic and breathe in pure adventure. 🌊🏔️✨ #FaroeIslands #Denmark",
+    "hashtags": "#travel #adventure #FaroeIslands #Denmark",
+    "video_idea": "{\n  \"title\": \"Cliffs & Calm: Faroe Islands in 45 Seconds\",\n  \"caption\": \"From soaring sea cliffs to snug grass‑roofed villages, feel the pulse of the North Atlantic and breathe in pure adventure. 🌊🏔️✨\",\n  \"hashtags\": [\n    \"#WanderwithZen\",\n    \"#FaroeIslands\",\n    \"#SeaCliffs\",\n    \"#GrassRoof\",\n    \"#NorthAtlantic\",\n    \"#MindfulTravel\"\n  ],\n  \"video_idea\": {\n    \"concept\": \"A 45‑second cinematic ride through the Faroe Islands, capturing raw nature and quiet moments that invite mindful wonder.\",\n    \"shot_list\": [\n      \"Opening drone sweep over towering sea cliffs at sunrise.\",\n      \"Close‑up of wind‑swept grass‑roofed houses in Gásadalur.\",\n      \"Inside the tunnel – light flickers as the car bursts into a fjord.\",\n      \"Time‑lapse of waves crashing against basalt rock.\",\n      \"Hand‑held steadycam of a traveler stepping onto a cliff trail, inhaling deeply.\",\n      \"",
+    "cta": "Follow for more travel stories.",
+    "place": "Faroe Islands",
+    "image_url": "https://images.pexels.com/photos/5132694/pexels-photo-5132694.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261118210936314463",
+    "status": "published",
+    "created_at": "2026-11-18T21:09:36.314503+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-18T21:09:39.890771+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122131768521311662",
+          "post_id": "1135032983019547_122131768545311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"A5gBAPk7l6xKwbyhzD1YopY\"}}"
       },
       "x": {
         "status": "skipped",
