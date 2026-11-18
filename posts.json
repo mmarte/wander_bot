@@ -1,47 +1,5 @@
 [
   {
-    "title": "Escape the noise, find your path",
-    "caption": "Explore travel, nature, hidden places, and mindful adventure with me — nature, hidden trails, and world-class views. #travel #adventure #wanderwithzen",
-    "hashtags": "#travel #adventure #nature #wanderlust",
-    "video_idea": "Start with a fast-paced arrival shot, then show a scenic hike, local food, and a quiet sunset moment.",
-    "cta": "Save this reel and follow for more adventure escapes.",
-    "id": "wander-20260904040206319866",
-    "status": "published",
-    "created_at": "2026-09-04T04:02:06.319897+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "61589349864879",
-    "published_at": "2026-09-04T04:02:10.283409+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "1135032983019547_122120298111311662"
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram credentials are missing."
-      },
-      "x": {
-        "status": "error",
-        "message": "X bearer token is missing."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "error",
-        "message": "YouTube OAuth access token is missing."
-      }
-    }
-  },
-  {
     "title": "Travel Short",
     "caption": "```json\n{\n  \"title\": \"Whispers of the Cloud Forest 🌿✨\",\n  \"caption\": \"Step off the beaten path and breathe in the misty magic of Colombia’s hidden cloud forest. Every step is a meditation, every view a reminder to wander with zen.\",\n  \"hashtags\": \"#WanderWithZen #CloudForest #MindfulTravel #HiddenGems #NatureTherapy #EcoAdventure\",\n  \"video_idea\": {\n    \"shot_list\": [\n      \"1️⃣ Drone sweep over emerald canopies at sunrise – golden light filtering through mist.\",\n      \"2️⃣ Close‑up of dew‑kissed ferns and a hummingbird hovering, slow‑motion.\",\n      \"3️⃣ POV footfall on mossy trail, soft crunch, breathing sounds.\",\n      \"4️⃣ Pan to a secluded waterfall, water cascading into a crystal pool",
     "hashtags": "#travel #adventure #wanderwithzen",
@@ -2706,6 +2664,62 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AdDTOR_x4jq91BALQKIAqXw\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Fjord & Fjord: Faroe Islands in 60 Seconds",
+    "caption": "From wind‑kissed cliffs to cozy grass‑roofed hamlets, discover why the Faroe Islands feel like a hidden breath of the North Atlantic. 🌊🏞️\n\n['#FaroeIslands', '#TravelMindfully', '#SeaCliffs', '#GrassRoofs', '#AdventureAwaits', '#WanderWithZen'] #Denmark",
+    "hashtags": "['#FaroeIslands', '#TravelMindfully', '#SeaCliffs', '#GrassRoofs', '#AdventureAwaits', '#WanderWithZen'] #Denmark",
+    "video_idea": {
+      "shot_list": [
+        "Drone sweep over dramatic sea cliffs at sunrise, mist hovering over the water.",
+        "Close‑up of waves pounding the rock face, slow‑motion splash.",
+        "Interior car shot driving through a dark tunnel, lights flickering, then emerging into a bright fjord.",
+        "Pan across a tiny village with iconic grass‑roofed houses, locals greeting the camera.",
+        "Hiker standing on a cliff edge, inhaling deeply, camera pulls back to reveal the endless ocean.",
+        "Golden‑hour sunset over the fjord, silhouette of a traditional boat gliding by."
+      ],
+      "mood": "Calm awe meets a subtle pulse of adventure—soft ambient tones with a gentle heartbeat rhythm."
+    },
+    "cta": "Tap ‘Learn More’ to download our free mindful travel guide to the Faroe Islands and start planning your next soulful escape!",
+    "place": "Faroe Islands",
+    "image_url": "https://images.pexels.com/photos/38771664/pexels-photo-38771664.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261118024051337313",
+    "status": "published",
+    "created_at": "2026-11-18T02:40:51.337347+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-18T02:40:58.262281+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122131619823311662",
+          "post_id": "1135032983019547_122131619847311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AvqcZADgJ9zg3og5pEIki5x\"}}"
       },
       "x": {
         "status": "skipped",
