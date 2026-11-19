@@ -1,61 +1,5 @@
 [
   {
-    "title": "Machu Picchu Sunrise: Inca Magic Unveiled",
-    "caption": "From the misty rail line to the clouds‑kissed citadel—watch a mindful adventure unfold in just 25 seconds. 🌄✨ #TravelWithPurpose\n\n#MachuPicchu #IncaTrail #MindfulTravel #WanderWithZen #AndesAdventure #Peru",
-    "hashtags": "#MachuPicchu #IncaTrail #MindfulTravel #WanderWithZen #AndesAdventure #Peru",
-    "video_idea": {
-      "shot_list": [
-        "0‑2 s: Train slicing through emerald Andean clouds",
-        "2‑5 s: Arrival in Aguas Cálientes, steam rising from the river",
-        "5‑8 s: Bus climbing the winding mountain road",
-        "8‑12 s: First reveal of Machu Picchu peeking through mist",
-        "12‑16 s: Sunlight sweeping over stone terraces and the Intihuatana",
-        "16‑20 s: Hand‑close on a carved stone, breathing in history",
-        "20‑25 s: Silhouette of a traveler meditating at the Sun Gate"
-      ],
-      "mood": "Serene awe, grounded wonder, gentle adventure"
-    },
-    "cta": "Tap ‘Learn More’ to join our mindful trek to Machu Picchu and claim a 10% early‑bird discount today!",
-    "place": "Machu Picchu",
-    "image_url": "https://images.pexels.com/photos/37885473/pexels-photo-37885473.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    "id": "wander-20261107204723944773",
-    "status": "published",
-    "created_at": "2026-11-07T20:47:23.944813+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-07T20:47:30.004422+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "122130230973311662",
-          "post_id": "1135032983019547_122130230997311662"
-        }
-      },
-      "instagram": {
-        "status": "skipped",
-        "message": "Instagram credentials are missing."
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Patagonia's Whisper: The W Trek",
     "caption": "From soaring granite sentinels to crystal‑blue lakes, every step at Torres del Paine feels like meditation in motion. 🌄✨ #WanderWithZen\n\n#TorresDelPaine #Patagonia #WTrek #MindfulTravel #NatureLovers #AdventureAwaits #Chile",
     "hashtags": "#TorresDelPaine #Patagonia #WTrek #MindfulTravel #NatureLovers #AdventureAwaits #Chile",
@@ -2728,6 +2672,71 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AgYaJzDeqESp2N7HfaHw-yn\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Fjord Awakening: Milford Sound Journey",
+    "caption": "From the hush of Homer Tunnel to the roar of waterfalls—let Milford Sound stir your spirit and invite mindful wonder. 🌊✨\n\n#MilfordSound #FjordLife #MindfulTravel #WanderwithZen #NZAdventure #NatureTherapy #NewZealand",
+    "hashtags": "#MilfordSound #FjordLife #MindfulTravel #WanderwithZen #NZAdventure #NatureTherapy #NewZealand",
+    "video_idea": {
+      "mood": "Awe‑inspiring, serene, and meditative",
+      "shot_list": [
+        "1️⃣ Drone fly‑over of Homer Tunnel entrance at sunrise",
+        "2️⃣ POV car window as you glide through the tunnel (soft ambient music builds)",
+        "3️⃣ Emerging into Milford Sound – wide‑angle reveal of cliffs and mist",
+        "4️⃣ Close‑up of cascading waterfalls with slow‑motion spray",
+        "5️⃣ Kayak paddle cutting through glass‑like water (first‑person view)",
+        "6️⃣ Gentle pan up the sheer cliffs, clouds drifting",
+        "7️⃣ Sunlight breaking through the mist – golden hour glow",
+        "8️⃣ Quick cut to a mindful breath‑in/out overlay text: “Breathe in the fjord”"
+      ],
+      "duration": "45‑seconds (ideal for Facebook Reels)",
+      "audio": "Ambient piano + subtle wind sounds, crescendo at waterfall reveal",
+      "text_overlay": [
+        "Slide 1: \"Enter the tunnel…\"",
+        "Slide 4: \"Feel the mist\"",
+        "Slide 7: \"Awaken your senses\""
+      ]
+    },
+    "cta": "Tap ‘Share’ if this fjord calls you, and comment your next mindful adventure destination! 🌍",
+    "place": "Milford Sound",
+    "image_url": "https://images.pexels.com/photos/237260/pexels-photo-237260.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261119211354247447",
+    "status": "published",
+    "created_at": "2026-11-19T21:13:54.247483+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-19T21:14:00.964354+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122131942473311662",
+          "post_id": "1135032983019547_122131942497311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AIdZopN-qUeBJrMBK4AiD8u\"}}"
       },
       "x": {
         "status": "skipped",
