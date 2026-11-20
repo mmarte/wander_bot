@@ -1,60 +1,5 @@
 [
   {
-    "title": "Patagonia Peaks & Pristine Waters 🌄",
-    "caption": "From the towering granite sentinels of Torres del Paine to the mirror‑like turquoise lagoons, the W Trek rewrites the meaning of awe. ✨🌿 #WanderWithZen\n\n#TorresDelPaine #Patagonia #WTrek #NatureLovers #MindfulAdventure #TravelInspo #Chile",
-    "hashtags": "#TorresDelPaine #Patagonia #WTrek #NatureLovers #MindfulAdventure #TravelInspo #Chile",
-    "video_idea": {
-      "shot_list": [
-        "0-3s: Drone rise over the three granite towers at sunrise, mist swirling.",
-        "4-7s: Close‑up of turquoise water lapping the shore of Lago Nordenskjöld.",
-        "8-12s: POV step‑by‑step on the trail, boots crunching snow‑dusted ground.",
-        "13-16s: Slow‑motion of a lone condor soaring above the peaks.",
-        "17-20s: Sunset time‑lapse over the towers, colors shifting from gold to deep violet."
-      ],
-      "mood": "Epic, tranquil, and meditative – a blend of awe‑inspiring grandeur and quiet reflection."
-    },
-    "cta": "Ready to feel the wind at the summit? Pack your boots, tag a fellow wanderer, and share your own Patagonia moment with #WanderWithZen!",
-    "place": "Torres del Paine",
-    "image_url": "https://images.pexels.com/photos/28551773/pexels-photo-28551773.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    "id": "wander-20261108051216020598",
-    "status": "published",
-    "created_at": "2026-11-08T05:12:16.020631+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-08T05:12:19.696639+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "122130273015311662",
-          "post_id": "1135032983019547_122130273039311662"
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram API request failed.",
-        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"type\":\"OAuthException\",\"code\":10,\"fbtrace_id\":\"A0I7vJKmVeugo4g0TTxwF9R\"}}"
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Torres del Paine: Whispering Peaks & Turquoise Dreams 🌄",
     "caption": "From the roar of the wind at the base of the granite towers to the mirror‑still turquoise lakes below—join our 7‑minute W‑Trekkers glimpse of Patagonia’s soul. 🌿✨ #MindfulAdventure\n\n#TorresDelPaine #Patagonia #WTrek #TravelMindfully #NatureLovers #ExploreChile #WanderWithZen #Chile",
     "hashtags": "#TorresDelPaine #Patagonia #WTrek #TravelMindfully #NatureLovers #ExploreChile #WanderWithZen #Chile",
@@ -2750,6 +2695,63 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"Ae1LS_qyVOG_U4kkQkBhCUA\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Jeju’s Hidden Heart: From Lava Tubes to Hallasan Peaks",
+    "caption": "Feel the pulse of volcanic wonder as we wander Jeju’s secret pathways—glowing lava caves, misty waterfalls, and the sunrise summit of Hallasan. 🌋✨ #MindfulTravel\n\n#JejuIsland #VolcanicVoyage #Hallasan #LavaTubes #WaterfallWonders #CoastalRoadTrip #TravelMindfully #WanderWithZen #SouthKorea",
+    "hashtags": "#JejuIsland #VolcanicVoyage #Hallasan #LavaTubes #WaterfallWonders #CoastalRoadTrip #TravelMindfully #WanderWithZen #SouthKorea",
+    "video_idea": {
+      "shot_list": [
+        "1. Drone sweep over Jeju’s jagged coastline at sunrise (5 sec)",
+        "2. Close‑up of glowing lava tube interior, lantern light tracing the walls (4 sec)",
+        "3. Slow‑motion of water cascading down Jeongbang Waterfall (3 sec)",
+        "4. Time‑lapse of the winding coastal road hugging cliffs, car windows framing the sea (5 sec)",
+        "5. POV hike up Hallasan trail, mist lifting as we ascend (4 sec)",
+        "6. Panoramic sunrise from Hallasan’s summit, breath‑taking 360° view (6 sec)",
+        "7. Closing shot of a meditative pause—hands placed on a stone, eyes closed, ocean breeze (3 sec)"
+      ],
+      "mood": "Serene yet adventurous—soft ambient tones with a subtle heartbeat rhythm, inviting viewers to breathe with the landscape."
+    },
+    "cta": "Ready to feel the earth’s pulse? 🌍 Tap ‘Learn More’ to download our free Jeju mindful‑adventure guide and start planning your volcanic escape today!",
+    "place": "Jeju Island",
+    "image_url": "https://images.pexels.com/photos/34350149/pexels-photo-34350149.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261120205803418569",
+    "status": "published",
+    "created_at": "2026-11-20T20:58:03.418602+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-20T20:58:10.103222+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122132196051311662",
+          "post_id": "1135032983019547_122132196075311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AFj9c1mq9gm8bMOb1sCJvTH\"}}"
       },
       "x": {
         "status": "skipped",
