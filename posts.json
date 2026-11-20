@@ -1,62 +1,5 @@
 [
   {
-    "title": "Granite Guardians of Patagonia",
-    "caption": "Sunrise paints the towering peaks, turquoise lakes reflect the sky, and every step on the W‑Trek whispers calm. 🌄✨ Feel the pulse of Patagonia in 60 seconds.\n\n#TorresDelPaine #Patagonia #WTrek #MindfulAdventure #NatureLovers #TravelWithZen #Chile",
-    "hashtags": "#TorresDelPaine #Patagonia #WTrek #MindfulAdventure #NatureLovers #TravelWithZen #Chile",
-    "video_idea": {
-      "shot_list": [
-        "0‑5s: Drone sweep over the three granite towers at sunrise.",
-        "5‑12s: Close‑up of mist hovering over turquoise Lake Pehoé.",
-        "12‑20s: Hiker’s boots crunching on the trail, breath visible in cold air.",
-        "20‑30s: Time‑lapse of clouds racing over the Valle del Francés.",
-        "30‑45s: Slow‑motion of a hand touching a wildflower, eyes closed, breathing deeply.",
-        "45‑55s: Pan from the summit view back down to the trail, showing the winding path.",
-        "55‑60s: Fade to Wanderwithzen logo with a gentle chime."
-      ],
-      "mood": "Epic yet meditative – a blend of awe‑inspiring grandeur and mindful serenity."
-    },
-    "cta": "Tap ‘Learn More’ to dive into the full W‑Trek guide, download our mindfulness checklist, and start planning your Patagonia pilgrimage today!",
-    "place": "Torres del Paine",
-    "image_url": "https://images.pexels.com/photos/29176039/pexels-photo-29176039.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    "id": "wander-20261108050110152143",
-    "status": "published",
-    "created_at": "2026-11-08T05:01:10.152171+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-08T05:01:15.648235+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "122130271851311662",
-          "post_id": "1135032983019547_122130271875311662"
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram API request failed.",
-        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media"
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Patagonia Peaks & Pristine Waters 🌄",
     "caption": "From the towering granite sentinels of Torres del Paine to the mirror‑like turquoise lagoons, the W Trek rewrites the meaning of awe. ✨🌿 #WanderWithZen\n\n#TorresDelPaine #Patagonia #WTrek #NatureLovers #MindfulAdventure #TravelInspo #Chile",
     "hashtags": "#TorresDelPaine #Patagonia #WTrek #NatureLovers #MindfulAdventure #TravelInspo #Chile",
@@ -2750,6 +2693,63 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"A57nX2ezmFvzAhr6cbuxUAL\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Jeju’s Volcanic Heartbeat",
+    "caption": "From the misty waterfalls of Cheonjiyeon to the sunrise atop Hallasan, discover Jeju’s raw beauty—where lava tubes whisper ancient stories and the coastal road sings with the sea breeze. 🌊🌋✨\n\n#JejuIsland #Hallasan #LavaTubes #Waterfalls #MindfulAdventure #WanderWithZen #SouthKorea",
+    "hashtags": "#JejuIsland #Hallasan #LavaTubes #Waterfalls #MindfulAdventure #WanderWithZen #SouthKorea",
+    "video_idea": {
+      "shot_list": [
+        "Opening aerial sweep over Hallasan at sunrise (5‑7 s)",
+        "Close‑up of steam rising from Manjanggul Lava Tube entrance (3‑4 s)",
+        "Slow‑motion drip of water at Cheonjiyeon Falls (4‑5 s)",
+        "Time‑lapse of driving the coastal road, waves crashing beside the car (6‑8 s)",
+        "Hiker’s footstep crunch on volcanic ash trail, camera low to ground (2‑3 s)",
+        "Panoramic 360° view from Hallasan summit, clouds drifting (5‑6 s)",
+        "Closing shot: meditative pause on a cliff edge, breathing in the sea air (3‑4 s)"
+      ],
+      "mood": "Calm yet exhilarating – a blend of awe‑inspiring vistas and mindful stillness."
+    },
+    "cta": "Ready to feel the island’s pulse? Pack your boots, hit the road, and tag your Jeju journey with #WanderWithZen!",
+    "place": "Jeju Island",
+    "image_url": "https://images.pexels.com/photos/39467702/pexels-photo-39467702.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261120081745269186",
+    "status": "published",
+    "created_at": "2026-11-20T08:17:45.269225+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-20T08:17:49.464986+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122132063241311662",
+          "post_id": "1135032983019547_122132063265311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"Ae1LS_qyVOG_U4kkQkBhCUA\"}}"
       },
       "x": {
         "status": "skipped",
