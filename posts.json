@@ -1,61 +1,5 @@
 [
   {
-    "title": "Guardians of Patagonia: The W Trek",
-    "caption": "From sunrise on the iconic granite towers to the mirror‑still turquoise waters of Pehoé, every step in Torres del Paine rewrites your story. 🌄✨\n\n#TorresDelPaine #Patagonia #WTrek #MindfulTravel #NatureLovers #AdventureAwaits #Chile",
-    "hashtags": "#TorresDelPaine #Patagonia #WTrek #MindfulTravel #NatureLovers #AdventureAwaits #Chile",
-    "video_idea": {
-      "shot_list": [
-        "Drone sweep over the three granite towers at golden hour",
-        "Close‑up of boots hitting the trail, mist rising",
-        "Time‑lapse of clouds swirling over Grey Glacier",
-        "Slow‑motion splash as a hiker dips feet in Lake Pehoé",
-        "Pan over sunrise reflecting on turquoise lake",
-        "Final wide shot of campfire under a star‑filled sky"
-      ],
-      "mood": "Epic yet meditative – a blend of awe‑inspiring grandeur and quiet reflection."
-    },
-    "cta": "Tap ‘Learn More’ to download our free 7‑day mindful trekking guide and start planning your Patagonia escape!",
-    "place": "Torres del Paine",
-    "image_url": "https://images.pexels.com/photos/7499997/pexels-photo-7499997.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    "id": "wander-20261108181518510787",
-    "status": "published",
-    "created_at": "2026-11-08T18:15:18.510824+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-08T18:15:25.085288+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "122130354171311662",
-          "post_id": "1135032983019547_122130354195311662"
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram API request failed.",
-        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"type\":\"OAuthException\",\"code\":10,\"fbtrace_id\":\"Ad-7855vab2CTt4_vzWIRGn\"}}"
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Discover Torres del Paine",
     "caption": "Discover Torres del Paine, Chile. Granite towers over turquoise lakes in Patagonia, hiked on the W trek. Slow down, look around, and let the place do the talking. #TorresDelPaine #Chile",
     "hashtags": "#travel #adventure #TorresDelPaine #Chile",
@@ -2750,6 +2694,63 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"ALW46fzaPca_3vDNZtT2QLv\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Turquoise Dreams: Bora Bora from Vaitape",
+    "caption": "Sail from Vaitape into the crystal‑blue embrace of Bora Bora’s lagoon, where Mount Otemanu watches over every mindful moment. 🌊✨\n\n#BoraBora #TurquoiseLagoon #MountOtemanu #MindfulTravel #WanderWithZen #IslandEscape #FrenchPolynesia",
+    "hashtags": "#BoraBora #TurquoiseLagoon #MountOtemanu #MindfulTravel #WanderWithZen #IslandEscape #FrenchPolynesia",
+    "video_idea": {
+      "shot_list": [
+        "0‑2s: Drone pull‑away from Vaitape harbor, sunrise glint on water",
+        "2‑5s: Close‑up of wooden boat cutting through turquoise waves",
+        "5‑8s: POV of paddles, gentle splash sounds, caption “Step aboard”",
+        "8‑12s: Aerial sweep revealing the full lagoon encircling Mount Otemanu",
+        "12‑15s: Slow‑motion of sun rays dancing on the water’s surface",
+        "15‑18s: Traveler meditating on deck, breathing in the sea breeze",
+        "18‑20s: Fade to sunset silhouette of Otemanu, text overlay “Find your calm”"
+      ],
+      "mood": "Calm, awe‑inspiring, sun‑kissed serenity with a gentle, meditative soundtrack"
+    },
+    "cta": "Tap to book your mindful escape to Bora Bora today!",
+    "place": "Bora Bora",
+    "image_url": "https://images.pexels.com/photos/13828643/pexels-photo-13828643.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261121015250337578",
+    "status": "published",
+    "created_at": "2026-11-21T01:52:50.337610+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-21T01:52:56.077744+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122132245137311662",
+          "post_id": "1135032983019547_122132245161311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AAhCqvCJWJ6kzEiVu1O3dva\"}}"
       },
       "x": {
         "status": "skipped",
