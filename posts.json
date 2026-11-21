@@ -1,51 +1,5 @@
 [
   {
-    "title": "Discover Torres del Paine",
-    "caption": "Discover Torres del Paine, Chile. Granite towers over turquoise lakes in Patagonia, hiked on the W trek. Slow down, look around, and let the place do the talking. #TorresDelPaine #Chile",
-    "hashtags": "#travel #adventure #TorresDelPaine #Chile",
-    "video_idea": "{\n  \"title\": \"Granite Giants & Turquoise Dreams\",\n  \"caption\": \"From sunrise at the base of the Torres to the mirror‑still lakes of the W Trek—feel Patagonia’s pulse in every step. 🌄🗻\",\n  \"hashtags\": [\n    \"#TorresDelPaine\",\n    \"#Patagonia\",\n    \"#WTrek\",\n    \"#MindfulTravel\",\n    \"#NatureLovers\",\n    \"#WanderWithZen\"\n  ],\n  \"video_idea\": \"Shot List:\\n1️⃣ Drone sweep over the three granite towers at golden hour, slow reveal.\\n2️⃣ Close‑up of turquoise glacial lake reflecting the peaks.\\n3️⃣ POV footstep on the trail with gentle breathing sound, caption: \\\"Breathe in the wild.\\\"\\n4️⃣ Sunset silhouette of the towers from the Mirador, time‑lapse clouds.\\n5️⃣ Campfire night‑sky timelapse, stars swirling over the mountains.\\nMood: awe‑inspiring, serene, meditative – a mindful adventure that invites viewers to pause and imagine.\\nLength: 30‑45 seconds, upbeat ambient music with natural sounds.\",\n  \"cta\": \"Tap “Learn More” to download our",
-    "cta": "Follow for more travel stories.",
-    "place": "Torres del Paine",
-    "image_url": "https://images.pexels.com/photos/29176039/pexels-photo-29176039.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    "id": "wander-20261108210329428654",
-    "status": "published",
-    "created_at": "2026-11-08T21:03:29.428692+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-08T21:03:34.936742+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "122130371319311662",
-          "post_id": "1135032983019547_122130371343311662"
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram API request failed.",
-        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"type\":\"OAuthException\",\"code\":10,\"fbtrace_id\":\"AU6JtYuhdZ2BQsFj2xVIxCH\"}}"
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Idea #1 – Chasing Turquoise on the Icefields Parkway",
     "caption": "From emerald‑blue lakes to sky‑piercing peaks, experience Banff’s magic in a 60‑second mindful adventure. 🌲✨\n\n#Banff #IcefieldsParkway #TurquoiseLakes #CanadianRockies #MindfulTravel #WanderWithZen #BanffNationalPark #Canada",
     "hashtags": "#Banff #IcefieldsParkway #TurquoiseLakes #CanadianRockies #MindfulTravel #WanderWithZen #BanffNationalPark #Canada",
@@ -2751,6 +2705,63 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AAhCqvCJWJ6kzEiVu1O3dva\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Bora Bora Bliss: The Turquoise Trail to Mount Otemanu",
+    "caption": "Glide through crystal‑clear waters, feel the island breeze, and let Mount Otemanu’s silhouette guide your soul. 🌊✨ #MindfulTravel\n\n#BoraBora #TurquoiseLagoon #MountOtemanu #WanderWithZen #TravelMindfully #IslandEscape #FrenchPolynesia",
+    "hashtags": "#BoraBora #TurquoiseLagoon #MountOtemanu #WanderWithZen #TravelMindfully #IslandEscape #FrenchPolynesia",
+    "video_idea": {
+      "shot_list": [
+        "0‑2s: Drone rise over Vaitape harbor, sun glint on the water.",
+        "2‑5s: Close‑up of wooden boat cutting through turquoise waves.",
+        "5‑8s: POV from bow – hand gently touching the water, sun‑dappled ripples.",
+        "8‑12s: Slow‑motion reveal of Mount Otemanu emerging from mist.",
+        "12‑15s: Over‑the‑shoulder of a traveler meditating on the boat deck.",
+        "15‑18s: Wide shot of the lagoon’s vibrant blues framing the mountain.",
+        "18‑20s: Sunset glow reflected on the water, ending with a soft fade‑out."
+      ],
+      "mood": "Calm, awe‑inspiring, and gently adventurous – a visual meditation that invites viewers to breathe with the waves."
+    },
+    "cta": "Ready to set sail? 🌺 Click ‘Learn More’ and start planning your mindful escape to Bora Bora today!",
+    "place": "Bora Bora",
+    "image_url": "https://images.pexels.com/photos/13828643/pexels-photo-13828643.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261121080954255192",
+    "status": "published",
+    "created_at": "2026-11-21T08:09:54.255222+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-21T08:10:01.752877+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122132291865311662",
+          "post_id": "1135032983019547_122132291889311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AVUYeSI7SY6q0Nqta2_W2i-\"}}"
       },
       "x": {
         "status": "skipped",
