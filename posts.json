@@ -1,60 +1,5 @@
 [
   {
-    "title": "Idea #1 – Chasing Turquoise on the Icefields Parkway",
-    "caption": "From emerald‑blue lakes to sky‑piercing peaks, experience Banff’s magic in a 60‑second mindful adventure. 🌲✨\n\n#Banff #IcefieldsParkway #TurquoiseLakes #CanadianRockies #MindfulTravel #WanderWithZen #BanffNationalPark #Canada",
-    "hashtags": "#Banff #IcefieldsParkway #TurquoiseLakes #CanadianRockies #MindfulTravel #WanderWithZen #BanffNationalPark #Canada",
-    "video_idea": {
-      "shot_list": [
-        "Drone sweep over Lake Louise at sunrise, turquoise water reflecting the surrounding peaks.",
-        "POV car window view cruising the Icefields Parkway, mountains rushing by in smooth motion.",
-        "Slow‑motion close‑up of glacial meltwater spilling into Moraine Lake, ripples catching the light.",
-        "Time‑lapse of clouds rolling over Mount Bowlen, revealing shifting shadows.",
-        "Traveler seated on a ridge, eyes closed, meditating with Peyto Lake’s turquoise expanse behind."
-      ],
-      "mood": "Serene yet exhilarating – a blend of calm mindfulness and awe‑inspiring adventure."
-    },
-    "cta": "Tap ‘Learn More’ to download our free 3‑day Banff itinerary and start your mindful escape today!",
-    "place": "Banff National Park",
-    "image_url": "https://images.pexels.com/photos/28366333/pexels-photo-28366333.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    "id": "wander-20261109001430499831",
-    "status": "published",
-    "created_at": "2026-11-09T00:14:30.499871+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-09T00:14:35.275907+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "122130384951311662",
-          "post_id": "1135032983019547_122130384975311662"
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram API request failed.",
-        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"type\":\"OAuthException\",\"code\":10,\"fbtrace_id\":\"AAVBDkVlSUn_6PJoqnE3IJG\"}}"
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Ride the Blue: Icefields Parkway Adventure",
     "caption": "From emerald waters to sky‑piercing peaks, let Banff’s turquoise gems calm your mind and spark your wanderlust. 🌲💙\n\n#Banff #IcefieldsParkway #TurquoiseLakes #MindfulTravel #NatureTherapy #WanderWithZen #BanffNationalPark #Canada",
     "hashtags": "#Banff #IcefieldsParkway #TurquoiseLakes #MindfulTravel #NatureTherapy #WanderWithZen #BanffNationalPark #Canada",
@@ -2762,6 +2707,52 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AVUYeSI7SY6q0Nqta2_W2i-\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Turquoise Dreams: Bora Bora",
+    "caption": "Glide across crystal‑blue waters, feel the pulse of the lagoon, and let Mount Otemanu’s silhouette guide your mindful adventure. 🌊✨\n\n#BoraBora #TurquoiseLagoon #MindfulTravel #WanderWithZen #IslandEscape #NatureLovers #FrenchPolynesia",
+    "hashtags": "#BoraBora #TurquoiseLagoon #MindfulTravel #WanderWithZen #IslandEscape #NatureLovers #FrenchPolynesia",
+    "video_idea": "Mood: Serene, awe‑inspiring.\\nShot List:\\n1. Drone rise over Vaitape harbor at sunrise, revealing the turquoise lagoon.\\n2. Close‑up of a wooden boat cutting through glass‑like water, gentle wake rippling.\\n3. POV from the bow: Mount Otemanu emerging, mist dancing around its peak.\\n4. Slow‑motion splash of a hand dipping into the lagoon, sunlight scattering.\\n5. Over‑the‑shoulder of a traveler meditating on the boat deck, eyes closed.\\n6. Sunset timelapse over the lagoon, colors shifting from teal to gold.\\n7. Final frame: the boat docking back at Vaitape, with the caption overlay: \"Find your calm where land meets water.\"",
+    "cta": "Tap ‘Learn More’ to discover mindful itineraries and book your serene escape to Bora Bora today!",
+    "place": "Bora Bora",
+    "image_url": "https://images.pexels.com/photos/1536428/pexels-photo-1536428.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261121195916187362",
+    "status": "published",
+    "created_at": "2026-11-21T19:59:16.187397+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-21T19:59:20.807103+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122132369745311662",
+          "post_id": "1135032983019547_122132369769311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"A8KwSOtyyGz86Jmw-hVT24l\"}}"
       },
       "x": {
         "status": "skipped",
