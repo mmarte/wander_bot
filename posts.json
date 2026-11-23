@@ -1,51 +1,5 @@
 [
   {
-    "title": "Serenity in Turquoise: Plitvice Lakes Journey",
-    "caption": "Walk the whispering boardwalks, feel mist kiss your skin, and let cascading turquoise waters guide your breath. 🌊✨ #MindfulTravel\n\n#PlitviceLakes #Croatia #NatureTherapy #WanderwithZen #MindfulAdventure",
-    "hashtags": "#PlitviceLakes #Croatia #NatureTherapy #WanderwithZen #MindfulAdventure",
-    "video_idea": "Mood: Calm, ethereal, meditative.\\nShot List:\\n1. Opening aerial sweep over the terraced lakes at sunrise, turquoise hues glimmering.\\n2. Close‑up of water droplets on a leaf, slow‑motion as they fall.\\n3. POV step‑by‑step on wooden boardwalks, gentle footfalls syncing with soft ambient music.\\n4. Slow pan up a waterfall, mist swirling, with a subtle breathing guide overlay.\\n5. Wide shot of the lake’s mirror‑like surface reflecting surrounding forest, inviting a moment of stillness.\\n6. Closing frame: a traveler sitting on a rock, eyes closed, inhaling – caption overlay: “Find your flow here.”",
-    "cta": "Tap to watch the full serene escape and start planning your mindful adventure to Plitvice Lakes today!",
-    "place": "Plitvice Lakes",
-    "image_url": "https://images.pexels.com/photos/35474945/pexels-photo-35474945.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    "id": "wander-20261110221634993684",
-    "status": "published",
-    "created_at": "2026-11-10T22:16:34.993724+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-10T22:16:39.351945+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "122130671859311662",
-          "post_id": "1135032983019547_122130671883311662"
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram API request failed.",
-        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"Acyd9XaFyzO3TokHLZ6d7QZ\"}}"
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Sunset Trail: From Fira to Oia 🌅",
     "caption": "Feel the volcanic heartbeat of Santorini as you wander the cliff‑side path where whitewashed villages meet endless blue. Let each step be a mindful breath, each view a reminder that adventure lives in the present moment. ✨\n\n#Santorini #MindfulTravel #WanderWithZen #FiraToOia #TravelInspiration #NatureLovers #Greece",
     "hashtags": "#Santorini #MindfulTravel #WanderWithZen #FiraToOia #TravelInspiration #NatureLovers #Greece",
@@ -2743,6 +2697,62 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AHPa-gZ3rrDXEXnedV3IFJt\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Idea #1 – Cloud‑Kissed Pillars: Zhangjiajie Adventure",
+    "caption": "From mist‑shrouded sandstone giants to the thrill of walking on glass above the clouds 🌥️✨ Feel the pulse of nature and the calm of mindful wandering in every step.\n\n#Zhangjiajie #GlassBridge #NatureTherapy #MindfulTravel #WanderWithZen #China",
+    "hashtags": "#Zhangjiajie #GlassBridge #NatureTherapy #MindfulTravel #WanderWithZen #China",
+    "video_idea": {
+      "mood": "Awe‑filled, serene, exhilarating",
+      "shot_list": [
+        "1️⃣ Drone sweep over the towering sandstone pillars at sunrise, clouds swirling below.",
+        "2️⃣ Slow‑motion close‑up of feet stepping onto the glass bridge, reflections of the sky.",
+        "3️⃣ POV glide across the bridge, wind‑whisper sound, heart‑beat pulse overlay.",
+        "4️⃣ Hand‑held trail walk: mist‑kissed forest path, bamboo swaying, mindful breathing cue.",
+        "5️⃣ Time‑lapse of the sun breaking through the pillars, casting golden rays.",
+        "6️⃣ Final wide shot: traveler sitting on a rock, eyes closed, taking in the view – caption overlay: “Find your stillness above the clouds.”"
+      ]
+    },
+    "cta": "Tap ‘Learn More’ to start planning your own sky‑high mindful escape to Zhangjiajie and share this journey with fellow wanderers!",
+    "place": "Zhangjiajie",
+    "image_url": "https://images.pexels.com/photos/39014255/pexels-photo-39014255.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261123084903016720",
+    "status": "published",
+    "created_at": "2026-11-23T08:49:03.016754+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-23T08:49:07.276481+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122132559501311662",
+          "post_id": "1135032983019547_122132559525311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"A_6pGrU1Mjbd2hIhEHXfDdY\"}}"
       },
       "x": {
         "status": "skipped",
