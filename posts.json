@@ -1,61 +1,5 @@
 [
   {
-    "title": "Sunset Trail: From Fira to Oia",
-    "caption": "Feel the wind, hear the waves, and watch the sky turn fire as we walk Santorini’s cliff‑side path. 🌊🏛️ #MindfulTravel\n\n#Santorini #FiraToOia #TravelWithZen #MindfulAdventure #VolcanicViews #Greece",
-    "hashtags": "#Santorini #FiraToOia #TravelWithZen #MindfulAdventure #VolcanicViews #Greece",
-    "video_idea": {
-      "mood": "Dreamy, reflective, uplifting",
-      "shot_list": [
-        "Aerial sweep over white villages and the blue caldera at golden hour",
-        "Close‑up of feet stepping on the stone trail, dust swirling",
-        "Slow‑motion of a scarf catching the sea breeze",
-        "Pan across iconic blue domes of Oia as the sun glows",
-        "Sunset reveal – sun sinking behind the sea, silhouettes of travelers",
-        "Final 360° view from the cliff edge with waves crashing below"
-      ]
-    },
-    "cta": "Tap ‘Learn More’ to download our free mindful‑travel guide for Santorini and start your own sunrise trek!",
-    "place": "Santorini",
-    "image_url": "https://images.pexels.com/photos/14712767/pexels-photo-14712767.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    "id": "wander-20261111232554037955",
-    "status": "published",
-    "created_at": "2026-11-11T23:25:54.037988+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-11T23:25:59.085811+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "122130855123311662",
-          "post_id": "1135032983019547_122130855147311662"
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram API request failed.",
-        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AcCZLy4dQcWWOFc4TYOYTfz\"}}"
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Scooter Sunrise: Ubud to Bali’s Hidden Gems",
     "caption": "From emerald rice terraces to ancient temples and rolling waves—join our sunrise scooter trek across Bali’s soul. 🌾🏄‍♀️🛵 #MindfulTravel\n\n#Bali #Ubud #ScooterAdventure #RiceTerraces #TempleRun #SurfVibes #TravelMindfully #Indonesia",
     "hashtags": "#Bali #Ubud #ScooterAdventure #RiceTerraces #TempleRun #SurfVibes #TravelMindfully #Indonesia",
@@ -2756,6 +2700,64 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AW4YMhlVxp47ce-x2nh4XT7\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Sunset Serenade: Amalfi Coast by Sea & Road",
+    "caption": "From winding cliff roads to turquoise waves, feel the pulse of Positano to Amalfi in 60 seconds. 🌊🚗✨ #MindfulTravel\n\n['#AmalfiCoast', '#Positano', '#Amalfi', '#TravelMindfully', '#WanderWithZen', '#SeaAndRoad', '#ItalyAdventure']",
+    "hashtags": "['#AmalfiCoast', '#Positano', '#Amalfi', '#TravelMindfully', '#WanderWithZen', '#SeaAndRoad', '#ItalyAdventure']",
+    "video_idea": {
+      "duration": "45‑60 seconds (short‑form)",
+      "mood": "Dreamy, uplifting, meditative – sunrise glow to golden sunset",
+      "shot_list": [
+        "0‑5s: Aerial drone sweep over cliff villages, sunrise painting the Tyrrhenian Sea.",
+        "5‑12s: Close‑up of a winding road car window, hands on steering, pastel houses slipping by.",
+        "12‑20s: POV from a small boat gliding between Positano’s colorful facades, gentle splash sounds.",
+        "20‑28s: Slow‑motion of a lemon orchard breeze, leaves rustling, a mindful breath inhale.",
+        "28‑35s: Sunset timelapse from Amalfi’s harbor – sky shifting from orange to deep violet.",
+        "35‑45s: Silhouette of a traveler stepping onto a stone terrace, looking out, eyes closed in gratitude.",
+        "45‑60s: Fade to Wanderwithzen logo with on‑screen text: “Find your own cliff‑side calm.”"
+      ]
+    },
+    "cta": "Tap to watch the full journey and book your mindful Amalfi escape today! 🌿✈️",
+    "place": "Amalfi Coast",
+    "image_url": "https://images.pexels.com/photos/26976122/pexels-photo-26976122.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261124104810594237",
+    "status": "published",
+    "created_at": "2026-11-24T10:48:10.594271+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-24T10:48:16.534248+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122132680467311662",
+          "post_id": "1135032983019547_122132680521311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AdoJS2BhssfRTcSB_lKRGFT\"}}"
       },
       "x": {
         "status": "skipped",
