@@ -1,51 +1,5 @@
 [
   {
-    "title": "Scooter Sunrise: Ubud to Bali’s Hidden Gems",
-    "caption": "From emerald rice terraces to ancient temples and rolling waves—join our sunrise scooter trek across Bali’s soul. 🌾🏄‍♀️🛵 #MindfulTravel\n\n#Bali #Ubud #ScooterAdventure #RiceTerraces #TempleRun #SurfVibes #TravelMindfully #Indonesia",
-    "hashtags": "#Bali #Ubud #ScooterAdventure #RiceTerraces #TempleRun #SurfVibes #TravelMindfully #Indonesia",
-    "video_idea": "{\n  \"title\": \"Scooter Sunrise: Ubud to Bali’s Hidden Gems\",\n  \"caption\": \"From emerald rice terraces to ancient temples and rolling waves—join our sunrise scooter trek across Bali’s soul. 🌾🏄‍♀️🛵 #MindfulTravel\",\n  \"hashtags\": \"#Bali #Ubud #ScooterAdventure #RiceTerraces #TempleRun #SurfVibes #TravelMindfully\",\n  \"video_idea\": {\n    \"shot_list\": [\n      \"0‑3s: Drone pull‑up over Tegalalang rice terraces bathed in golden light\",\n      \"3‑6s: Close‑up of scooter wheel kicking up mist, rider’s hand on the handlebars\",\n      \"6‑9s: POV dash‑cam weaving through lush jungle road\",\n      \"9‑12s: Slow‑motion of a monk at Tirta Empul temple, water droplets glistening\",\n      \"12‑15s: Sunset surf break at Canggu—board carving the wave\",\n      \"15‑18s: Rider on scooter silhouetted against the setting sun over the coast\",\n      \"18‑20s: Text overlay – “Find your balance. Ride Bali.”\"\n    ],\n    \"mood\": \"Calm‑energet",
-    "cta": "Follow for more travel stories.",
-    "place": "Bali",
-    "image_url": "https://images.pexels.com/photos/15994332/pexels-photo-15994332.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    "id": "wander-20261112020435887053",
-    "status": "published",
-    "created_at": "2026-11-12T02:04:35.887087+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-12T02:04:41.234497+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "122130866139311662",
-          "post_id": "1135032983019547_122130866163311662"
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram API request failed.",
-        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AWuwFC0TIZu01LBFh91doGr\"}}"
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Scooter Serenity: Ubud to the Sea",
     "caption": "From emerald terraces to golden sunsets, ride with us on a two‑wheel odyssey across Bali’s heart. 🌾🏄‍♀️\n\n#Bali #Ubud #RiceTerraces #Surf #ScooterAdventure #MindfulJourney #TravelWithZen #Indonesia",
     "hashtags": "#Bali #Ubud #RiceTerraces #Surf #ScooterAdventure #MindfulJourney #TravelWithZen #Indonesia",
@@ -2758,6 +2712,52 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AdoJS2BhssfRTcSB_lKRGFT\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Sunset Sojourn: Amalfi Coast Cliff Villages",
+    "caption": "From Positano’s pastel stairs to Amalfi’s lemon‑scented breezes—watch the magic unfold as we glide the Tyrrhenian Sea and chase sunrise on cliffside lanes. 🌊✨\n\n#AmalfiCoast #Positano #TravelMindfully #WanderwithZen #CoastalAdventure #SunsetChase #Italy",
+    "hashtags": "#AmalfiCoast #Positano #TravelMindfully #WanderwithZen #CoastalAdventure #SunsetChase #Italy",
+    "video_idea": "Mood: tranquil, awe‑inspiring, meditative.\\nShot List:\\n1. Drone sweep over the jagged cliffs at golden hour.\\n2. Speed‑ramped boat cut gliding past Positano’s colorful facades.\\n3. Close‑up of lemon trees swaying in the sea breeze.\\n4. Hand‑held walk through narrow, winding alleys of Amalfi, capturing local chatter.\\n5. Slow‑motion of waves crashing against the rocks.\\n6. Time‑lapse of the sunset melting into the Tyrrhenian horizon.\\n7. Final aerial pull‑back revealing the coastline’s curve.",
+    "cta": "Tap ‘Learn More’ to plan your mindful Amalfi escape & download our free itinerary!",
+    "place": "Amalfi Coast",
+    "image_url": "https://images.pexels.com/photos/26976122/pexels-photo-26976122.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261124225717197327",
+    "status": "published",
+    "created_at": "2026-11-24T22:57:17.197359+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-24T22:57:21.969632+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122132758119311662",
+          "post_id": "1135032983019547_122132758143311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"Am3Vdy8qsllcJOvPYFzLjME\"}}"
       },
       "x": {
         "status": "skipped",
