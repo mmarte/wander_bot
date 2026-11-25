@@ -1,62 +1,5 @@
 [
   {
-    "title": "Idea #1 – Bali on Two Wheels: From Ubud’s Terraces to Surf",
-    "caption": "Ride the rhythm of Bali 🌾🏍️✨ From emerald rice paddies to sunrise surf, discover the island’s soul on a scooter. #Wanderwithzen\n\n#Bali #Ubud #ScooterAdventure #RiceTerraces #TempleVibes #SurfLife #MindfulTravel #Indonesia",
-    "hashtags": "#Bali #Ubud #ScooterAdventure #RiceTerraces #TempleVibes #SurfLife #MindfulTravel #Indonesia",
-    "video_idea": {
-      "shot_list": [
-        "Drone sweep over Tegalalang rice terraces at golden hour",
-        "Close‑up of scooter wheels humming along a jungle path",
-        "Rider pauses at a warung, sipping tea, smiling at the camera",
-        "Time‑lapse of Pura Tirta Empul’s gate with incense swirling",
-        "Cut to Kuta Beach waves; rider steps onto a surfboard",
-        "Silhouette of the scooter heading toward a sunset horizon",
-        "Calm breath overlay with Wanderwithzen logo and a gentle fade‑out"
-      ],
-      "mood": "Serene yet adventurous, with a meditative pulse and bursts of vibrant color"
-    },
-    "cta": "Tap ‘Learn More’ to download our free Bali scooter itinerary and start your mindful ride today!",
-    "place": "Bali",
-    "image_url": "https://images.pexels.com/photos/36810327/pexels-photo-36810327.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    "id": "wander-20261112204154770588",
-    "status": "published",
-    "created_at": "2026-11-12T20:41:54.770622+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-12T20:41:59.753474+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "122130949101311662",
-          "post_id": "1135032983019547_122130949125311662"
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram API request failed.",
-        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"ACMp2t0z0CQlA-YLYD5gyQ4\"}}"
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Scooter Soul‑Ride Through Bali’s Heart",
     "caption": "From misty rice terraces to sunrise surf, we chase calm on two wheels. 🌾🏄‍♀️✨\n\n#BaliAdventure #UbudScooter #RiceTerraceViews #TempleTrail #SurfLife #MindfulTravel #Wanderwithzen #Indonesia",
     "hashtags": "#BaliAdventure #UbudScooter #RiceTerraceViews #TempleTrail #SurfLife #MindfulTravel #Wanderwithzen #Indonesia",
@@ -2748,6 +2691,62 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AATLREOQAcygD8ggGVtbwv2\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Skye’s Secrets: From Cliffs to Fairy Pools",
+    "caption": "Chase the mist on Skye’s rugged sea cliffs, dip into crystal fairy pools, and conquer the Cuillin ridge—all on winding single‑track roads. 🌊🏞️ #Wanderwithzen\n\n['#IsleOfSkye', '#FairyPools', '#CuillinRidge', '#ScotlandAdventure', '#MindfulTravel', '#NatureLovers']",
+    "hashtags": "['#IsleOfSkye', '#FairyPools', '#CuillinRidge', '#ScotlandAdventure', '#MindfulTravel', '#NatureLovers']",
+    "video_idea": {
+      "shot_list": [
+        "1️⃣ Drone sweep over the dramatic sea cliffs at sunrise (5 s).",
+        "2️⃣ POV drive on a narrow single‑track road, windows framing misty hills (4 s).",
+        "3️⃣ Slow‑motion splash of turquoise water at the Fairy Pools (3 s).",
+        "4️⃣ Time‑lapse of clouds racing over the Cuillin peaks (4 s).",
+        "5️⃣ Close‑up of a hiker’s boots stepping on heather, breathing in the fresh air (2 s).",
+        "6️⃣ Final wide shot of the island’s coastline at golden hour, text overlay: “Find your calm on Skye.” (5 s)"
+      ],
+      "mood": "Epic yet serene – a blend of awe‑inspiring landscapes and quiet mindfulness."
+    },
+    "cta": "Tap ‘Learn More’ to start planning your mindful adventure to Skye today!",
+    "place": "Isle of Skye",
+    "image_url": "https://images.pexels.com/photos/45900/landscape-scotland-isle-of-skye-old-man-of-storr-45900.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261125035239986767",
+    "status": "published",
+    "created_at": "2026-11-25T03:52:39.986804+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-25T03:52:46.706965+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122132782407311662",
+          "post_id": "1135032983019547_122132782431311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"ApkPaXR7F_UZXiWAWfYqBY5\"}}"
       },
       "x": {
         "status": "skipped",
