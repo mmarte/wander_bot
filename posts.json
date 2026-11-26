@@ -1,62 +1,5 @@
 [
   {
-    "title": "Dune Dreams: Huacachina Oasis Escape",
-    "caption": "From the roar of the buggy to the stillness of the oasis—discover Peru’s hidden desert jewel in 60 seconds. 🌵✨\n\n#Huacachina #DesertOasis #TravelPeru #MindfulAdventure #WanderWithZen #DuneBuggy #Peru",
-    "hashtags": "#Huacachina #DesertOasis #TravelPeru #MindfulAdventure #WanderWithZen #DuneBuggy #Peru",
-    "video_idea": {
-      "shot_list": [
-        "1️⃣ Drone sweep over sunrise‑lit dunes, revealing the oasis’s emerald curve.",
-        "2️⃣ Macro of wind‑sculpted sand ripples – tactile, whisper‑soft.",
-        "3️⃣ Buggy kicking up powder as it charges the crest – high‑energy cut.",
-        "4️⃣ First glimpse of the lagoon: crystal water reflecting sky and dunes.",
-        "5️⃣ Slow‑mo of a traveler stepping into the water, droplets sparkling.",
-        "6️⃣ Sunset glow over the oasis, lanterns flicker, silhouettes relax.",
-        "7️⃣ Text overlay: “Breathe. Explore. Be.” with a gentle ambient sound fade."
-      ],
-      "mood": "Epic yet tranquil – a blend of adrenaline‑filled adventure and meditative calm."
-    },
-    "cta": "Tap ‘Learn More’ to plan your Huacachina escape and join our next guided dune meditation!",
-    "place": "Huacachina",
-    "image_url": "https://images.pexels.com/photos/17043687/pexels-photo-17043687.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    "id": "wander-20261114010756334269",
-    "status": "published",
-    "created_at": "2026-11-14T01:07:56.334316+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-14T01:08:01.935382+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "122131108995311662",
-          "post_id": "1135032983019547_122131109019311662"
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram API request failed.",
-        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AtWA0nmuSZyLsMKw5LG6GEA\"}}"
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Sands of Serenity: Huacachina Oasis Adventure",
     "caption": "From towering dunes to crystal‑clear waters—discover Peru’s hidden desert oasis and feel the calm beneath the wind. 🌵💧\n\n#Huacachina #DesertOasis #MindfulTravel #WanderWithZen #IcaAdventure #TravelInspo #Peru",
     "hashtags": "#Huacachina #DesertOasis #MindfulTravel #WanderWithZen #IcaAdventure #TravelInspo #Peru",
@@ -2761,6 +2704,63 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AazIJVIbrkGmVGnLHrpe3e5\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Starlit Secrets of Wadi Rum",
+    "caption": "Feel the heartbeat of the red desert 🌵✨— sunrise over towering canyons, Bedouin whispers by the fire, and a galaxy‑filled sky that awakens the soul. Ready for a mindful adventure?\n\n#WadiRum #JordanAdventure #MindfulTravel #DesertDreams #BedouinGuides #StarlitCamping",
+    "hashtags": "#WadiRum #JordanAdventure #MindfulTravel #DesertDreams #BedouinGuides #StarlitCamping",
+    "video_idea": {
+      "shot_list": [
+        "1️⃣ Drone sweep over crimson dunes at golden hour",
+        "2️⃣ Close‑up of sunrise spilling across sandstone arches",
+        "3️⃣ Hands pouring traditional tea, steam swirling",
+        "4️⃣ Bedouin guide sharing a story around a crackling campfire",
+        "5️⃣ Slow‑motion footprints in sand, boots crunching",
+        "6️⃣ Night‑time timelapse of the Milky Way over the camp",
+        "7️⃣ Wide shot of tents lit by lanterns, silhouettes against stars"
+      ],
+      "mood": "Mystical, serene, and lightly adventurous – a blend of awe‑inspiring landscape and intimate, grounded moments."
+    },
+    "cta": "Tap ‘Learn More’ to join our next mindful trek to Wadi Rum and experience the desert under the stars! 🌌",
+    "place": "Wadi Rum",
+    "image_url": "https://images.pexels.com/photos/36721973/pexels-photo-36721973.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261126221020190719",
+    "status": "published",
+    "created_at": "2026-11-26T22:10:20.190751+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-26T22:10:26.634690+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122133027723311662",
+          "post_id": "1135032983019547_122133027747311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"Asd1yDKefLJNta1A-HEfE_5\"}}"
       },
       "x": {
         "status": "skipped",
