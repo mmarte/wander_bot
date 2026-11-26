@@ -1,60 +1,5 @@
 [
   {
-    "title": "Arctic Horizons: Lofoten in Motion",
-    "caption": "Chasing midnight sun over jagged peaks & turquoise tides. 🌊🏔️ #WanderwithZen\n\n#Lofoten #ArcticAdventure #E10RoadTrip #TravelMindfully #NatureLovers #LofotenIslands #Norway",
-    "hashtags": "#Lofoten #ArcticAdventure #E10RoadTrip #TravelMindfully #NatureLovers #LofotenIslands #Norway",
-    "video_idea": {
-      "shot_list": [
-        "1️⃣ Drone sweep over Arctic peaks soaring straight from the sea at sunrise.",
-        "2️⃣ Close‑up of colorful fishing‑village harbor – boats, nets, local smiles.",
-        "3️⃣ POV drive on the E10 winding along sheer cliffs, sea spray in frame.",
-        "4️⃣ Hike to Reinebringen summit – rapid cut to a 360° panoramic view.",
-        "5️⃣ Golden‑hour beach scene fading into a hint of the Northern Lights."
-      ],
-      "mood": "Awe‑inspiring, serene, and adventurous – a mindful escape that fuels wanderlust."
-    },
-    "cta": "Tap to watch the full journey and start planning your own Arctic escape!",
-    "place": "Lofoten Islands",
-    "image_url": "https://images.pexels.com/photos/33695268/pexels-photo-33695268.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    "id": "wander-20261113202257266356",
-    "status": "published",
-    "created_at": "2026-11-13T20:22:57.266389+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-13T20:23:01.615739+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "122131085649311662",
-          "post_id": "1135032983019547_122131085673311662"
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram API request failed.",
-        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AXQXQFNFZ8uQZxhJ-yzFcoM\"}}"
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Arctic Peaks & Sea: Lofoten in 60 Seconds",
     "caption": "Chasing sunrise over jagged peaks, winding the iconic E10, and uncovering hidden fishing villages. Feel the wild, breathe the sea. 🌊🏔️\n\n#Lofoten #ArcticAdventure #TravelMindfully #E10RoadTrip #NatureLovers #WanderWithZen #LofotenIslands #Norway",
     "hashtags": "#Lofoten #ArcticAdventure #TravelMindfully #E10RoadTrip #NatureLovers #WanderWithZen #LofotenIslands #Norway",
@@ -2750,6 +2695,62 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AqtEjQf_jIDvmr63e36_leK\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Starlit Silence: Wadi Rum Awakens",
+    "caption": "From ruby canyons to endless dunes, feel the pulse of the desert under a sky that never sleeps. 🌌✨\n\n#WadiRum #JordanAdventure #DesertDreams #MindfulTravel #BedouinNights",
+    "hashtags": "#WadiRum #JordanAdventure #DesertDreams #MindfulTravel #BedouinNights",
+    "video_idea": {
+      "shot_list": [
+        "1️⃣ Drone sweep over sunrise‑lit sandstone arches.",
+        "2️⃣ Close‑up of Bedouin hands lighting a traditional lantern.",
+        "3️⃣ POV walk on golden dunes, footprints fading behind.",
+        "4️⃣ Time‑lapse of the night sky unveiling a Milky Way over campfire.",
+        "5️⃣ Slow‑motion of tea being poured, steam dancing in lantern light.",
+        "6️⃣ Final wide shot of the tent silhouette against the stars."
+      ],
+      "mood": "Quiet awe • Warm earthy tones • Gentle, meditative soundtrack with soft oud strings"
+    },
+    "cta": "Ready for a mindful desert escape? Tap ‘Learn More’ and let the Bedouin guides lead you to Wadi Rum’s star‑kissed serenity.",
+    "place": "Wadi Rum",
+    "image_url": "https://images.pexels.com/photos/13806469/pexels-photo-13806469.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261126031730979998",
+    "status": "published",
+    "created_at": "2026-11-26T03:17:30.980044+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-26T03:17:38.888943+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122132935791311662",
+          "post_id": "1135032983019547_122132935815311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AYFF3veh8SNlO1Z1A1Tzjww\"}}"
       },
       "x": {
         "status": "skipped",
