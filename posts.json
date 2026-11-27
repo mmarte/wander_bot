@@ -1,62 +1,5 @@
 [
   {
-    "title": "Sunset Serenity at Huacachina",
-    "caption": "From the roar of dune buggies to the calm of the oasis—discover Peru’s hidden desert jewel in 60 seconds. 🌵✨\n\n#Huacachina #DesertOasis #TravelPeru #MindfulAdventure #WanderWithZen #Peru",
-    "hashtags": "#Huacachina #DesertOasis #TravelPeru #MindfulAdventure #WanderWithZen #Peru",
-    "video_idea": {
-      "shot_list": [
-        "1️⃣ Drone sweep over golden dunes at sunrise, music builds.",
-        "2️⃣ Close‑up of a dune buggy kicking up clouds of sand, driver laughing.",
-        "3️⃣ Arrival at the turquoise oasis – water glistening, palms swaying.",
-        "4️⃣ Slow‑motion splash as feet touch the lagoon, gentle ripple.",
-        "5️⃣ Time‑lapse of the sun setting behind dunes, sky turning amber.",
-        "6️⃣ Traveler seated in meditation on a sand‑covered rock, breath overlay.",
-        "7️⃣ Quick tip overlay: \"Best buggy tours start from Ica – book 24h ahead!\""
-      ],
-      "mood": "Epic adventure meets tranquil mindfulness – vibrant sunrise to golden sunset, with a calm, reflective finish."
-    },
-    "cta": "Tap ‘Learn More’ to plan your Huacachina oasis escape and share your own sunrise moments with #WanderWithZen!",
-    "place": "Huacachina",
-    "image_url": "https://images.pexels.com/photos/17043687/pexels-photo-17043687.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    "id": "wander-20261114211821825808",
-    "status": "published",
-    "created_at": "2026-11-14T21:18:21.825833+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-14T21:18:29.459360+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "122131218585311662",
-          "post_id": "1135032983019547_122131218609311662"
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram API request failed.",
-        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AO1cg2CjhRPZxBhSh3eNJSK\"}}"
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Mirror Earth: 4x4 Adventure on Salar de Uyuni",
     "caption": "Step into the endless sky‑to‑ground reflection. From sunrise to star‑strewn night, watch our 4x4 carve a path across the world’s biggest salt canvas. 🌍✨ #WanderWithZen\n\n#SalarDeUyuni #Bolivia #SaltFlat #MindfulTravel #AdventureAwaits #TravelVideo #NatureLovers",
     "hashtags": "#SalarDeUyuni #Bolivia #SaltFlat #MindfulTravel #AdventureAwaits #TravelVideo #NatureLovers",
@@ -2759,6 +2702,62 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"An7r0jjSaMQbh4X2ZFATGhn\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Volcano Reflections: Lake Atitlán Journey",
+    "caption": "Sail into serenity as three mighty volcanoes watch over crystal waters. 🌋✨ #WanderwithZen\n\n#LakeAtitlan #Guatemala #VolcanicLake #MindfulTravel #NatureLovers #AdventureAwaits",
+    "hashtags": "#LakeAtitlan #Guatemala #VolcanicLake #MindfulTravel #NatureLovers #AdventureAwaits",
+    "video_idea": {
+      "shot_list": [
+        "Drone sunrise sweep over the lake, revealing the trio of volcanoes.",
+        "Close‑up of the wooden boat pushing off from Panajachel’s dock.",
+        "Slow‑motion ripples on the water mirroring the volcanic peaks.",
+        "Footsteps on a volcanic ash trail leading to a hidden viewpoint.",
+        "Vibrant market stalls in Santiago Atitlán – colors, smiles, local crafts.",
+        "Sunset timelapse: volcano silhouettes darkening as the sky glows."
+      ],
+      "mood": "Calm, awe‑inspiring, meditative, with bursts of vibrant local life."
+    },
+    "cta": "Ready to drift? Book your mindful adventure to Lake Atitlán today and let the volcanoes guide your soul.",
+    "place": "Lake Atitlán",
+    "image_url": "https://images.pexels.com/photos/15741038/pexels-photo-15741038.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261127093458685361",
+    "status": "published",
+    "created_at": "2026-11-27T09:34:58.685396+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-27T09:35:06.560242+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122133077427311662",
+          "post_id": "1135032983019547_122133077451311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AV_MVTHs49VTpOzsuFC8UUA\"}}"
       },
       "x": {
         "status": "skipped",
