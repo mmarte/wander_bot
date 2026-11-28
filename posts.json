@@ -1,61 +1,5 @@
 [
   {
-    "title": "Mirror Earth: 4x4 Odyssey on Salar de Uyuni",
-    "caption": "From sunrise to starlit reflections, we chase the horizon where sky meets salt. 🌅🚙\n\n#SalarDeUyuni #Bolivia #SaltFlat #4x4Adventure #TravelMindfully #WanderwithZen",
-    "hashtags": "#SalarDeUyuni #Bolivia #SaltFlat #4x4Adventure #TravelMindfully #WanderwithZen",
-    "video_idea": {
-      "shot_list": [
-        "1️⃣ Drone lift‑off: sweeping aerial reveal of the endless white salt plain under a pastel sky.",
-        "2️⃣ 4x4 tires crunching across the mirror surface, kicking up tiny salt crystals.",
-        "3️⃣ Close‑up: clouds and mountains reflected perfectly on the ground, creating a surreal double‑vision.",
-        "4️⃣ Traveler’s boots stepping forward, leaving a fleeting imprint that fades instantly.",
-        "5️⃣ Sunset timelapse: the flat transforms to gold, then to deep violet as the sun dips.",
-        "6️⃣ Nightfall: star‑filled sky mirrored below, a silent, infinite portal."
-      ],
-      "mood": "Ethereal, contemplative, awe‑inspiring – a quiet invitation to feel the planet’s heartbeat."
-    },
-    "cta": "Tap ‘Learn More’ to map your own mindful journey across the world’s biggest mirror and join our next adventure!",
-    "place": "Salar de Uyuni",
-    "image_url": "https://images.pexels.com/photos/39640243/pexels-photo-39640243.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    "id": "wander-20261115213904674255",
-    "status": "published",
-    "created_at": "2026-11-15T21:39:04.674289+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-15T21:39:11.486063+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "122131365609311662",
-          "post_id": "1135032983019547_122131365633311662"
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram API request failed.",
-        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"A-uvtWDATfQbyXyIylkstx8\"}}"
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Sunrise Over Cappadocia: Balloons & Fairy Chimneys",
     "caption": "Float above ancient stone wonders as the sun paints the sky—discover the magic of Göreme from a hot‑air balloon. 🌅✨\n\n#Cappadocia #Göreme #BalloonAdventure #TravelMindfully #NatureLovers #WanderWithZen #Turkey",
     "hashtags": "#Cappadocia #Göreme #BalloonAdventure #TravelMindfully #NatureLovers #WanderWithZen #Turkey",
@@ -2740,6 +2684,64 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AT102d4lLn7zzjFQ5rwnoVH\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Jungle Echoes: Trek to Tikal",
+    "caption": "Step off the beaten path and let the ancient Maya whispers guide you through the emerald heart of Petén. 🌿✨\n\n#Tikal #MayaMagic #PeténJungle #MindfulAdventure #WanderWithZen #TravelInspiration #Guatemala",
+    "hashtags": "#Tikal #MayaMagic #PeténJungle #MindfulAdventure #WanderWithZen #TravelInspiration #Guatemala",
+    "video_idea": {
+      "mood": "Mystical, serene, and invigorating",
+      "shot_list": [
+        "1️⃣ Sunrise over the jungle canopy – time‑lapse of golden light breaking through leaves.",
+        "2️⃣ Close‑up of worn stone steps as feet tread softly, dust swirling.",
+        "3️⃣ Drone sweep over the towering Temple I emerging from the forest.",
+        "4️⃣ Slow‑motion of a hummingbird hovering near a vine‑covered stela.",
+        "5️⃣ POV walk through the park trail – crunch of leaves, distant bird calls.",
+        "6️⃣ Quiet moment at the top: wide‑angle of the plaza, breath taken in silence.",
+        "7️⃣ End card: a hand‑drawn map sketch of the trek route with a gentle fade‑out."
+      ],
+      "audio_notes": "Ambient jungle sounds + a subtle, meditative flute melody."
+    },
+    "cta": "Ready for the rise? Pack your boots, hit the trail, and share your own Tikal sunrise with #WanderWithZen!",
+    "place": "Tikal",
+    "image_url": "https://images.pexels.com/photos/14843659/pexels-photo-14843659.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261128084724717111",
+    "status": "published",
+    "created_at": "2026-11-28T08:47:24.717154+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-28T08:47:29.953747+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122133239829311662",
+          "post_id": "1135032983019547_122133239853311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AENc3uvMsaoLjaah8G-jKC-\"}}"
       },
       "x": {
         "status": "skipped",
