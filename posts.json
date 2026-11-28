@@ -1,62 +1,5 @@
 [
   {
-    "title": "Mirror Earth: Journey Across Salar de Uyuni",
-    "caption": "Walk where the sky kisses the ground. 🌌✨ Feel the stillness, hear the wind, and let the endless white inspire your next mindful adventure.\n\n#SalarDeUyuni #Bolivia #SaltFlatMagic #MindfulTravel #WanderWithZen #4x4Adventure #NatureMirrors",
-    "hashtags": "#SalarDeUyuni #Bolivia #SaltFlatMagic #MindfulTravel #WanderWithZen #4x4Adventure #NatureMirrors",
-    "video_idea": {
-      "mood": "Serene, awe‑inspiring, meditative",
-      "shot_list": [
-        "1️⃣ Drone rise: sunrise over the endless white, revealing the horizon‑less mirror.",
-        "2️⃣ Close‑up of a 4×4 tire carving gentle spirals in the salt, dust kicking up like silver snow.",
-        "3️⃣ POV from the driver’s seat: steering wheel framed by endless reflections, clouds drifting overhead.",
-        "4️⃣ Slow‑motion of a lone traveler stepping onto a perfect cloud‑like reflection, footprints fading instantly.",
-        "5️⃣ Time‑lapse of shifting light: from sunrise gold to midday glare to sunset pink, all mirrored below.",
-        "6️⃣ Final wide‑angle pull‑back: the vehicle becomes a tiny speck on a glass‑like world, stars appearing as night falls."
-      ],
-      "description": "A 45‑second short‑form video that captures the surreal symmetry of Salar de Uyuni. Each shot flows with gentle transitions, paired with a soft ambient soundscape and a whisper‑like voiceover: “When the earth mirrors the sky, you find space to breathe.”"
-    },
-    "cta": "Ready to walk on the sky? Click ‘Learn More’ and join our guided mindful 4×4 trek across the world’s greatest salt flat.",
-    "place": "Salar de Uyuni",
-    "image_url": "https://images.pexels.com/photos/36721724/pexels-photo-36721724.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    "id": "wander-20261115191812339351",
-    "status": "published",
-    "created_at": "2026-11-15T19:18:12.339387+00:00",
-    "brand": "Wanderwithzen",
-    "page_id": "1135032983019547",
-    "published_at": "2026-11-15T19:18:18.237836+00:00",
-    "publish_results": {
-      "facebook": {
-        "status": "ok",
-        "platform": "facebook",
-        "response": {
-          "id": "122131354941311662",
-          "post_id": "1135032983019547_122131354965311662"
-        }
-      },
-      "instagram": {
-        "status": "error",
-        "message": "Instagram API request failed.",
-        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"APLyBsFroiCAGGuhq-NkvR9\"}}"
-      },
-      "x": {
-        "status": "skipped",
-        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
-      },
-      "threads": {
-        "status": "error",
-        "message": "Threads auth token or user ID is missing."
-      },
-      "tiktok": {
-        "status": "error",
-        "message": "TikTok access token or open_id is missing."
-      },
-      "youtube": {
-        "status": "skipped",
-        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
-      }
-    }
-  },
-  {
     "title": "Mirror Earth: 4x4 Odyssey on Salar de Uyuni",
     "caption": "From sunrise to starlit reflections, we chase the horizon where sky meets salt. 🌅🚙\n\n#SalarDeUyuni #Bolivia #SaltFlat #4x4Adventure #TravelMindfully #WanderwithZen",
     "hashtags": "#SalarDeUyuni #Bolivia #SaltFlat #4x4Adventure #TravelMindfully #WanderwithZen",
@@ -2751,6 +2694,52 @@
         "status": "error",
         "message": "Instagram API request failed.",
         "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AQehUeuEpcu7u5kxyAf3Ab5\"}}"
+      },
+      "x": {
+        "status": "skipped",
+        "message": "X user token is missing. Set X_USER_TOKEN (OAuth user token); an app-only bearer token cannot post."
+      },
+      "threads": {
+        "status": "error",
+        "message": "Threads auth token or user ID is missing."
+      },
+      "tiktok": {
+        "status": "error",
+        "message": "TikTok access token or open_id is missing."
+      },
+      "youtube": {
+        "status": "skipped",
+        "message": "YouTube OAuth access token is missing. Set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN, or a fresh YOUTUBE_ACCESS_TOKEN."
+      }
+    }
+  },
+  {
+    "title": "Jungle Echoes: Trek to Tikal’s Sunrise",
+    "caption": "Step into the ancient heartbeat of the Maya as we hike through Petén’s emerald canopy to watch the sun crown Temple I. Feel the silence, hear the birds, and let the ruins whisper your next adventure. 🌿✨\n\n#Tikal #MayaMagic #PeténJungle #MindfulTravel #WanderwithZen #AdventureAwaits #EcoTrek #Guatemala",
+    "hashtags": "#Tikal #MayaMagic #PeténJungle #MindfulTravel #WanderwithZen #AdventureAwaits #EcoTrek #Guatemala",
+    "video_idea": "Shot List:\n1. Aerial drone sweep over the dense Petén canopy, revealing the hidden stone silhouettes.\n2. Close‑up of boots crunching leaf litter, rhythmic steps echoing the journey.\n3. Hand‑held focus on moss‑covered glyphs and weathered stone textures.\n4. Time‑lapse of sunrise spilling golden light over Temple I, shadows receding.\n5. Slow pan through a temple corridor, light shafts dancing on ancient walls.\n6. Traveler sitting cross‑legged on the temple’s summit, breathing in the jungle air.\nMood: Mystical, serene, awe‑inspiring – ambient jungle sounds, soft drum pulse, and a gentle rise in music as the sun appears.",
+    "cta": "Tap ‘Learn More’ to join our guided sunrise trek to Tikal – limited spots!",
+    "place": "Tikal",
+    "image_url": "https://images.pexels.com/photos/6942679/pexels-photo-6942679.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "id": "wander-20261128030109238532",
+    "status": "published",
+    "created_at": "2026-11-28T03:01:09.238572+00:00",
+    "brand": "Wanderwithzen",
+    "page_id": "1135032983019547",
+    "published_at": "2026-11-28T03:01:14.690965+00:00",
+    "publish_results": {
+      "facebook": {
+        "status": "ok",
+        "platform": "facebook",
+        "response": {
+          "id": "122133211851311662",
+          "post_id": "1135032983019547_122133211875311662"
+        }
+      },
+      "instagram": {
+        "status": "error",
+        "message": "Instagram API request failed.",
+        "details": "400 Client Error: Bad Request for url: https://graph.facebook.com/v25.0/17841469923565579/media — {\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AT102d4lLn7zzjFQ5rwnoVH\"}}"
       },
       "x": {
         "status": "skipped",
